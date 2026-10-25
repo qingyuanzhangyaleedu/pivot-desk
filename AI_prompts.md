@@ -108,3 +108,10 @@ as the evidence supporting each completed outcome.
 > Allow AI processing; keep publication on hold
 
 **Outcome:** Ran a live PDF extraction and fit reviews through the configured provider after consent. Reviewed the extracted facts, verified source quotations, tested cache reuse and used the real AI profile in the local form lab. Fixed a search-response race discovered during testing, preserving the extra paid review and its cost in the evidence. Report, HTML slides and an updated PowerPoint copy include aggregate results only. Publication remains on hold; private resume and detailed outputs are excluded.
+
+## Final submission preparation
+**Prompt:** “Okay I am ready to submit the project. similar to what we’ve done for hw3, hw4, hw5. just follow the instructions in the pdf.”
+
+**Follow-up:** “it doesn’t matter. the professor said during the class that it can be whatever” (model choice).
+
+**Work:** Reread the brief; retained Astra based on the reported clarification; prepared public GitHub source, repository links, offline report/deck and a fresh remote-clone check. Kept private resumes, personal runtime data and credentials excluded. Canvas upload is a separate final step.

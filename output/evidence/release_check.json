@@ -1,5 +1,5 @@
 {
-  "candidate_file_count": 154,
+  "candidate_file_count": 158,
   "missing": [],
   "credential_findings": [],
   "historical_findings": [],
@@ -8,7 +8,7 @@
   "boards": 10,
   "sectors": 6,
   "bundled_jobs": 146,
-  "git_remote_present": false,
+  "git_remote_present": true,
   "passed": true,
   "note": "No secret values printed. Pattern scan and configured-value matching do not prove absence of every possible secret."
 }

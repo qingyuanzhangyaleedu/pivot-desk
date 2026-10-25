@@ -1,7 +1,7 @@
 # Final-project requirements and grading checklist
 
-Source: [the supplied assignment brief](assignment_brief.pdf), reviewed in full on
-October 24, 2026. Updated October 25 after implementation. Checked items describe verified artifacts; the report remains a draft pending the explicitly listed submission gaps.
+Source: the supplied assignment brief (private local copy: `docs/assignment_brief.pdf`, excluded from Git), reviewed in full on
+October 24, 2026. Updated October 25 after implementation. Checked items describe verified artifacts; the final report and deck include the repository link. Canvas upload remains outstanding.
 
 ## Submission
 
@@ -58,7 +58,7 @@ does not run for graders; it cannot replace the 5 setup points.
 The teaching staff's parent `.env` contains `PORTKEY_API_KEY` and `OPENAI_API_KEY`.
 Use the exact applicable name. List only the keys the finished application needs.
 
-**User decision:** On October 25, the user explicitly selected `gpt-6-astra` with the existing workspace account. The code and measured evidence follow that instruction. This differs from the course-key restriction above and is disclosed in the README and report. It is not represented as course-compliant.
+**User decision:** On October 25, the user explicitly selected `gpt-6-astra` with the existing workspace account. The code and measured evidence follow that instruction. Before publication, the user reported that the instructor allowed any model in class and retained Astra. The printed restriction above remains documented as written; the later clarification is attributed to the user.
 
 ## Report sections, in the required order
 
@@ -132,6 +132,6 @@ real new addition. Their **idea** is capped at Tier 1 without that new contribut
 
 ## Current handoff
 
-Report: 14 letter-size printed pages. Deck: 9 offline reveal.js slides. Application: working local prototype with live model runs and automated evidence. Outstanding: real applicant trial, authenticated employer Workday test, course-key model conflict, GitHub publication and final submission review. No video or human testimonial has been fabricated.
+Report: 15 letter-size printed pages. Deck: 9 offline reveal.js slides. Application: working local prototype with live model runs and automated evidence. Outstanding evidence limits: independent applicant trial and authenticated employer Workday test. The user reported an instructor model clarification. Repository publication and final Canvas handoff are tracked below. No video or human testimonial has been fabricated.
 
 Current verification: 10 boards, 6 sectors, 146 bundled source records, and 35 passing offline tests. The source-expansion browser results are in `output/evidence/sector_browser.json`. Report/deck image loading, layout and navigation checks are in `output/evidence/artifact_validation.json`. `docs/project_plan.md` tracks the remaining completion work.

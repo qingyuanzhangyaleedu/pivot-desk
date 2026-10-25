@@ -69,3 +69,6 @@ The report now has 15 verified printed pages and a nine-slide editable PowerPoin
 
 ## Authorized live evidence
 A later consented run adds actual extraction and fit checks on an owner-provided document. The report includes 13 source-supported facts, two intended role assessments and a retained unintended assessment that exposed a UI race. A controlled before/after regression now selects the right role. Costs include all four paid calls; no failed or unintended work is hidden. This strengthens functional, safety and cost evidence, but does not establish human time savings, universal Workday compatibility or an awarded grade.
+
+## Submission-stage clarification
+The earlier estimate is historical, not a grade. The user now reports that the instructor permitted any model in class, so Astra remains unchanged. The public repository link is in `output/github_url.txt`; current setup verification is in `remote_clean_setup.json` when present. The independent human-trial and authenticated Workday evidence limits remain.

@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 ROOT = Path(__file__).resolve().parents[1]
 load_dotenv(ROOT / ".env", override=False)
 load_dotenv(ROOT.parent / ".env", override=False)
-# Explicit workspace model choice. Course brief requires Luna on the course key; see README.
+# Explicit user choice; user reports the instructor allowed any model in class. See README.
 MODEL_NAME = "gpt-6-astra"
 RUNTIME = Path(os.getenv("PIVOT_DATA_DIR", str(ROOT / "runtime")))
 RUNTIME.mkdir(parents=True, exist_ok=True)

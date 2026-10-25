@@ -1,0 +1,13 @@
+{
+  "file": "output/presentation/Pivot_Desk_Submission.pptx",
+  "sha256": "63c4a6e6d92306a1e2650a64a273a94491ffd10e645f759d69c2c2c91681937a",
+  "slides": 9,
+  "native_tables": 2,
+  "package_integrity_passed": true,
+  "layout_findings": 0,
+  "first_party_import_passed": true,
+  "all_final_slides_reimported_and_rendered": true,
+  "visual_review": "Changed slides 1 and 9 visually reviewed. Renders of slides 2\u20138 are byte-identical to the previously verified live-test deck.",
+  "opened_in_native_powerpoint": false,
+  "older_companions_preserved": true
+}

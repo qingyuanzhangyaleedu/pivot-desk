@@ -1,14 +1,19 @@
-"""Rehearse README setup from a fresh local clone. No real key or AI call.
+"""Rehearse README setup from a local or public clone.
 
-Warm package caches are disclosed. --port avoids disturbing the user's live app.
+--live-ai uses only the fictional demo and a temporary parent dotenv.
+Warm caches are disclosed. --port avoids disturbing the user's live app.
 """
 
 import argparse, http.cookiejar, json, os, shutil, subprocess, sys, tempfile, time, urllib.request
 from pathlib import Path
+from dotenv import dotenv_values, set_key
 
 R = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument("--port", type=int, default=8771)
+parser.add_argument("--source", default=str(R))
+parser.add_argument("--live-ai", action="store_true")
+parser.add_argument("--evidence", default="output/evidence/final_clean_setup.json")
 args = parser.parse_args()
 root = Path(tempfile.mkdtemp(prefix="pivot-release-check-"))
 clone = root / "pivot-desk"
@@ -17,10 +22,8 @@ started = time.monotonic()
 logfile = root / "install.log"
 serverlog = None
 result = {
-    "source": "Fresh local Git clone of committed release candidate, not a public remote",
-    "revision": subprocess.check_output(
-        ["git", "rev-parse", "HEAD"], cwd=R, text=True
-    ).strip(),
+    "source": args.source,
+    "public_remote": args.source.startswith("https://github.com/"),
     "port": args.port,
     "checks": [],
 }
@@ -34,7 +37,10 @@ def run(cmd, cwd, env=None):
 
 
 try:
-    run(["git", "clone", str(R), str(clone)], root)
+    run(["git", "clone", args.source, str(clone)], root)
+    result["revision"] = subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=clone, text=True
+    ).strip()
     assert not any(
         (clone / p).exists()
         for p in [".env", "runtime", ".venv", "frontend/node_modules"]
@@ -53,6 +59,8 @@ try:
         "extension/content.js",
         "output/demo.webm",
         "output/user_trial.html",
+        "output/github_url.txt",
+        "output/presentation/Pivot_Desk_Submission.pptx",
     ]
     assert all((clone / p).is_file() for p in required)
     run([sys.executable, "-m", "venv", ".venv"], clone)
@@ -79,6 +87,21 @@ try:
     result["checks"].append(
         "Parent-only dotenv discovered; requested Astra configuration unchanged"
     )
+    if args.live_ai:
+        values = {
+            **dotenv_values(R.parent / ".env"),
+            **dotenv_values(R / ".env"),
+            **os.environ,
+        }
+        selected_key = next(
+            (key for key in ["PORTKEY_API_KEY", "OPENAI_API_KEY"] if values.get(key)),
+            None,
+        )
+        if not selected_key:
+            raise RuntimeError("No configured key for the optional live clone test")
+        (root / ".env").write_text("")
+        set_key(root / ".env", selected_key, values[selected_key])
+        (root / ".env").chmod(0o600)
     serverlog = (root / "server.log").open("w")
     server = subprocess.Popen(
         [
@@ -138,8 +161,34 @@ try:
     )
     run([str(py), "-m", "unittest", "discover", "-s", "tests", "-v"], clone, env)
     result["checks"].append("All 35 offline checks passed in the clean environment")
+    if args.live_ai:
+        began = request("/api/analyze", {"job_id": found["jobs"][0]["id"]})
+        deadline = time.monotonic() + 115
+        while time.monotonic() < deadline:
+            actual = request("/api/runs/" + began["run_id"])
+            if actual["status"] not in ["queued", "running"]:
+                break
+            time.sleep(1)
+        assert actual["status"] == "completed", actual.get("error")
+        assert actual["usage"]["requests"] > 0
+        repeat = request("/api/analyze", {"job_id": found["jobs"][0]["id"]})
+        assert repeat["cached"]
+        result["live_ai"] = {
+            "fixture": "Bundled fictional Avery Morgan profile and dated public listing",
+            "job_id": found["jobs"][0]["id"],
+            "job_title": found["jobs"][0]["title"],
+            "run_id": began["run_id"],
+            "status": actual["status"],
+            "usage": actual["usage"],
+            "events": actual["events"],
+            "cached_repeat": repeat["cached"],
+            "key_location": "Temporary .env one level above the fresh clone; removed after the check",
+        }
+        result["checks"].append("Real fictional-profile AI review and cached repeat passed from the GitHub clone")
     result["limitations"] = (
-        "Local clone; warm package caches; loopback port override only; parent dotenv uses a non-secret fixture; no AI request made from this clone. Real AI runs are recorded separately."
+        "Warm package caches; loopback port override only. Parent dotenv discovery first uses a non-secret fixture. "
+        + ("The optional live AI test then uses the configured key from a temporary parent file and fictional applicant data. " if args.live_ai else "No AI call made from this clone. ")
+        + "This is a setup check, not a human usability trial."
     )
     result["passed"] = True
 except Exception as exc:
@@ -156,7 +205,7 @@ finally:
             server.wait()
     if serverlog:
         serverlog.close()
-    (R / "output/evidence/final_clean_setup.json").write_text(
+    (R / args.evidence).write_text(
         json.dumps(result, indent=2) + "\n"
     )
     print(json.dumps(result, indent=2))

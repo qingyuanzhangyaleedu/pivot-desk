@@ -1,0 +1,9 @@
+{
+  "scope": "All reachable Git-history blobs, including decompressed PowerPoint members",
+  "blobs_scanned": 265,
+  "archives_scanned": 2,
+  "known_private_values_checked": 8,
+  "findings": [],
+  "passed": true,
+  "limitations": "Exact-value and pattern checks are not a proof against every possible transformed secret. No private values are printed."
+}

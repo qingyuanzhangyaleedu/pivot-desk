@@ -1,5 +1,7 @@
 # Pivot Desk — MBA recruiting with evidence
 
+Repository: **https://github.com/qingyuanzhangyaleedu/pivot-desk**
+
 Local app: **http://localhost:8000** after the steps below. React development preview: http://localhost:5173.
 
 Upload a PDF, DOCX or text resume, review extracted facts, filter real employer listings, inspect a transparent overlap score and an AI evidence review, then prepare reusable application fields. Nothing applies for a job, sends a message, or accepts an agreement automatically.
@@ -9,7 +11,8 @@ Upload a PDF, DOCX or text resume, review extracted facts, filter real employer 
 Prerequisites: Python **3.11+** (tested with 3.13), Node **22.12+**, npm, internet for package installation. Use your own computer; this is a local personal workspace, not a public multi-user service.
 
 ```sh
-cd final_project
+git clone https://github.com/qingyuanzhangyaleedu/pivot-desk.git
+cd pivot-desk
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
@@ -27,7 +30,7 @@ The app searches `.env` in this repository first, then its parent folder; existi
 - `OPENAI_API_KEY`: optional personal direct-OpenAI alternative if Portkey is unset. Do not set both unless you intend Portkey to take priority.
 - `PIVOT_DATA_DIR`: optional private runtime directory; defaults to `runtime/`.
 
-**Model decision confirmed:** the explicit workspace instruction selects **gpt-6-astra**, so that is the current `MODEL_NAME` in `backend/config.py`. The assignment permits **gpt-6-luna only on the course Portkey key**. The user explicitly confirmed Astra on October 25. This preserves the requested model but does not satisfy that course-key restriction; review it with the course before submission. Changing models also requires updating the pricing constants and re-running the measured evaluation. The present evidence measures Astra; it must not be relabeled as Luna. No extra search-service key is required.
+**Model:** `gpt-6-astra`, set once in `backend/config.py`. The written brief specifies Luna for the course Portkey key; the project owner reports that the instructor subsequently allowed any model in class and chose to retain Astra. This records the owner’s clarification, not an independently verified course announcement. All measured usage and cost evidence is for Astra. No extra search-service key is required.
 
 Without an AI key, public job search, the fictional demo profile, scoring, tracking and the application practice lab work. Resume AI extraction and AI evidence review show a configuration error instead of pretending to run.
 
@@ -44,7 +47,7 @@ Open **http://localhost:8000**. The backend serves the compiled frontend. Stop w
 For development, keep that backend running and in a second terminal:
 
 ```sh
-cd final_project/frontend
+cd pivot-desk/frontend
 npm run dev -- --host 127.0.0.1
 ```
 
@@ -82,7 +85,7 @@ python -m unittest discover -s tests -v
 npm --prefix frontend run build
 ```
 
-Tests are offline and do not charge the model. The live measurements and browser evidence in `output/evidence/` use fictional applicant data. Real-user recruiting outcomes have not been measured.
+Tests are offline and do not charge the model. Most live measurements and browser evidence use fictional applicant data. The authorized owner-resume test shares aggregate counts only; the source resume, detailed responses and personal screenshots remain private. Real-user recruiting outcomes have not been measured.
 
 | Location | Contents |
 | --- | --- |
@@ -94,10 +97,10 @@ Tests are offline and do not charge the model. The live measurements and browser
 | `tests/` | Offline security and API contract tests |
 | `output/harness.md` | Actual fields, tools, routes, limits and safety controls |
 | `output/evidence/` | Measured runs, tests and setup evidence |
-| `report.html`, `slides.html` | Offline draft submission artifacts; outstanding items clearly stated |
+| `report.html`, `slides.html` | Final offline submission artifacts; evidence limits clearly stated |
 | `AI_prompts.md` | User prompt log |
 
-The course brief stays in `docs/assignment_brief.pdf` for local reference and is excluded from publication. The repository has not been published or submitted on the student’s behalf.
+The course brief stays in `docs/assignment_brief.pdf` for local reference and is excluded from publication. The repository is public at the link above. Canvas upload remains the student’s final step.
 
 ## Clean setup evidence
 
@@ -123,7 +126,7 @@ The choices draw on [Yale SOM’s career report](https://som.yale.edu/programs/m
 
 The current app has 10 employer sources, 6 company sectors and 146 bundled public-job records. The latest 35-test result is `output/evidence/final_tests.txt`; `sector_browser.json` records the added sector searches and preserved filters. The earlier clean-clone and model-cost measurements remain dated baseline evidence.
 
-Use `docs/project_plan.md` for the document map and remaining tasks, and `docs/requirements.md` for the grading checklist. The app is a tested local prototype; a real applicant trial, live employer-form validation, resolution of the course model/account conflict, and publication/final submission are still outstanding.
+Use `docs/project_plan.md` for the document map and remaining tasks, and `docs/requirements.md` for the grading checklist. The app is a tested local prototype; a real applicant trial and authenticated employer-form validation remain uncompleted. Those limitations are disclosed rather than presented as shipped capabilities. The instructor clarification is recorded above; Canvas upload remains outstanding.
 
 After updating a report or slide claim, edit the generator and run:
 
@@ -160,9 +163,9 @@ After final review and a clean commit, `python scripts/package_submission.py` bu
 
 ## Report, slides and private-document test
 
-`report.html` is verified at 15 printed letter-size pages. `slides.html` is the required nine-slide offline reveal.js deck. `output/presentation/Pivot_Desk_Live_Test.pptx` is the current editable nine-slide PowerPoint companion; it does not replace the required HTML. Both describe the measured repeated-language correction and keep unpublished limitations visible.
+`report.html` is verified at 15 printed letter-size pages. `slides.html` is the required nine-slide offline reveal.js deck. `output/presentation/Pivot_Desk_Submission.pptx` is the current editable nine-slide PowerPoint companion; it does not replace the required HTML. Both describe the measured repeated-language correction and keep unpublished limitations visible.
 
 `output/evidence/private_resume_local_check.json` contains only aggregate results from a real owner-provided resume. The initial local-only test used local PDF parsing and an assistant-transcribed, source-checked profile; it made no AI calls. Raw text, profile, private review and screenshots stay in ignored `runtime/resume_review/`. The public form regression uses fictional languages and also checks that legal-name questions stay manual. This is not a human usability trial or live Workday compatibility claim.
 
 ## Authorized live AI follow-up
-The owner then explicitly allowed AI processing while keeping publication on hold. The live reader returned 13 source-supported facts. All four paid runs (including one unintended review caused by a now-fixed selection race) used seven model requests, estimated at $0.36854. Three identical repeats hit the cache. Only aggregate evidence is shared in `output/evidence/private_resume_live_check.json`; raw resume text, personal screenshots and detailed outputs stay ignored. The report and required HTML deck are updated. `output/presentation/Pivot_Desk_Live_Test.pptx` is the updated PowerPoint companion; the original `Pivot_Desk.pptx` remains intact. The package includes the updated copy under the standard filename. No repository or coursework has been published.
+The owner then explicitly allowed AI processing while keeping publication on hold. The live reader returned 13 source-supported facts. All four paid runs (including one unintended review caused by a now-fixed selection race) used seven model requests, estimated at $0.36854. Three identical repeats hit the cache. Only aggregate evidence is shared in `output/evidence/private_resume_live_check.json`; raw resume text, personal screenshots and detailed outputs stay ignored. The report and required HTML deck are updated. `output/presentation/Pivot_Desk_Live_Test.pptx` is the updated PowerPoint companion; the original `Pivot_Desk.pptx` remains intact. The final submission companion is `output/presentation/Pivot_Desk_Submission.pptx`, which adds the public repository URL and reported instructor clarification. The package includes that final copy under the standard filename. At that stage, publication was on hold. The current public repository is linked at the top; no Canvas submission has been made.

@@ -173,7 +173,7 @@ Every field has a Pydantic description. Extra fields are rejected. Optional info
 
 | Actual setting | Value / trade-off |
 | --- | --- |
-| Model | gpt-6-astra, one constant in backend/config.py; user confirmed; course-key restriction still differs |
+| Model | gpt-6-astra, one constant in backend/config.py; retained after the owner reported instructor permission to use any model |
 | Agent request / tool-call limits | 3 model requests and 5 function calls per run |
 | Tokens | PydanticAI 24,000 total-token limit; checked at model boundaries, not a provider billing guarantee |
 | Output | 2,600 max output tokens per request |

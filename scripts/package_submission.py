@@ -17,7 +17,8 @@ revision = subprocess.check_output(
 files = {
     "report.html": "report.html",
     "slides.html": "slides.html",
-    "output/presentation/Pivot_Desk_Live_Test.pptx": "Pivot_Desk.pptx",
+    "output/presentation/Pivot_Desk_Submission.pptx": "Pivot_Desk.pptx",
+    "output/github_url.txt": "github_url.txt",
     "output/demo.webm": "demo.webm",
     "output/user_trial.html": "user_trial.html",
     "output/submission_checklist.md": "submission_checklist.md",
@@ -47,17 +48,20 @@ with zipfile.ZipFile(OUT / "source.zip") as z:
         for n in names
     )
     assert "pivot-desk/.env.example" in names
-(OUT / "START_HERE.md").write_text("""# Pivot Desk submission package
+repo_url = (R / "output/github_url.txt").read_text().strip()
+(OUT / "START_HERE.md").write_text(f"""# Pivot Desk submission package
+
+Repository URL to paste into Canvas: {repo_url}
 
 Double-click report.html and slides.html. Both include their own visuals and work offline.
 Pivot_Desk.pptx is an editable nine-slide PowerPoint companion. The required course deck remains slides.html; the PPTX does not replace it.
 The captioned demo.webm shows fictional applicant data and a real AI review; it is an automated demonstration, not a human trial.
 
-Canvas requires the GitHub repository URL plus report.html and slides.html. The optional video is included here. source.zip is a clean source backup, not a replacement for the required repository URL. See submission_checklist.md for publication/account requirements and remaining evidence limits.
+Canvas requires the GitHub repository URL plus report.html and slides.html. The optional video is included here. source.zip is a clean source backup, not a replacement for the required repository URL. See submission_checklist.md for exact Canvas items and remaining evidence limits.
 
 user_trial.html is a local, anonymous timer worksheet for a real applicant. It contains no completed results. Do not submit empty observations as user evidence.
 
-The source ZIP excludes private runtime state, real .env files, dependencies and virtualenvs. Follow its README to run the app. A personal direct-OpenAI launch option preserves Astra when the course Portkey key cannot be used with that model; the saved workspace default is unchanged.
+The source ZIP excludes private runtime state, real .env files, dependencies and virtualenvs. Follow its README to run the app. The owner reports instructor permission to use any model. The documented Astra setup and its measured results are unchanged. No Canvas upload has been performed.
 """)
 items = [
     "report.html",
@@ -68,6 +72,7 @@ items = [
     "submission_checklist.md",
     "source.zip",
     "START_HERE.md",
+    "github_url.txt",
 ]
 manifest = {
     "created_at": datetime.now(timezone.utc).isoformat(),
@@ -80,7 +85,8 @@ manifest = {
         for n in items
     },
     "private_files_excluded": True,
-    "repository_url": "Pending publication; see checklist",
+    "repository_url": repo_url,
+    "canvas_submission_completed": False,
     "human_trial_completed": False,
     "authenticated_workday_verified": False,
 }

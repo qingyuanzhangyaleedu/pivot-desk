@@ -1,52 +1,34 @@
-# Submission handoff — Pivot Desk
+# Pivot Desk — final Canvas handoff
 
-## Files for Canvas
+## Submit these three items
 
-1. A public GitHub repository link, or a private repository accessible to `zlisto`. **Kept local at the user’s request on October 25; publication is pending. Do not substitute localhost or a ZIP for the required link.**
-2. `report.html` — self-contained report, with embedded screenshots and diagrams.
-3. `slides.html` — self-contained reveal.js deck, nine slides. An editable `Pivot_Desk.pptx` companion is also included; submit the required HTML deck even if presenting from PowerPoint.
-4. Optional `output/demo.webm` — captioned automated walkthrough with a fictional applicant and a real AI review. It has no human narration and is not a user study.
+1. **Website URL:** https://github.com/qingyuanzhangyaleedu/pivot-desk
+2. **Report:** `report.html` — one self-contained file, 15 printed letter-size pages.
+3. **Slide deck:** `slides.html` — one self-contained reveal.js file, nine slides. Arrow keys navigate; F enters fullscreen.
 
-The submission folder and ZIP are convenience copies of these materials plus a source ZIP. The GitHub link remains required. Open the HTML files in that copied folder before uploading. The course deadline is October 26, 2026 at 6:00 PM; the brief does not specify a timezone, so use Canvas to confirm it.
+The final copies are together in `submission/`. `github_url.txt` contains the URL to paste. `Pivot_Desk.pptx` is an editable companion, not a replacement for the required HTML slides. `source.zip` and `Pivot_Desk_Submission.zip` are backups, not substitutes for the repository link.
 
-## Run the app for a grader
+The PDF gives a deadline of October 26, 2026, at 6:00 PM. It does not state a timezone; the Canvas assignment is authoritative for the upload deadline. No Canvas upload has been performed by the coding assistant.
 
-Follow README.md from a fresh checkout. The pinned Python environment and `npm ci` are required; the built React app is served by FastAPI on localhost:8000. The optional Vite development server runs on localhost:5173. The fictional profile and 146 dated public-job records are bundled. No private runtime database, real resume or credential belongs in the repository.
+## What is ready
 
-The submitted code uses `gpt-6-astra`, as explicitly requested. The default workspace mode uses Portkey. The brief permits Luna only on the course Portkey key. For an allowed personal direct-OpenAI arrangement with Astra, set the personal paid `OPENAI_API_KEY`, then launch from backend/ with:
+- Public source repository with pinned Python dependencies, a small public-job sample, `.env.example` and step-by-step README.
+- Local startup from the repository or with the grader’s `.env` one folder above it.
+- Report and HTML slides with embedded images and reveal.js code; both open offline.
+- Actual model usage, cost comparison, injection defenses, form-mapping and search-selection regressions, and aggregate authorized real-resume checks.
+- Credentials, the real resume, personal screenshots, runtime databases and exported profiles excluded from Git and the package.
+- `output/evidence/remote_clean_setup.json` records the fresh GitHub-clone rehearsal when complete. Earlier local-clone evidence remains separately labeled.
 
-```sh
-PORTKEY_API_KEY='' ../.venv/bin/uvicorn main:app --host 127.0.0.1 --port 8000
-```
+## Model clarification
 
-The empty process variable prevents the parent dotenv from selecting Portkey. It does not expose or change either key. No API key is bundled. This command does not establish that a suitable personal key exists; confirm the allowed account or obtain an instructor exception. The user's saved default configuration has not been changed.
+The project retains `gpt-6-astra` with `PORTKEY_API_KEY`, as requested. The printed brief specifies Luna for the course key; before submission, the owner reported that the instructor allowed any model in class. That clarification is attributed to the owner in the README and report. The actual Astra measurements have not been relabeled. A personal `OPENAI_API_KEY` remains an optional alternative if Portkey is unset.
 
-## Final gates
+## Evidence limits to retain
 
-- [x] Functional tests and browser evidence, including the application helper's controlled fixtures.
-- [x] Exact-source application checks, documented benchmark and known miss.
-- [x] Self-contained HTML generator and reproducible offline layout checks.
-- [x] Anonymous timed trial worksheet, ready for an actual participant.
-- [ ] A real applicant completes the trial. Record observations rather than inventing time savings.
-- [ ] Authenticated employer-form test if claiming live Workday compatibility. Current evidence stops at the account gate.
-- [ ] Confirm an allowed model/account arrangement.
-- [ ] Publish the reviewed repository, verify access, and put its URL in README/report/Canvas.
-- [ ] Clone the published revision and repeat the README rehearsal. Local-clone evidence is separate.
-- [ ] Review the report's claims personally and upload the required files to Canvas.
+An independent timed applicant trial has not been completed. The app has real tests, including an authorized owner-resume test, but these are assistant-operated rather than an observed human study. Authenticated employer Workday behavior is also unverified; the helper’s local practice lab and controlled fixtures are tested. Do not claim universal compatibility, measured time savings or hiring outcomes.
 
-## Suggested two-minute presentation
+The included `demo.webm` is a captioned automated demonstration with fictional applicant data. It is about 114 seconds and has no human narration, so it is supplementary evidence rather than the optional 2–3 minute narrated video described in the brief. The empty `user_trial.html` worksheet is for future testing, not completed evidence to submit.
 
-- Show the applicant's concrete problem: career-pivot evidence and repeated applications.
-- Search a real role, then show why a high overlap score still requires checking graduation timing.
-- Show the analyst's exact source connections and unresolved questions.
-- Demonstrate preview/review/fill on the practice form; explicitly state the real Workday limit.
-- Show real tokens and the rejected truncation experiment, then the safety controls.
-- Finish with the development benchmark and the remaining human-impact measurement.
+## Final student step
 
-No grade, hiring outcome, time saving or universal Workday compatibility is guaranteed.
-
-## Latest local evidence
-In the initial phase, the owner-provided resume was parsed and tested locally without AI processing. Its source, structured profile and screenshots remain private and excluded. The report is now 15 printed pages. It records the language-field correction (1/3 correct before, 3/3 after) and the 12-field private practice result, without claiming a timed human trial.
-
-## Authorized live AI follow-up
-The owner then explicitly allowed AI processing while keeping publication on hold. The live reader returned 13 source-supported facts. All four paid runs (including one unintended review caused by a now-fixed selection race) used seven model requests, estimated at $0.36854. Three identical repeats hit the cache. Only aggregate evidence is shared in `output/evidence/private_resume_live_check.json`; raw resume text, personal screenshots and detailed outputs stay ignored. The report and required HTML deck are updated. `output/presentation/Pivot_Desk_Live_Test.pptx` is the updated PowerPoint companion; the original `Pivot_Desk.pptx` remains intact. The package includes the updated copy under the standard filename. No repository or coursework has been published.
+Open `submission/report.html` and `submission/slides.html`, review the claims, and upload the two HTML files with the repository URL to Canvas. Keep the original filenames. Confirm Canvas shows a successful submission receipt. The app itself runs locally; the GitHub URL is the required source link, not a hosted application.
