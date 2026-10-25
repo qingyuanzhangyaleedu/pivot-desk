@@ -154,7 +154,7 @@ python tests/browser_readiness.py
 The final source scan checks configured credential values and common key patterns without printing them. Reproduce it with `python scripts/verify_release.py`. A fresh committed local-copy rehearsal is available with `python scripts/check_clean_clone.py`; it installs in a temporary directory and uses port 8771 to avoid disturbing the running app. It makes no model call.
 
 ## Release-candidate rehearsal
-The committed application revision `df57929` passed a new local-clone rehearsal: 10.09 seconds to install, build and start with warm package caches, all 35 offline tests passing, parent-only dotenv discovery, production frontend and current qualification checks working. The temporary server used port 8771 to avoid the live app. This did not call AI or test a public GitHub clone. See `output/evidence/final_clean_setup.json` for the exact revision and limitations.
+The committed application revision `4c2a0a2` passed a new local-clone rehearsal: 10.56 seconds to install, build and start with warm package caches, all 35 offline tests passing, parent-only dotenv discovery, production frontend and current qualification checks working. The temporary server used port 8771 to avoid the live app. This did not call AI or test a public GitHub clone. See `output/evidence/final_clean_setup.json` for the exact revision and limitations.
 
 After final review and a clean commit, `python scripts/package_submission.py` builds the ignored `submission/` folder and ZIP from tracked source. It excludes runtime data and credentials, preserves embedded report/deck images, and includes a SHA-256 manifest. The source ZIP is a backup; Canvas still requires the repository link.
 

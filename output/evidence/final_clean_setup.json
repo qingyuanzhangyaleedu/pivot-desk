@@ -1,6 +1,6 @@
 {
   "source": "Fresh local Git clone of committed release candidate, not a public remote",
-  "revision": "df579297b76a443c9900e6b2ae5396997c330357",
+  "revision": "4c2a0a2a1f29223870b6f505f3ac65322c5955bf",
   "port": 8771,
   "checks": [
     "No real .env, private runtime, virtualenv or node_modules in clone",
@@ -8,7 +8,7 @@
     "Production frontend, current MBA filters, exact-source checks and reviewed export work from clean copy",
     "All 35 offline checks passed in the clean environment"
   ],
-  "setup_seconds": 10.09,
+  "setup_seconds": 10.56,
   "under_ten_minutes": true,
   "limitations": "Local clone; warm package caches; loopback port override only; parent dotenv uses a non-secret fixture; no AI request made from this clone. Real AI runs are recorded separately.",
   "passed": true
