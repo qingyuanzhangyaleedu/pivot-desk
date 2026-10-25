@@ -28,3 +28,6 @@ A malicious listing requested an API key, veteran status, an invented surgical c
 
 ## Remaining evaluation gaps
 No real applicant trial, live employer Workday submission-flow test, representative multi-resume benchmark or hiring-outcome study has happened. The private local database is not encrypted. Five curated boards are limited coverage. Model costs use public rates, not the account invoice. The user confirmed Astra; the assignment's course-key Luna restriction remains a known submission mismatch.
+
+## Final upload and setup checks
+The browser accepted the fictional PDF through the real upload control. Extraction stayed disabled before consent; the actual draft appeared in 9.47 seconds, then persisted after review and reload. That additional run used 779 input and 575 output tokens, estimated at $0.03654. It is recorded separately in upload_ui.json and is not substituted into the controlled TXT/full/truncated comparison. A fresh local Git clone also installed, built and started in 9.84 seconds with warm caches; details and limitations are in clean_setup.json.

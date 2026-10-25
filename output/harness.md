@@ -208,3 +208,6 @@ Token usage comes from PydanticAI RunUsage, including failed attempts when avail
 
 ## Evidence and remaining checks
 See `output/evidence/` for real model counts, the full/truncated comparison, browser tests and safety cases. All applicant fixtures are fictional. Automated fill success does not measure human time savings. A real applicant trial and employer-specific Workday verification remain open. README contains exact installation and run commands.
+
+## Rehearsal
+A fresh local Git clone passed all 23 offline checks, created a fresh runtime database, served the compiled frontend from port 8000 and returned six strategy matches from the bundled 95-record sample. Setup took 9.84 seconds with warm package caches. Parent-only dotenv discovery used a non-secret fixture; actual AI behavior was verified separately with the configured account. No public repository has been published.

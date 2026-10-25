@@ -39,7 +39,7 @@ cd backend
 uvicorn main:app --host 127.0.0.1 --port 8000
 ```
 
-Open **http://localhost:8000**. The backend serves the compiled frontend. Stop with Ctrl+C. No auto-reloader is needed.
+Open **http://localhost:8000**. The backend serves the compiled frontend. Stop with Ctrl+C. No auto-reloader is needed. On this Mac, after installation you can also double-click **Start Pivot Desk.command** to build, start and open the app.
 
 For development, keep that backend running and in a second terminal:
 
@@ -98,3 +98,17 @@ Tests are offline and do not charge the model. The live measurements and browser
 | `AI_prompts.md` | User prompt log |
 
 The course brief stays in `docs/assignment_brief.pdf` for local reference and is excluded from publication. The repository has not been published or submitted on the student’s behalf.
+
+## Clean setup evidence
+
+A fresh **local Git clone** installed dependencies, built the frontend and served the app in **9.84 seconds** on the development machine, with warm package caches. All 23 offline tests passed there. A non-secret parent-folder `.env` fixture verified key discovery; no real key entered the clone or Git. This is not a promise of that speed on an uncached machine or a claim that a GitHub clone has been tested. Details: `output/evidence/clean_setup.json`.
+
+Optional reproducible browser regression (app running on port 8000; fictional data, no model calls):
+
+```sh
+python -m pip install -r requirements-dev.txt
+python -m playwright install chromium
+python tests/browser_smoke.py
+```
+
+Rebuild the offline report/deck from the saved evidence with `python scripts/build_deliverables.py`. The embedded reveal.js runtime is vendored with its MIT license; no CDN is used.

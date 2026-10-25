@@ -136,6 +136,7 @@ export default function App() {
     };
   }, [runId]);
   async function search(p = prefs, refresh = false) {
+    if (working) return;
     setBusy(true);
     setError("");
     try {
@@ -160,6 +161,7 @@ export default function App() {
     }
   }
   async function demo() {
+    if (working) return;
     try {
       const p = await api<Profile>("/demo", { method: "POST" });
       setProfile(p);
@@ -202,6 +204,7 @@ export default function App() {
     }
   }
   async function saveProfile() {
+    if (working) return;
     if (!profile) return;
     setBusy(true);
     setError("");
@@ -261,6 +264,7 @@ export default function App() {
     }
   }
   async function importJob() {
+    if (working) return;
     try {
       const j = await api("/jobs/import", {
         method: "POST",
@@ -870,6 +874,7 @@ export default function App() {
                       </p>
                       <Feed />
                       {run?.kind === "fit" &&
+                        profile?.confirmed &&
                         run.result &&
                         analysisJobId === selected.id && (
                           <div className="analysis">

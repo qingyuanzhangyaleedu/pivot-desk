@@ -1,0 +1,2 @@
+# Optional browser regression checks; application runtime uses requirements.txt.
+playwright==1.64.0

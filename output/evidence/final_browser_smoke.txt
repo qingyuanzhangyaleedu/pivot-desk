@@ -1,0 +1,1 @@
+Browser smoke passed: search, pipeline persistence, 13 reviewed fields, manual consent and mobile layout. No AI calls.

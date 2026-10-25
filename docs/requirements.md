@@ -42,7 +42,7 @@ does not run for graders; it cannot replace the 5 setup points.
 - [ ] If local, time a fresh-clone setup. **More than 10 minutes without a running
       app earns zero of the 5 "teaching staff can run it" points.**
 - [x] Search for `.env` first in the repository root, then one directory above it.
-- [ ] Test the grader's arrangement with the key file only in the parent folder.
+- [x] Test the grader's arrangement with the key file only in the parent folder.
 - [ ] If an additional API key beyond the permitted names is needed, the brief
       says to host the app online and consult the professor.
 
@@ -124,7 +124,7 @@ real new addition. Their **idea** is capped at Tier 1 without that new contribut
 - [x] One or more relevant safety defenses are demonstrated, not merely described.
 - [x] Both HTML files remain complete when copied away from the project folder.
 - [x] Report print preview is 10-15 letter-size pages; deck has no more than 10 slides.
-- [ ] Repo clone, parent-folder keys and the README startup steps are tested.
+- [x] Local Git clone, parent-folder key discovery and README startup steps tested; public-remote test remains pending.
 - [ ] Final links, repository access, and absence of committed secrets are verified.
 
 ## Current handoff

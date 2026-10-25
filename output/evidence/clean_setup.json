@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-25",
+  "source": "Fresh clone of the local Git repository; no public remote yet",
+  "checks": [
+    "Clone contains no real .env, runtime database, virtualenv or node_modules",
+    "All source, demo, prompt and deliverable paths present",
+    "Parent-only .env discovered with non-secret fixture; explicit Astra constant retained",
+    "README backend command starts from backend/ on port 8000 and serves the production React build",
+    "Clean-copy demo profile, stored-job search and reviewed profile export work",
+    "All 23 offline tests pass in the fresh environment"
+  ],
+  "setup_seconds": 9.84,
+  "under_ten_minutes": true,
+  "sample_matches": 6,
+  "limitations": "Local clone, not GitHub. Package caches were warm. Parent dotenv used a non-secret sentinel; no AI call was made from this copy. Real AI runs are recorded separately."
+}

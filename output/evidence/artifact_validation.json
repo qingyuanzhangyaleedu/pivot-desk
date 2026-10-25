@@ -6,5 +6,7 @@
   "slide_overflow": [],
   "arrow_navigation": true,
   "slide_images_loaded": true,
-  "browser_errors": []
+  "browser_errors": [],
+  "letter_printed_pages": 12,
+  "offline": true
 }
