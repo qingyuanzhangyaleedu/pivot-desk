@@ -1,6 +1,6 @@
 {
   "scope": "Tracked and unignored candidate files, including decompressed PowerPoint XML. Private scan strings never emitted.",
-  "candidate_files": 158,
+  "candidate_files": 160,
   "private_values_checked": 7,
   "archives_inspected": 3,
   "findings": [],

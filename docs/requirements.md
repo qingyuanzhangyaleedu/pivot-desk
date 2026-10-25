@@ -127,11 +127,11 @@ real new addition. Their **idea** is capped at Tier 1 without that new contribut
 - [x] One or more relevant safety defenses are demonstrated, not merely described.
 - [x] Both HTML files remain complete when copied away from the project folder.
 - [x] Report print preview is 10-15 letter-size pages; deck has no more than 10 slides.
-- [x] Local Git clone, parent-folder key discovery and README startup steps tested; public-remote test remains pending.
-- [ ] Final links, repository access, and absence of committed secrets are verified.
+- [x] Local Git clone, parent-folder key discovery and README startup steps tested; public GitHub-clone startup, parent dotenv discovery, all 35 tests and one live fictional-profile review now pass; see `remote_clean_setup.json`.
+- [x] Final repository link is public; staged files and Git history passed credential/private-value scans.
 
 ## Current handoff
 
-Report: 15 letter-size printed pages. Deck: 9 offline reveal.js slides. Application: working local prototype with live model runs and automated evidence. Outstanding evidence limits: independent applicant trial and authenticated employer Workday test. The user reported an instructor model clarification. Repository publication and final Canvas handoff are tracked below. No video or human testimonial has been fabricated.
+Report: 15 letter-size printed pages. Deck: 9 offline reveal.js slides. Application: working local prototype with live model runs and automated evidence. Outstanding evidence limits: independent applicant trial and authenticated employer Workday test. The user reported an instructor model clarification. Repository publication is complete; the final Canvas upload remains a student step. No video or human testimonial has been fabricated.
 
 Current verification: 10 boards, 6 sectors, 146 bundled source records, and 35 passing offline tests. The source-expansion browser results are in `output/evidence/sector_browser.json`. Report/deck image loading, layout and navigation checks are in `output/evidence/artifact_validation.json`. `docs/project_plan.md` tracks the remaining completion work.

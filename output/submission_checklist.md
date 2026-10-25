@@ -17,7 +17,7 @@ The PDF gives a deadline of October 26, 2026, at 6:00 PM. It does not state a ti
 - Report and HTML slides with embedded images and reveal.js code; both open offline.
 - Actual model usage, cost comparison, injection defenses, form-mapping and search-selection regressions, and aggregate authorized real-resume checks.
 - Credentials, the real resume, personal screenshots, runtime databases and exported profiles excluded from Git and the package.
-- `output/evidence/remote_clean_setup.json` records the fresh GitHub-clone rehearsal when complete. Earlier local-clone evidence remains separately labeled.
+- `output/evidence/remote_clean_setup.json` records the passing fresh GitHub-clone rehearsal: 10.08 seconds to startup with warm caches, 35 offline tests, a live fictional-profile AI review and a cached repeat. Earlier local-clone evidence remains separately labeled.
 
 ## Model clarification
 

@@ -162,7 +162,7 @@ try:
     run([str(py), "-m", "unittest", "discover", "-s", "tests", "-v"], clone, env)
     result["checks"].append("All 35 offline checks passed in the clean environment")
     if args.live_ai:
-        began = request("/api/analyze", {"job_id": found["jobs"][0]["id"]})
+        began = request("/api/analyze", {"job_id": found["jobs"][0]["id"], "consent": True})
         deadline = time.monotonic() + 115
         while time.monotonic() < deadline:
             actual = request("/api/runs/" + began["run_id"])
@@ -171,7 +171,7 @@ try:
             time.sleep(1)
         assert actual["status"] == "completed", actual.get("error")
         assert actual["usage"]["requests"] > 0
-        repeat = request("/api/analyze", {"job_id": found["jobs"][0]["id"]})
+        repeat = request("/api/analyze", {"job_id": found["jobs"][0]["id"], "consent": True})
         assert repeat["cached"]
         result["live_ai"] = {
             "fixture": "Bundled fictional Avery Morgan profile and dated public listing",

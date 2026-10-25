@@ -1,0 +1,77 @@
+{
+  "source": "https://github.com/qingyuanzhangyaleedu/pivot-desk.git",
+  "public_remote": true,
+  "port": 8771,
+  "checks": [
+    "No real .env, private runtime, virtualenv or node_modules in clone",
+    "Parent-only dotenv discovered; requested Astra configuration unchanged",
+    "Production frontend, current MBA filters, exact-source checks and reviewed export work from clean copy",
+    "All 35 offline checks passed in the clean environment",
+    "Real fictional-profile AI review and cached repeat passed from the GitHub clone"
+  ],
+  "revision": "eba1f9fbfdb01331d455ffbee307432f6829c856",
+  "setup_seconds": 10.08,
+  "under_ten_minutes": true,
+  "live_ai": {
+    "fixture": "Bundled fictional Avery Morgan profile and dated public listing",
+    "job_id": "gh:thebrattlegroup:4726468005",
+    "job_title": "Associate, MBA - Economics/Finance",
+    "run_id": "e9f6733b-5d14-449b-82d7-ed2510ed72a7",
+    "status": "completed",
+    "usage": {
+      "input_tokens": 2365,
+      "cached_tokens": 0,
+      "output_tokens": 889,
+      "requests": 2,
+      "cost": 0.0681
+    },
+    "events": [
+      {
+        "id": 1,
+        "agent": "Evidence analyst",
+        "action": "start",
+        "summary": "Starting a bounded structured analysis. Contact and sensitive answers are excluded from job analysis.",
+        "created": "2026-10-25T21:23:32.562812+00:00"
+      },
+      {
+        "id": 2,
+        "agent": "Evidence analyst",
+        "action": "model_response",
+        "summary": "get_candidate_evidence, get_job_evidence",
+        "created": "2026-10-25T21:23:35.469206+00:00"
+      },
+      {
+        "id": 3,
+        "agent": "Evidence analyst",
+        "action": "tool_return",
+        "summary": "get_candidate_evidence: 8 reviewed professional facts.",
+        "created": "2026-10-25T21:23:35.471546+00:00"
+      },
+      {
+        "id": 4,
+        "agent": "Evidence analyst",
+        "action": "tool_return",
+        "summary": "get_job_evidence: selected employer text; original source retained.",
+        "created": "2026-10-25T21:23:35.471609+00:00"
+      },
+      {
+        "id": 5,
+        "agent": "Evidence analyst",
+        "action": "model_response",
+        "summary": "final_result",
+        "created": "2026-10-25T21:23:51.311651+00:00"
+      },
+      {
+        "id": 6,
+        "agent": "Evidence analyst",
+        "action": "end",
+        "summary": "Validated structured output ready for human review.",
+        "created": "2026-10-25T21:23:51.323960+00:00"
+      }
+    ],
+    "cached_repeat": true,
+    "key_location": "Temporary .env one level above the fresh clone; removed after the check"
+  },
+  "limitations": "Warm package caches; loopback port override only. Parent dotenv discovery first uses a non-secret fixture. The optional live AI test then uses the configured key from a temporary parent file and fictional applicant data. This is a setup check, not a human usability trial.",
+  "passed": true
+}

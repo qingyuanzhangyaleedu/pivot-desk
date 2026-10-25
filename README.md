@@ -102,7 +102,7 @@ Tests are offline and do not charge the model. Most live measurements and browse
 
 The course brief stays in `docs/assignment_brief.pdf` for local reference and is excluded from publication. The repository is public at the link above. Canvas upload remains the student’s final step.
 
-## Clean setup evidence
+## Initial local setup evidence (historical)
 
 A fresh **local Git clone** installed dependencies, built the frontend and served the app in **9.84 seconds** on the development machine, with warm package caches. All 23 offline tests passed there. A non-secret parent-folder `.env` fixture verified key discovery; no real key entered the clone or Git. This is not a promise of that speed on an uncached machine or a claim that a GitHub clone has been tested. Details: `output/evidence/clean_setup.json`.
 
@@ -156,16 +156,28 @@ python tests/browser_readiness.py
 
 The final source scan checks configured credential values and common key patterns without printing them. Reproduce it with `python scripts/verify_release.py`. A fresh committed local-copy rehearsal is available with `python scripts/check_clean_clone.py`; it installs in a temporary directory and uses port 8771 to avoid disturbing the running app. It makes no model call.
 
-## Release-candidate rehearsal
+## Earlier local release rehearsal (historical)
 The committed application revision `4c2a0a2` passed a new local-clone rehearsal: 10.56 seconds to install, build and start with warm package caches, all 35 offline tests passing, parent-only dotenv discovery, production frontend and current qualification checks working. The temporary server used port 8771 to avoid the live app. This did not call AI or test a public GitHub clone. See `output/evidence/final_clean_setup.json` for the exact revision and limitations.
 
 After final review and a clean commit, `python scripts/package_submission.py` builds the ignored `submission/` folder and ZIP from tracked source. It excludes runtime data and credentials, preserves embedded report/deck images, and includes a SHA-256 manifest. The source ZIP is a backup; Canvas still requires the repository link.
 
 ## Report, slides and private-document test
 
-`report.html` is verified at 15 printed letter-size pages. `slides.html` is the required nine-slide offline reveal.js deck. `output/presentation/Pivot_Desk_Submission.pptx` is the current editable nine-slide PowerPoint companion; it does not replace the required HTML. Both describe the measured repeated-language correction and keep unpublished limitations visible.
+`report.html` is verified at 15 printed letter-size pages. `slides.html` is the required nine-slide offline reveal.js deck. `output/presentation/Pivot_Desk_Submission.pptx` is the current editable nine-slide PowerPoint companion; it does not replace the required HTML. Both describe the measured repeated-language correction and keep unverified capabilities clearly labeled.
 
 `output/evidence/private_resume_local_check.json` contains only aggregate results from a real owner-provided resume. The initial local-only test used local PDF parsing and an assistant-transcribed, source-checked profile; it made no AI calls. Raw text, profile, private review and screenshots stay in ignored `runtime/resume_review/`. The public form regression uses fictional languages and also checks that legal-name questions stay manual. This is not a human usability trial or live Workday compatibility claim.
 
 ## Authorized live AI follow-up
 The owner then explicitly allowed AI processing while keeping publication on hold. The live reader returned 13 source-supported facts. All four paid runs (including one unintended review caused by a now-fixed selection race) used seven model requests, estimated at $0.36854. Three identical repeats hit the cache. Only aggregate evidence is shared in `output/evidence/private_resume_live_check.json`; raw resume text, personal screenshots and detailed outputs stay ignored. The report and required HTML deck are updated. `output/presentation/Pivot_Desk_Live_Test.pptx` is the updated PowerPoint companion; the original `Pivot_Desk.pptx` remains intact. The final submission companion is `output/presentation/Pivot_Desk_Submission.pptx`, which adds the public repository URL and reported instructor clarification. The package includes that final copy under the standard filename. At that stage, publication was on hold. The current public repository is linked at the top; no Canvas submission has been made.
+
+## Published-repository verification
+
+The public GitHub revision `eba1f9f` passed a fresh-clone rehearsal. With warm package caches, installation, frontend build and startup took **10.08 seconds**. All **35 offline tests** passed. The key file existed only one folder above the clone. A real Astra review of the fictional demo against Brattle’s MBA role completed using 2,365 input and 889 output tokens across two requests (estimated $0.06810); an identical repeat used the cache. The temporary server and key file were removed. Details: `output/evidence/remote_clean_setup.json`. This is a setup test, not a human usability study.
+
+Reproduce the remote setup check without a paid call:
+
+```sh
+python scripts/check_clean_clone.py --source https://github.com/qingyuanzhangyaleedu/pivot-desk.git --evidence output/evidence/remote_clean_setup.json
+```
+
+Add `--live-ai` only when intentionally making one paid fictional-profile review with the configured key. It stores the key in a temporary parent `.env` and deletes that folder after the check.

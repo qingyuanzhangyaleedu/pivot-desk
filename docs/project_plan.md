@@ -39,7 +39,7 @@ After each meaningful change, update the affected rows/documents, run the releva
 - Record a real applicant trial using `docs/user_trial.md`; do not substitute automated testing for human feedback.
 - Test the helper on a permitted real employer form before making an actual Workday-compatibility claim. Submission and agreements remain manual.
 - Instructor clarification recorded: the owner reports any model is allowed. The selected Astra configuration remains unchanged.
-- Verify the public GitHub clone and final repository links; see output/evidence/remote_clean_setup.json when complete.
+- Public GitHub clone and repository links verified; see output/evidence/remote_clean_setup.json.
 - Review the final package and submit it through Canvas. No submission has been made.
 
 ## Rubric review
@@ -56,3 +56,7 @@ A real resume was tested locally with a manually transcribed, checked profile. A
 
 ## Authorized live AI follow-up
 The owner then explicitly allowed AI processing while keeping publication on hold. The live reader returned 13 source-supported facts. All four paid runs (including one unintended review caused by a now-fixed selection race) used seven model requests, estimated at $0.36854. Three identical repeats hit the cache. Only aggregate evidence is shared in `output/evidence/private_resume_live_check.json`; raw resume text, personal screenshots and detailed outputs stay ignored. The report and required HTML deck are updated. `output/presentation/Pivot_Desk_Live_Test.pptx` is the updated PowerPoint companion; the original `Pivot_Desk.pptx` remains intact. The package includes the updated copy under the standard filename. That test preceded repository publication. Canvas upload remains outstanding.
+
+## Public release verification
+
+The public GitHub revision `eba1f9f` passed a fresh-clone rehearsal. With warm package caches, installation, frontend build and startup took **10.08 seconds**. All **35 offline tests** passed. The key file existed only one folder above the clone. A real Astra review of the fictional demo against Brattle’s MBA role completed using 2,365 input and 889 output tokens across two requests (estimated $0.06810); an identical repeat used the cache. The temporary server and key file were removed. Details: `output/evidence/remote_clean_setup.json`. This is a setup test, not a human usability study.
