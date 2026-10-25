@@ -207,7 +207,7 @@ Token usage comes from PydanticAI RunUsage, including failed attempts when avail
 | Private-data retention | Delete action clears private records and outputs; secure-delete enabled; no original resume file saved | SQLite is unencrypted; backups and exported packets must be managed separately |
 
 ## Evidence and remaining checks
-See `output/evidence/` for real model counts, the full/truncated comparison, browser tests and safety cases. All applicant fixtures are fictional. Automated fill success does not measure human time savings. A real applicant trial and employer-specific Workday verification remain open. README contains exact installation and run commands.
+See `output/evidence/` for real model counts, the full/truncated comparison, browser tests and safety cases. Shared applicant fixtures are fictional; the separate private-resume check publishes aggregate results only. Automated fill success does not measure human time savings. A real applicant trial and employer-specific Workday verification remain open. README contains exact installation and run commands.
 
 ## Rehearsal
 A fresh local Git clone passed all 23 offline checks, created a fresh runtime database, served the compiled frontend from port 8000 and returned six strategy matches from the bundled 95-record sample. Setup took 9.84 seconds with warm package caches. Parent-only dotenv discovery used a non-secret fixture; actual AI behavior was verified separately with the configured account. No public repository has been published.
@@ -232,3 +232,9 @@ Search results now include `application_checks`: at most six exact-source excerp
 Current evidence: `final_tests.txt` (35 offline checks), `form_regression.json`, `readiness_browser.json`, and `readiness_benchmark.json` in `output/evidence/`. The benchmark deliberately selected 12 real snapshots and surfaced 32/32 author-labeled topics. It is a development coverage check, not a random sample or a human-outcome study. A travel-benefit false positive was corrected; the written-years miss is retained as a limitation.
 
 A live Pfizer Workday inspection reached Create Account/Sign In after Apply Manually. No account was created and no applicant data or agreement was submitted. This verifies the public navigation boundary only; it does not establish authenticated form compatibility. See `workday_public_check.json`.
+
+## Private resume check and repeated-language correction
+
+A real owner-provided resume was parsed locally and manually transcribed into 12 checked facts for an assistant-operated test. It was not sent to an AI provider. The profile persisted, an isolated browser could not read it, and the local practice lab filled 12 supported fields. A separate fixture preserved four same-employer roles, three schools and three languages across 17 fields. Aggregate evidence is in `private_resume_local_check.json`; raw text, profile, screenshots and private review are ignored under `runtime/resume_review/`.
+
+The shared adapter now reads explicit `data-language-index` or `languageSection` groups. Ambiguous repeated groups, proficiency scales, and legal-name questions stay manual. A fictional before/after comparison found 1/3 correct language entries in revision `29acc13`, versus 3/3 after the correction. This is controlled browser evidence, not authenticated Workday verification or a measured human time saving. `form_multilingual_comparison.json` records the comparison; `tests/browser_forms.py` prevents regression.

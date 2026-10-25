@@ -35,6 +35,6 @@ test_real_source_quotes_and_bounds (test_readiness.Readiness.test_real_source_qu
 test_travel_benefit_is_not_an_expectation (test_readiness.Readiness.test_travel_benefit_is_not_an_expectation) ... ok
 
 ----------------------------------------------------------------------
-Ran 35 tests in 0.612s
+Ran 35 tests in 0.676s
 
 OK

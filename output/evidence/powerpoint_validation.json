@@ -1,0 +1,16 @@
+{
+  "file": "output/presentation/Pivot_Desk.pptx",
+  "sha256": "a649393b574d5ad7639dca119ab36e2f4d3093a53fd4893107da5bcaec1821f2",
+  "slides": 9,
+  "native_tables": 2,
+  "package_integrity_passed": true,
+  "layout_findings": 0,
+  "fonts": [
+    "Arial",
+    "Georgia"
+  ],
+  "first_party_import_passed": true,
+  "all_slide_previews_visually_reviewed": true,
+  "opened_in_native_powerpoint": false,
+  "notes": "Editable local companion. The required course deck remains slides.html. No private resume details included."
+}

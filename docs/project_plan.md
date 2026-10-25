@@ -11,7 +11,7 @@ The chosen user is an MBA applicant making an industry or geographic pivot. The 
 | Application helper | Shared adapter tested in local lab; extension supplied; actual employer Workday compatibility remains unverified |
 | Privacy / safety tests | Offline isolation, consent, input and quote checks; browser field-safety checks |
 | Cost evaluation | Full vs truncated source comparison plus identical-result cache test |
-| Report and slides | Verified 14-page report, nine-slide deck and captioned demo; submission gates remain |
+| Report and slides | Verified 15-page report, nine-slide deck and captioned demo; submission gates remain |
 | Actual applicant trial | Still needed; automated tests do not substitute for it |
 | Course model restriction | User confirmed Astra; the course-key Luna restriction remains a known submission conflict |
 | GitHub publication and Canvas submission | Not performed |
@@ -20,7 +20,7 @@ Next priorities are a real applicant trial, testing one permitted employer appli
 
 ## Current evidence and document map
 
-The app now covers **10 employer boards, 6 sectors and a 146-record bundled sample**. There are **35 passing offline checks**, plus browser checks for all four new sectors and the original workflow. The report now has 14 printed pages and the deck 9 slides. Earlier five-board, 95-record and 23-test measurements remain labeled as the initial baseline.
+The app now covers **10 employer boards, 6 sectors and a 146-record bundled sample**. There are **35 passing offline checks**, plus browser checks for all four new sectors and the original workflow. The report now has 15 printed pages and the deck 9 slides. Earlier five-board, 95-record and 23-test measurements remain labeled as the initial baseline.
 
 | File | Keep current when | Supporting evidence |
 | --- | --- | --- |
@@ -47,6 +47,9 @@ After each meaningful change, update the affected rows/documents, run the releva
 The October 25 assessment in [grading_review.md](../output/grading_review.md) estimates 79/100 for current content (planning range 75–85), conditional on resolving repository access and model/account requirements. This is an internal estimate, not a course grade. Priorities are real applicant evidence, permitted employer-form validation and a measured career-pivot comparison; further cosmetic features alone do not address those gaps.
 
 ## Submission preparation update
-Added exact-source application checks, explicit exclusion scope, reviewed given/family names, repeated education mapping and dynamic-field safeguards. The current report has 14 printed pages and the deck remains 9 slides. A captioned automated demo and empty timed trial worksheet are ready. See `output/submission_checklist.md` for the exact deliverables and the remaining account, human-trial and publication steps. The earlier 79-point estimate preceded these improvements and is retained as a dated review, not an awarded grade.
+Added exact-source application checks, explicit exclusion scope, reviewed given/family names, repeated education mapping and dynamic-field safeguards. The current report has 15 printed pages and the deck remains 9 slides. A captioned automated demo and empty timed trial worksheet are ready. See `output/submission_checklist.md` for the exact deliverables and the remaining account, human-trial and publication steps. The earlier 79-point estimate preceded these improvements and is retained as a dated review, not an awarded grade.
 
 Publication preference: on October 25 the user requested continued local preparation. No remote repository was created. The verified files and source ZIP are being kept local; publication and Canvas upload remain explicit later steps.
+
+## Private document and PowerPoint check
+A real resume was tested locally with a manually transcribed, checked profile. A repeated-language bug was fixed and demonstrated with fictional before/after data. The 15-page report includes only aggregate evidence; the required nine-slide HTML deck and a nine-slide editable PowerPoint companion are prepared. No private resume or screenshot is included in source or the submission ZIP. No live model call used this resume.

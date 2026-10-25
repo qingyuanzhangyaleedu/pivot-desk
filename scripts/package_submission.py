@@ -17,6 +17,7 @@ revision = subprocess.check_output(
 files = {
     "report.html": "report.html",
     "slides.html": "slides.html",
+    "output/presentation/Pivot_Desk.pptx": "Pivot_Desk.pptx",
     "output/demo.webm": "demo.webm",
     "output/user_trial.html": "user_trial.html",
     "output/submission_checklist.md": "submission_checklist.md",
@@ -49,6 +50,7 @@ with zipfile.ZipFile(OUT / "source.zip") as z:
 (OUT / "START_HERE.md").write_text("""# Pivot Desk submission package
 
 Double-click report.html and slides.html. Both include their own visuals and work offline.
+Pivot_Desk.pptx is an editable nine-slide PowerPoint companion. The required course deck remains slides.html; the PPTX does not replace it.
 The captioned demo.webm shows fictional applicant data and a real AI review; it is an automated demonstration, not a human trial.
 
 Canvas requires the GitHub repository URL plus report.html and slides.html. The optional video is included here. source.zip is a clean source backup, not a replacement for the required repository URL. See submission_checklist.md for publication/account requirements and remaining evidence limits.
@@ -60,6 +62,7 @@ The source ZIP excludes private runtime state, real .env files, dependencies and
 items = [
     "report.html",
     "slides.html",
+    "Pivot_Desk.pptx",
     "demo.webm",
     "user_trial.html",
     "submission_checklist.md",

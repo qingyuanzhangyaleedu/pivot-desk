@@ -157,3 +157,9 @@ The final source scan checks configured credential values and common key pattern
 The committed application revision `0739831` passed a new local-clone rehearsal: 10.16 seconds to install, build and start with warm package caches, all 35 offline tests passing, parent-only dotenv discovery, production frontend and current qualification checks working. The temporary server used port 8771 to avoid the live app. This did not call AI or test a public GitHub clone. See `output/evidence/final_clean_setup.json` for the exact revision and limitations.
 
 After final review and a clean commit, `python scripts/package_submission.py` builds the ignored `submission/` folder and ZIP from tracked source. It excludes runtime data and credentials, preserves embedded report/deck images, and includes a SHA-256 manifest. The source ZIP is a backup; Canvas still requires the repository link.
+
+## Report, slides and private-document test
+
+`report.html` is verified at 15 printed letter-size pages. `slides.html` is the required nine-slide offline reveal.js deck. `output/presentation/Pivot_Desk.pptx` is an editable nine-slide PowerPoint companion; it does not replace the required HTML. Both describe the measured repeated-language correction and keep unpublished limitations visible.
+
+`output/evidence/private_resume_local_check.json` contains only aggregate results from a real owner-provided resume. The test used local PDF parsing and an assistant-transcribed, source-checked profile; it made no AI calls. Raw text, profile, private review and screenshots stay in ignored `runtime/resume_review/`. The public form regression uses fictional languages and also checks that legal-name questions stay manual. This is not a human usability trial or live Workday compatibility claim.

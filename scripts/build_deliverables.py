@@ -134,6 +134,19 @@ page(
     + """<p>The current automated walkthrough in output/demo.webm uses fictional data and shows discovery, qualification checks, a live analyst review, pipeline and form filling. It is captioned, not a recording of an independent human trial.</p><p class="source">Evidence: upload_ui.json, live_runs.json and final_demo_run.json. The initial and final recordings are separate runs with separate usage records.</p>""",
 )
 page(
+    "05 / THE AGENTS · PRIVATE LOCAL TEST",
+    "A real resume exposed a form bug",
+    """<p>The project owner supplied a real one-page resume for testing. I read the PDF locally and manually transcribed and checked 12 facts before exercising the app. This was an assistant-operated test, not a new AI extraction run or a timed human trial. No resume text went to a model or employer during this check.</p><h2>The realistic edge cases</h2><p>The document has four dated positions under one employer, three education entries and three languages. It also contains year-only employment dates, a parenthesized display name and a future MBA completion date. The profile must preserve those distinctions instead of inventing months, legal-name parts, a current address or degree completion.</p>"""
+    + table(["Local check", "Observed result"], [
+        ["PDF and reviewed profile", "One page parsed; 12 manually checked facts persisted after reload"],
+        ["Search with the reviewed facts", "91 matches from 1,740 cached postings; filters preserved, no AI calls"],
+        ["Application practice lab", "12 supported fields filled; missing address/date information and legal questions stayed manual"],
+        ["Repeated-entry fixture", "17 fields preserved four positions, three schools and three languages separately"],
+        ["Private workspace", "A second browser could not read the profile; no mobile overflow or browser errors"],
+    ])
+    + """<h2>A measured correction</h2><p>The previous adapter filled English into all three language entries: only 1 of 3 was correct. In the same fictional fixture, the revised adapter filled English, Spanish and French: 3 of 3 correct. It uses declared language-group indices and leaves ambiguous groups and proficiency scales manual.</p><p>The same fixture showed a display name entering a legal-name question. Legal-name fields now stay manual. These before/after corrections do not prove that every employer form works.</p><h2>What this adds to the evidence</h2><p>The real document revealed a defect the simpler demo missed. Raw text, profile and screenshots remain excluded from the submission; shared evidence contains aggregate results and fictional regression values. No application was submitted or agreement accepted.</p><p class="source">Evidence: private_resume_local_check.json, form_multilingual_comparison.json and form_regression.json. Search counts describe a cached snapshot, not confirmed vacancies or eligibility. Live model measurements elsewhere still use the fictional applicant.</p>""",
+)
+page(
     "06 / TOKENOMICS",
     "Measured model use, including unsuccessful attempts",
     table(
@@ -370,7 +383,7 @@ slides = [
     ),
     (
         "What the evidence establishes",
-        '<div class="numbers"><div><strong>13</strong><span>ordinary form fields filled</span></div><div><strong>35</strong><span>offline checks passed</span></div><div><strong>0</strong><span>model calls on a cache hit</span></div></div><p>32/32 labeled review topics surfaced in 12 selected real postings. One written-years challenge remains a miss.</p><p><strong>Not yet measured:</strong> applicant time saved,<br>real Workday completion, or hiring outcomes.</p><p class="fine">Author-labeled development sample; no measured applicant time saving. A real-user worksheet is ready.</p>',
+        '<div class="numbers"><div><strong>12</strong><span>fields filled from a private reviewed profile</span></div><div><strong>1 → 3</strong><span>correct language entries after the fix</span></div><div><strong>0</strong><span>model calls in this local test</span></div></div><p>A real resume exposed repeated-language and legal-name gaps.<br>The regression uses fictional values; personal details stay private.</p><p><strong>Not yet measured:</strong> applicant time saved,<br>authenticated Workday completion, or hiring outcomes.</p><p class="fine">Assistant-operated local check with a manually transcribed profile. Earlier evidence: 35 offline checks; 32/32 topics in 12 selected postings. Not a human trial.</p>',
     ),
     (
         "The next evidence to earn",

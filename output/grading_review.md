@@ -62,4 +62,7 @@ Successful evidence on these items could support a high-80s or low-90s assessmen
 Historical measurements were not rewritten. No grading prediction is presented as an achieved course result.
 
 ## Subsequent improvements
-After this estimate, the project added visible application checks, a 12-posting development benchmark, title-only exclusions, stronger form mapping, 35 offline tests, a public Workday account-boundary check, a captioned demo and a timed human-trial worksheet. The report now has 14 pages. These strengthen functional evidence but do not substitute for real applicant outcomes or establish authenticated Workday compatibility. No automatic revised grade is claimed.
+After this estimate, the project added visible application checks, a 12-posting development benchmark, title-only exclusions, stronger form mapping, 35 offline tests, a public Workday account-boundary check, a captioned demo and a timed human-trial worksheet. At that checkpoint the report had 14 pages. These strengthen functional evidence but do not substitute for real applicant outcomes or establish authenticated Workday compatibility. No automatic revised grade is claimed.
+
+## Latest private-resume check
+The report now has 15 verified printed pages and a nine-slide editable PowerPoint companion in addition to the required HTML deck. An owner-provided document exposed a repeated-language error: the fictional regression improved from 1/3 to 3/3 correctly filled entries. The private local practice test filled 12 supported fields. This adds concrete before/after quality evidence; it is not an observed human trial, new AI extraction evaluation or authenticated Workday result. No new numeric grade is assigned.

@@ -7,7 +7,7 @@
       .replace(/\s+/g, " ")
       .trim();
   const manual =
-    /consent|agree|terms|privacy|signature|certif|acknowledge|disability|gender|race|ethnic|birth|social security|ssn|password/;
+    /consent|agree|terms|privacy|signature|certif|acknowledge|disability|gender|race|ethnic|birth|social security|ssn|password|legal name/;
   function label(el) {
     return (
       [...(el.labels || [])].map((x) => x.innerText).join(" ") ||
@@ -80,6 +80,8 @@
         /sponsor/.test(name) ? null : packet.work_authorization || null,
         "Do not infer eligibility or sponsorship.",
       ];
+    if (/proficiency|fluency|native language|mother tongue/.test(name))
+      return [null, "Review the employer's proficiency scale yourself; no level is inferred."];
     const key =
       explicit ||
       (/first name|given name/.test(name)
@@ -127,11 +129,26 @@
         education?.[key.split(".")[1]] || null,
         "Reviewed education entry",
       ];
-    if (key === "language")
+    if (key === "language") {
+      const languageSection = el.closest('[data-language-index],[data-automation-id="languageSection"]');
+      const languageIndex = languageSection?.dataset.languageIndex != null
+        ? Number(languageSection.dataset.languageIndex)
+        : languageSection ? [...document.querySelectorAll('[data-automation-id="languageSection"]')].indexOf(languageSection) : 0;
+      // Without a known repeated group, a second language field is ambiguous.
+      // Do not silently repeat the first language across multiple form entries.
+      const otherUnindexedLanguages = fields().filter(other =>
+        !["checkbox", "radio"].includes(other.type) &&
+        /language/.test(norm(label(other))) &&
+        !/proficiency|fluency|native language|mother tongue/.test(norm(label(other))) &&
+        !other.closest('[data-language-index],[data-automation-id="languageSection"]')
+      );
+      if (!languageSection && otherUnindexedLanguages.length > 1)
+        return [null, "Multiple language fields without a reliable group; choose each manually."];
       return [
-        facts.find((f) => f.kind === "language")?.title || null,
-        "Only an explicitly stated language",
+        facts.filter((f) => f.kind === "language")[languageIndex]?.title || null,
+        "Reviewed language entry " + (languageIndex + 1),
       ];
+    }
     if (/start|end/.test(key))
       return [null, "Confirm employer-specific date format manually."];
     return [packet[key] || null, "From your reviewed profile"];

@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-10-25T15:41:42.895198+00:00",
+  "method": "Assistant-operated local PDF parse, manually transcribed and checked profile, API and browser checks. No live AI extraction and no human timing trial.",
+  "privacy": "No resume text sent to an AI provider or employer. Private profile, raw resume text and screenshots excluded from source/submission.",
+  "pdf_pages": 1,
+  "reviewed_facts": 12,
+  "checks": {
+    "search_matches": 91,
+    "search_records": 1740,
+    "default_regions_and_industries_preserved": true,
+    "title_exclusion_preserved": true,
+    "profile_persists_after_reload": true,
+    "expected_graduation_and_year_only_dates_preserved": true,
+    "legal_name_address_sensitive_answers_not_inferred": true,
+    "practice_fields_filled": 12,
+    "repeated_fixture_fields_filled": 17,
+    "four_roles_three_degrees_three_languages_kept_separate": true,
+    "second_browser_cannot_read_profile": true,
+    "mobile_no_horizontal_overflow": true,
+    "browser_errors": [],
+    "model_calls": 0
+  },
+  "passed": true,
+  "authenticated_workday_test": false,
+  "application_submitted": false,
+  "agreements_accepted": false,
+  "known_limit": "Employer-specific widgets and unindexed repeated language groups stay manual."
+}

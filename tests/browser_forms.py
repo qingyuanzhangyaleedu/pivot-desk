@@ -81,6 +81,27 @@ with sync_playwright() as p:
     r = fill()
     assert r["result"]["filled"] == 0
     checks += ["Misleading data-pivot-key cannot bypass sensitive-answer review"]
+    multilingual = {
+        **packet,
+        "facts": [f for f in packet["facts"] if f["kind"] != "language"]
+        + [{"kind": "language", "title": title} for title in ("English", "Spanish", "French")],
+    }
+    prepare(''.join(
+        f'<fieldset data-language-index="{i}"><label>Language<input id="lang{i}"></label>'
+        f'<label>Language proficiency<input id="level{i}"></label></fieldset>'
+        for i in range(3)
+    ))
+    language_result = page.evaluate(
+        'p=>PivotFill.apply(p,PivotFill.preview(p).filter(r=>r.value&&!r.sensitive))', multilingual
+    )
+    assert language_result["filled"] == 3
+    assert [page.locator(f"#lang{i}").input_value() for i in range(3)] == ["English", "Spanish", "French"]
+    assert all(page.locator(f"#level{i}").input_value() == "" for i in range(3))
+    checks += ["Three indexed languages remain distinct; proficiency scales stay manual"]
+    prepare('<label>Language<input id="l1"></label><label>Language<input id="l2"></label><label>Full legal name<input id="legal"></label>')
+    ambiguous = page.evaluate('p=>PivotFill.preview(p)', multilingual)
+    assert all(row["value"] is None for row in ambiguous)
+    checks += ["Unindexed repeated languages and legal-name questions require manual entry"]
     b.close()
 assert (ROOT / "extension/content.js").read_bytes() == (
     ROOT / "frontend/public/form-helper.js"

@@ -4,7 +4,7 @@
 
 1. A public GitHub repository link, or a private repository accessible to `zlisto`. **Kept local at the user’s request on October 25; publication is pending. Do not substitute localhost or a ZIP for the required link.**
 2. `report.html` — self-contained report, with embedded screenshots and diagrams.
-3. `slides.html` — self-contained reveal.js deck, nine slides.
+3. `slides.html` — self-contained reveal.js deck, nine slides. An editable `Pivot_Desk.pptx` companion is also included; submit the required HTML deck even if presenting from PowerPoint.
 4. Optional `output/demo.webm` — captioned automated walkthrough with a fictional applicant and a real AI review. It has no human narration and is not a user study.
 
 The submission folder and ZIP are convenience copies of these materials plus a source ZIP. The GitHub link remains required. Open the HTML files in that copied folder before uploading. The course deadline is October 26, 2026 at 6:00 PM; the brief does not specify a timezone, so use Canvas to confirm it.
@@ -44,3 +44,6 @@ The empty process variable prevents the parent dotenv from selecting Portkey. It
 - Finish with the development benchmark and the remaining human-impact measurement.
 
 No grade, hiring outcome, time saving or universal Workday compatibility is guaranteed.
+
+## Latest local evidence
+The owner-provided resume was parsed and tested locally without AI processing. Its source, structured profile and screenshots remain private and excluded. The report is now 15 printed pages. It records the language-field correction (1/3 correct before, 3/3 after) and the 12-field private practice result, without claiming a timed human trial.

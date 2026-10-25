@@ -26,3 +26,7 @@ Each selected role has a “Check before applying” panel with the employer's a
 
 ## Keep application names and education accurate
 The reviewed profile accepts optional given/family names directly. The helper uses those values without splitting names and maps separate education sections to separate records. It rechecks every target field after earlier change events so dynamic forms cannot redirect an old approval to a replaced field. Controlled DOM tests cover these behaviors; a real employer's authenticated application remains unverified.
+
+## Repeated languages and legal names
+
+The application helper keeps explicitly grouped language entries separate. Unindexed repeated groups and proficiency scales stay manual. Legal-name questions also stay manual rather than copying a display name. A real-resume local check revealed the gap; fictional regression data reproduces the improvement from one correct language entry to three. This reduces a specific form error without claiming support for every Workday form.

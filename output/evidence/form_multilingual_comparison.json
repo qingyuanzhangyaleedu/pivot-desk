@@ -1,0 +1,31 @@
+{
+  "baseline_revision": "29acc13",
+  "fixture": "Fictional profile with three declared language groups and a legal-name field. This is a controlled DOM, not Workday.",
+  "expected_languages": [
+    "English",
+    "Spanish",
+    "French"
+  ],
+  "result": {
+    "before": {
+      "language_values": [
+        "English",
+        "English",
+        "English"
+      ],
+      "correct_language_entries": 1,
+      "legal_name_left_manual": false
+    },
+    "after": {
+      "language_values": [
+        "English",
+        "Spanish",
+        "French"
+      ],
+      "correct_language_entries": 3,
+      "legal_name_left_manual": true
+    }
+  },
+  "model_calls": 0,
+  "private_resume_data_included": false
+}
