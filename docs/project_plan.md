@@ -11,7 +11,7 @@ The chosen user is an MBA applicant making an industry or geographic pivot. The 
 | Application helper | Shared adapter tested in local lab; extension supplied; actual employer Workday compatibility remains unverified |
 | Privacy / safety tests | Offline isolation, consent, input and quote checks; browser field-safety checks |
 | Cost evaluation | Full vs truncated source comparison plus identical-result cache test |
-| Report and slides | Evidence-backed local drafts; not a completed submission |
+| Report and slides | Verified 14-page report, nine-slide deck and captioned demo; submission gates remain |
 | Actual applicant trial | Still needed; automated tests do not substitute for it |
 | Course model restriction | User confirmed Astra; the course-key Luna restriction remains a known submission conflict |
 | GitHub publication and Canvas submission | Not performed |
@@ -48,3 +48,5 @@ The October 25 assessment in [grading_review.md](../output/grading_review.md) es
 
 ## Submission preparation update
 Added exact-source application checks, explicit exclusion scope, reviewed given/family names, repeated education mapping and dynamic-field safeguards. The current report has 14 printed pages and the deck remains 9 slides. A captioned automated demo and empty timed trial worksheet are ready. See `output/submission_checklist.md` for the exact deliverables and the remaining account, human-trial and publication steps. The earlier 79-point estimate preceded these improvements and is retained as a dated review, not an awarded grade.
+
+Publication preference: on October 25 the user requested continued local preparation. No remote repository was created. The verified files and source ZIP are being kept local; publication and Canvas upload remain explicit later steps.

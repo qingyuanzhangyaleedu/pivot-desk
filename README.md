@@ -152,3 +152,8 @@ python tests/browser_readiness.py
 `output/user_trial.html` is a local worksheet for a real participant's timed comparison. It contains no invented results. `output/demo.webm` is a captioned automated walkthrough with fictional applicant data and a real AI review; it is not a narrated human trial. The submission checklist and exact files to upload are in `output/submission_checklist.md`.
 
 The final source scan checks configured credential values and common key patterns without printing them. Reproduce it with `python scripts/verify_release.py`. A fresh committed local-copy rehearsal is available with `python scripts/check_clean_clone.py`; it installs in a temporary directory and uses port 8771 to avoid disturbing the running app. It makes no model call.
+
+## Release-candidate rehearsal
+The committed application revision `0739831` passed a new local-clone rehearsal: 10.16 seconds to install, build and start with warm package caches, all 35 offline tests passing, parent-only dotenv discovery, production frontend and current qualification checks working. The temporary server used port 8771 to avoid the live app. This did not call AI or test a public GitHub clone. See `output/evidence/final_clean_setup.json` for the exact revision and limitations.
+
+After final review and a clean commit, `python scripts/package_submission.py` builds the ignored `submission/` folder and ZIP from tracked source. It excludes runtime data and credentials, preserves embedded report/deck images, and includes a SHA-256 manifest. The source ZIP is a backup; Canvas still requires the repository link.

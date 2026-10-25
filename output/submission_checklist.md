@@ -2,7 +2,7 @@
 
 ## Files for Canvas
 
-1. A public GitHub repository link, or a private repository accessible to `zlisto`. **Publication is pending; do not substitute localhost or a ZIP for the required link.**
+1. A public GitHub repository link, or a private repository accessible to `zlisto`. **Kept local at the user’s request on October 25; publication is pending. Do not substitute localhost or a ZIP for the required link.**
 2. `report.html` — self-contained report, with embedded screenshots and diagrams.
 3. `slides.html` — self-contained reveal.js deck, nine slides.
 4. Optional `output/demo.webm` — captioned automated walkthrough with a fictional applicant and a real AI review. It has no human narration and is not a user study.
