@@ -30,3 +30,7 @@ The reviewed profile accepts optional given/family names directly. The helper us
 ## Repeated languages and legal names
 
 The application helper keeps explicitly grouped language entries separate. Unindexed repeated groups and proficiency scales stay manual. Legal-name questions also stay manual rather than copying a display name. A real-resume local check revealed the gap; fictional regression data reproduces the improvement from one correct language entry to three. This reduces a specific form error without claiming support for every Workday form.
+
+## A delayed search cannot replace the chosen role
+
+Only the latest search request can update the cards and selected role. While results load, the app blocks role selection and paid analysis; startup also waits for saved preferences before allowing query edits. The analysis button stays disabled while its request is pending. A controlled test reproduced the old behavior (the older role was submitted) and now verifies the newer role is submitted, without calling a model. This protects both the applicant's intent and their model budget.

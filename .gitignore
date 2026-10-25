@@ -4,6 +4,7 @@
 !.env.example
 .codex/
 .DS_Store
+~$*
 
 # Python environments and generated caches
 .venv/

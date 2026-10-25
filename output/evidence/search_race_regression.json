@@ -1,0 +1,12 @@
+{
+  "keyword_edit_blocked_during_initial_load": true,
+  "analysis_blocked_during_search": true,
+  "newer_search_survives_late_older_response": true,
+  "analysis_disabled_while_request_pending": true,
+  "submitted_job_id": [
+    "test:newer"
+  ],
+  "model_calls": 0,
+  "fixture": "Fictional search responses and mocked analysis route; no employer or model call.",
+  "passed": true
+}

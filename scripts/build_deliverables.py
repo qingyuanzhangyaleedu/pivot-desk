@@ -8,6 +8,7 @@ E = R / "output/evidence"
 live = json.loads((E / "live_runs.json").read_text())
 full = live["runs"][1]
 short = live["runs"][2]
+clean_setup = json.loads((E / "final_clean_setup.json").read_text())
 
 
 def img(name, caption="", cls=""):
@@ -134,17 +135,16 @@ page(
     + """<p>The current automated walkthrough in output/demo.webm uses fictional data and shows discovery, qualification checks, a live analyst review, pipeline and form filling. It is captioned, not a recording of an independent human trial.</p><p class="source">Evidence: upload_ui.json, live_runs.json and final_demo_run.json. The initial and final recordings are separate runs with separate usage records.</p>""",
 )
 page(
-    "05 / THE AGENTS · PRIVATE LOCAL TEST",
-    "A real resume exposed a form bug",
-    """<p>The project owner supplied a real one-page resume for testing. I read the PDF locally and manually transcribed and checked 12 facts before exercising the app. This was an assistant-operated test, not a new AI extraction run or a timed human trial. No resume text went to a model or employer during this check.</p><h2>The realistic edge cases</h2><p>The document has four dated positions under one employer, three education entries and three languages. It also contains year-only employment dates, a parenthesized display name and a future MBA completion date. The profile must preserve those distinctions instead of inventing months, legal-name parts, a current address or degree completion.</p>"""
-    + table(["Local check", "Observed result"], [
-        ["PDF and reviewed profile", "One page parsed; 12 manually checked facts persisted after reload"],
-        ["Search with the reviewed facts", "91 matches from 1,740 cached postings; filters preserved, no AI calls"],
-        ["Application practice lab", "12 supported fields filled; missing address/date information and legal questions stayed manual"],
-        ["Repeated-entry fixture", "17 fields preserved four positions, three schools and three languages separately"],
-        ["Private workspace", "A second browser could not read the profile; no mobile overflow or browser errors"],
+    "05 / THE AGENTS · AUTHORIZED LIVE TEST",
+    "A real resume, tested with permission",
+    """<p>After the initial local-only check, the owner explicitly authorized AI processing while keeping publication on hold. The browser uploaded the real PDF to the configured provider. The reader returned 13 source-supported facts in one request; I checked every fact before saving the profile. No extraction correction was needed in this test.</p>"""
+    + table(["Live run", "Input / output tokens", "Requests", "Est. USD"], [
+        ["Resume reader", "1,416 / 1,750", 1, "$0.10166"],
+        ["Heartflow marketing (unplanned)", "4,221 / 978", 2, "$0.09111"],
+        ["Heartflow corporate strategy", "4,392 / 1,004", 2, "$0.09412"],
+        ["Stripe strategy / analytics", "3,535 / 926", 2, "$0.08165"],
     ])
-    + """<h2>A measured correction</h2><p>The previous adapter filled English into all three language entries: only 1 of 3 was correct. In the same fictional fixture, the revised adapter filled English, Spanish and French: 3 of 3 correct. It uses declared language-group indices and leaves ambiguous groups and proficiency scales manual.</p><p>The same fixture showed a display name entering a legal-name question. Legal-name fields now stay manual. These before/after corrections do not prove that every employer form works.</p><h2>What this adds to the evidence</h2><p>The real document revealed a defect the simpler demo missed. Raw text, profile and screenshots remain excluded from the submission; shared evidence contains aggregate results and fictional regression values. No application was submitted or agreement accepted.</p><p class="source">Evidence: private_resume_local_check.json, form_multilingual_comparison.json and form_regression.json. Search counts describe a cached snapshot, not confirmed vacancies or eligibility. Live model measurements elsewhere still use the fictional applicant.</p>""",
+    + """<p><strong>Four successful runs, seven model requests, $0.36854 estimated total.</strong> Three identical repeat reviews were served from the local cache with no new model request. These are public-rate estimates, not the provider invoice. All usage, including the unplanned review, remains recorded.</p><h2>What the reviews got right</h2><p>The reader preserved expected degree completion, left an unstated address blank and flagged overlapping year-only employment dates. Heartflow’s review caught a graduation-cohort mismatch and distinguished healthcare analytics from enterprise-strategy ownership. Stripe’s review recognized transferable analytics while leaving Financial Crimes expertise, expert SQL depth, qualifying tenure and availability unconfirmed.</p><h2>What testing fixed</h2><p>A late search response initially changed the selected role to Heartflow product marketing. The subsequent intended corporate-strategy request was a paid review, not a cache hit. A controlled browser test reproduced the error. The fix accepts only the newest search response and blocks analysis during loading; the test now submits the intended job ID.</p><p>The earlier local check also exposed repeated-language mapping: a fictional regression improved from 1/3 to 3/3 correct entries. Legal-name questions now stay manual. With the live AI profile, the practice form filled 12 supported fields and left agreements, signatures and unsupported dates untouched.</p><p class="source">Evidence: private_resume_live_check.json, search_race_before.json, search_race_regression.json and form_multilingual_comparison.json. These are assistant-operated tests, not a timed human trial or authenticated Workday validation. Raw resume, detailed responses and personal screenshots remain private.</p>""",
 )
 page(
     "06 / TOKENOMICS",
@@ -192,7 +192,7 @@ page(
             ["10,000 users at the same pattern", "$13,010.20"],
         ],
     )
-    + """<p>The one-user estimate is 2 × $0.03571 + 16 × $0.07685. It does not include servers, storage, support, compliance work or failed-call overhead. Real usage may differ sharply by resume length and employer text. The 100/10,000-user rows are arithmetic projections, not deployment capacity: this implementation is a single-process local app.</p><p class="source">Recorded comparison: output/evidence/cost_comparison.json. Model-boundary token limits can stop later requests, but cannot retrospectively erase tokens already generated.</p>""",
+    + """<p>Demo-profile calculation: 2 × $0.03571 + 16 × $0.07685. At the same volume, page 8’s real-resume extraction and corporate-strategy review cost $1.70924/user, $170.92/100 users or $17,092.40/10,000 users. These estimates exclude hosting, support, compliance and failed/unplanned calls. Resume length changes cost. These are arithmetic projections; the app is single-process, not a tested multi-user service.</p><p class="source">Recorded comparison: output/evidence/cost_comparison.json. Model-boundary token limits can stop later requests, but cannot retrospectively erase tokens already generated.</p>""",
 )
 page(
     "08 / SAFETY",
@@ -282,7 +282,7 @@ page(
 page(
     "12 / EVIDENCE + REPRODUCIBILITY",
     "How to check the claims",
-    """<h2>Reproduce the app</h2><p>Install the pinned Python requirements in a local virtual environment. Run <code>npm ci</code> and <code>npm run build</code> inside frontend/. Put the configured key in the repository or parent .env. From backend/, run <code>uvicorn main:app --host 127.0.0.1 --port 8000</code>. Open localhost:8000.</p><p><strong>Latest local-clone rehearsal:</strong> revision df57929 installed, built and started in 10.09 seconds with warm caches; all 35 tests passed. Parent-only key discovery used a fixture and port 8771. No AI call or public-clone test. See final_clean_setup.json.</p><h2>Evidence map</h2>"""
+    f"""<h2>Reproduce the app</h2><p>Install the pinned Python requirements in a local virtual environment. Run <code>npm ci</code> and <code>npm run build</code> inside frontend/. Put the configured key in the repository or parent .env. From backend/, run <code>uvicorn main:app --host 127.0.0.1 --port 8000</code>. Open localhost:8000.</p><p><strong>Latest local-clone rehearsal:</strong> revision {clean_setup["revision"][:7]} installed, built and started in {clean_setup["setup_seconds"]:.2f} seconds with warm caches; all 35 tests passed. Parent-only key discovery used a fixture and port 8771. No AI call or public-clone test. See final_clean_setup.json.</p><h2>Evidence map</h2>"""
     + table(
         ["File", "Evidence"],
         [
@@ -383,7 +383,7 @@ slides = [
     ),
     (
         "What the evidence establishes",
-        '<div class="numbers"><div><strong>12</strong><span>fields filled from a private reviewed profile</span></div><div><strong>1 → 3</strong><span>correct language entries after the fix</span></div><div><strong>0</strong><span>model calls in this local test</span></div></div><p>A real resume exposed repeated-language and legal-name gaps.<br>The regression uses fictional values; personal details stay private.</p><p><strong>Not yet measured:</strong> applicant time saved,<br>authenticated Workday completion, or hiring outcomes.</p><p class="fine">Assistant-operated local check with a manually transcribed profile. Earlier evidence: 35 offline checks; 32/32 topics in 12 selected postings. Not a human trial.</p>',
+        '<div class="numbers"><div><strong>13</strong><span>source-supported facts from the real resume</span></div><div><strong>7</strong><span>model requests across four live runs</span></div><div><strong>$0.37</strong><span>estimated total, including an unintended review</span></div></div><p>Graduation timing flagged. Unsupported expertise left open.<br>A late search could change the role; the regression now passes.</p><p><strong>Not yet measured:</strong> applicant time saved,<br>authenticated Workday completion, or hiring outcomes.</p><p class="fine">Owner-authorized AI processing; assistant-operated review. Exact estimated cost $0.36854. Three cache hits made no model call. Personal details and detailed outputs stay private.</p>',
     ),
     (
         "The next evidence to earn",

@@ -17,7 +17,7 @@ revision = subprocess.check_output(
 files = {
     "report.html": "report.html",
     "slides.html": "slides.html",
-    "output/presentation/Pivot_Desk.pptx": "Pivot_Desk.pptx",
+    "output/presentation/Pivot_Desk_Live_Test.pptx": "Pivot_Desk.pptx",
     "output/demo.webm": "demo.webm",
     "output/user_trial.html": "user_trial.html",
     "output/submission_checklist.md": "submission_checklist.md",

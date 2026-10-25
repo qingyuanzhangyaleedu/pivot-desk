@@ -66,3 +66,6 @@ After this estimate, the project added visible application checks, a 12-posting 
 
 ## Latest private-resume check
 The report now has 15 verified printed pages and a nine-slide editable PowerPoint companion in addition to the required HTML deck. An owner-provided document exposed a repeated-language error: the fictional regression improved from 1/3 to 3/3 correctly filled entries. The private local practice test filled 12 supported fields. This adds concrete before/after quality evidence; it is not an observed human trial, new AI extraction evaluation or authenticated Workday result. No new numeric grade is assigned.
+
+## Authorized live evidence
+A later consented run adds actual extraction and fit checks on an owner-provided document. The report includes 13 source-supported facts, two intended role assessments and a retained unintended assessment that exposed a UI race. A controlled before/after regression now selects the right role. Costs include all four paid calls; no failed or unintended work is hidden. This strengthens functional, safety and cost evidence, but does not establish human time savings, universal Workday compatibility or an awarded grade.

@@ -1,0 +1,115 @@
+{
+  "checked_at": "2026-10-25T18:48:26.645692+00:00",
+  "consent": "Owner explicitly allowed AI processing; publication remains on hold.",
+  "model": "gpt-6-astra",
+  "provider": "Configured Portkey endpoint; no credentials included.",
+  "method": "Assistant-operated browser upload, source review, selected-role analysis and local form test. Not an independent human usability trial.",
+  "extraction": {
+    "characters": 4010,
+    "facts": 13,
+    "education_entries": 3,
+    "dated_employment_entries": 4,
+    "additional_undated_experience_entries": 2,
+    "skill_groups": 1,
+    "languages": 3,
+    "all_quotes_validated_against_source": true,
+    "assistant_review_found_no_required_corrections": true,
+    "unknown_address_left_blank": true,
+    "future_degree_date_preserved": true,
+    "year_only_dates_not_expanded_to_months": true,
+    "overlapping_dates_flagged": true
+  },
+  "runs": [
+    {
+      "label": "resume",
+      "run_id": "576c127a-183a-434b-97cd-4be20fdd33d5",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1416,
+        "cached_tokens": 0,
+        "output_tokens": 1750,
+        "requests": 1,
+        "cost": 0.10166
+      },
+      "observed_wall_seconds": 21.57
+    },
+    {
+      "label": "heartflow_product_marketing",
+      "run_id": "bfba1a37-6484-4540-88d0-d268724ad688",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 4221,
+        "cached_tokens": 0,
+        "output_tokens": 978,
+        "requests": 2,
+        "cost": 0.09111
+      },
+      "job_id": "gh:heartflowinc:6218480004",
+      "job_title": "Product Marketing Manager - MBA Grad, Summer 2027",
+      "company": "Heartflow",
+      "source_url": "https://job-boards.greenhouse.io/heartflowinc/jobs/6218480004",
+      "retrieved_at": "2026-10-25T14:07:56.141456+00:00",
+      "evidence_links": 6
+    },
+    {
+      "label": "heartflow_corporate_strategy",
+      "run_id": "160524bd-66a7-48b0-92ca-34396b548ae9",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 4392,
+        "cached_tokens": 0,
+        "output_tokens": 1004,
+        "requests": 2,
+        "cost": 0.09412
+      },
+      "job_id": "gh:heartflowinc:6218422004",
+      "job_title": "Manager, Corporate Strategy - MBA Grad, Summer 2027",
+      "company": "Heartflow",
+      "source_url": "https://job-boards.greenhouse.io/heartflowinc/jobs/6218422004",
+      "retrieved_at": "2026-10-25T14:07:56.133129+00:00",
+      "evidence_links": 6
+    },
+    {
+      "label": "stripe_strategy_analytics",
+      "run_id": "6700fdc9-c4b7-47df-a312-32642415b290",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 3535,
+        "cached_tokens": 0,
+        "output_tokens": 926,
+        "requests": 2,
+        "cost": 0.08165
+      },
+      "observed_wall_seconds": 21.35,
+      "job_id": "gh:stripe:8079783",
+      "job_title": "Strategy & Analytics Business Partner Analyst",
+      "company": "Stripe",
+      "source_url": "https://stripe.com/jobs/search?gh_jid=8079783",
+      "retrieved_at": "2026-10-25T14:07:56.984778+00:00",
+      "evidence_links": 6
+    }
+  ],
+  "total_model_requests": 7,
+  "total_estimated_usd": 0.36854,
+  "cost_note": "Uses the app\u2019s documented public standard rates. Not the provider invoice. Includes the unplanned product-marketing review.",
+  "review_findings": {
+    "heartflow_corporate_strategy": "Flagged the mismatch between expected MBA completion and the role\u2019s earlier cohort; separated healthcare analytics from enterprise-strategy ownership.",
+    "stripe_strategy_analytics": "Recognized transferable analytics work, while leaving expert SQL depth, Financial Crimes experience, qualifying tenure and availability unconfirmed."
+  },
+  "workflow": {
+    "profile_persistence": true,
+    "profile_review": "Assistant reviewed all 13 extracted facts against the PDF. No corrections required for this test; not an independently observed human trial.",
+    "practice_fields_filled": 12,
+    "agreements_accepted": false,
+    "submitted": false,
+    "cache_reused_identical_results": 2,
+    "selected_role_verified_in_actual_analysis_request": true,
+    "browser_errors": [],
+    "incident": "An overlapping search initially replaced the intended corporate-strategy selection with the product-marketing role. Both successful reviews and usage are retained. The repeated lookup of the intended job was a new paid run, not a cache hit. A request-generation guard and loading-state interlock now pass the controlled regression."
+  },
+  "cache_hits_in_session": 3,
+  "privacy": "Public record excludes raw resume, contact details, professional fact text, detailed AI responses and personal screenshots. Those remain in ignored local runtime files.",
+  "authenticated_workday_verified": false,
+  "human_trial_completed": false,
+  "published": false
+}

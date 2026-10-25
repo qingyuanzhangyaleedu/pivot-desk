@@ -46,4 +46,7 @@ The empty process variable prevents the parent dotenv from selecting Portkey. It
 No grade, hiring outcome, time saving or universal Workday compatibility is guaranteed.
 
 ## Latest local evidence
-The owner-provided resume was parsed and tested locally without AI processing. Its source, structured profile and screenshots remain private and excluded. The report is now 15 printed pages. It records the language-field correction (1/3 correct before, 3/3 after) and the 12-field private practice result, without claiming a timed human trial.
+In the initial phase, the owner-provided resume was parsed and tested locally without AI processing. Its source, structured profile and screenshots remain private and excluded. The report is now 15 printed pages. It records the language-field correction (1/3 correct before, 3/3 after) and the 12-field private practice result, without claiming a timed human trial.
+
+## Authorized live AI follow-up
+The owner then explicitly allowed AI processing while keeping publication on hold. The live reader returned 13 source-supported facts. All four paid runs (including one unintended review caused by a now-fixed selection race) used seven model requests, estimated at $0.36854. Three identical repeats hit the cache. Only aggregate evidence is shared in `output/evidence/private_resume_live_check.json`; raw resume text, personal screenshots and detailed outputs stay ignored. The report and required HTML deck are updated. `output/presentation/Pivot_Desk_Live_Test.pptx` is the updated PowerPoint companion; the original `Pivot_Desk.pptx` remains intact. The package includes the updated copy under the standard filename. No repository or coursework has been published.

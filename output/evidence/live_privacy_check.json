@@ -1,0 +1,9 @@
+{
+  "scope": "Tracked and unignored candidate files, including decompressed PowerPoint XML. Private scan strings never emitted.",
+  "candidate_files": 153,
+  "private_values_checked": 7,
+  "archives_inspected": 2,
+  "findings": [],
+  "passed": true,
+  "limitations": "Exact matching cannot detect every transformed personal value. Public screenshots are fictional and private screenshots remain ignored."
+}

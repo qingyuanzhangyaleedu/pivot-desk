@@ -1,0 +1,19 @@
+{
+  "file": "output/presentation/Pivot_Desk_Live_Test.pptx",
+  "sha256": "9a70717da18444c636ad80f1274b23cd160352fb14e3eee54538774428e3bcc6",
+  "slides": 9,
+  "native_tables": 2,
+  "package_integrity_passed": true,
+  "layout_findings": 0,
+  "fonts": [
+    "Arial",
+    "Georgia"
+  ],
+  "first_party_import_passed": true,
+  "final_pptx_reimported_and_all_nine_slides_rendered": true,
+  "all_slide_previews_visually_reviewed": true,
+  "visual_review": "Updated slide 8 inspected after final PPTX reimport. Other eight slide renders are byte-identical to the previously inspected companion.",
+  "opened_in_native_powerpoint": false,
+  "original_companion_preserved": true,
+  "notes": "Updated editable local companion. Required course deck remains slides.html. Raw resume, detailed AI outputs and personal screenshots excluded."
+}

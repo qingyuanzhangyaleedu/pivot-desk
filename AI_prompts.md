@@ -102,3 +102,9 @@ as the evidence supporting each completed outcome.
 > You can feel free to review it for me. You can use this resume of mine to test things out. make sure things are looking great for final submission. Again do not upload just yet just make sure things are good to go and we can score as many points as we can. Keep in mind the report and powerpoint slide deck]
 
 **Outcome:** Reviewed the supplied resume privately and exercised the local parser, reviewed profile, search and form helper. Corrected repeated-language mapping and left legal-name questions manual. Added anonymized evidence to the report and slide deck, and prepared a local PowerPoint companion. Personal source text and screenshots remain excluded from the submission package. No repository or coursework was published; local assistant-operated checks are not presented as a human trial or live AI extraction.
+
+**AI-processing follow-up (as provided):**
+
+> Allow AI processing; keep publication on hold
+
+**Outcome:** Ran a live PDF extraction and fit reviews through the configured provider after consent. Reviewed the extracted facts, verified source quotations, tested cache reuse and used the real AI profile in the local form lab. Fixed a search-response race discovered during testing, preserving the extra paid review and its cost in the evidence. Report, HTML slides and an updated PowerPoint copy include aggregate results only. Publication remains on hold; private resume and detailed outputs are excluded.

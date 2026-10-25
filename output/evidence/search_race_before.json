@@ -1,0 +1,10 @@
+{
+  "analysis_blocked_during_search": false,
+  "newer_search_survives_late_older_response": false,
+  "submitted_job_id": [
+    "test:older"
+  ],
+  "model_calls": 0,
+  "fixture": "Fictional search responses and mocked analysis route; no employer or model call.",
+  "passed": false
+}

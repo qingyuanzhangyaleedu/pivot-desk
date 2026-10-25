@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowUpRight,
   ArrowRight,
@@ -53,6 +53,7 @@ const stages = [
   "Closed",
 ];
 export default function App() {
+  const searchGeneration = useRef(0);
   const [tab, setTab] = useState("discover"),
     [status, setStatus] = useState<any>(null),
     [profile, setProfile] = useState<Profile | null>(null),
@@ -60,7 +61,7 @@ export default function App() {
     [jobs, setJobs] = useState<Job[]>([]),
     [selected, setSelected] = useState<Job | null>(null),
     [searchInfo, setSearchInfo] = useState<any>(null),
-    [busy, setBusy] = useState(false),
+    [busy, setBusy] = useState(true),
     [notice, setNotice] = useState(""),
     [error, setError] = useState(""),
     [run, setRun] = useState<Run | null>(null),
@@ -93,6 +94,7 @@ export default function App() {
       await refreshExtras();
     } catch (e) {
       setError(String(e));
+      setBusy(false);
     }
   }
   async function refreshExtras() {
@@ -137,6 +139,7 @@ export default function App() {
   }, [runId]);
   async function search(p = prefs, refresh = false) {
     if (working) return;
+    const generation = ++searchGeneration.current;
     setBusy(true);
     setError("");
     try {
@@ -144,6 +147,7 @@ export default function App() {
         method: "POST",
         body: JSON.stringify({ preferences: p, refresh }),
       });
+      if (generation !== searchGeneration.current) return;
       setJobs(d.jobs);
       setSearchInfo(d);
       setSelected(d.jobs[0] || null);
@@ -155,9 +159,9 @@ export default function App() {
             : d.message,
         );
     } catch (e) {
-      setError(String(e));
+      if (generation === searchGeneration.current) setError(String(e));
     } finally {
-      setBusy(false);
+      if (generation === searchGeneration.current) setBusy(false);
     }
   }
   async function demo() {
@@ -223,7 +227,8 @@ export default function App() {
     }
   }
   async function analyze() {
-    if (!selected) return;
+    if (!selected || busy || working) return;
+    setBusy(true);
     setAnalysisJobId(selected.id);
     setError("");
     try {
@@ -239,6 +244,8 @@ export default function App() {
       setRunId(r.run_id);
     } catch (e) {
       setError(String(e));
+    } finally {
+      setBusy(false);
     }
   }
   async function saveJob(j: Job, stage = "Saved", note = "", follow_up = "") {
@@ -476,7 +483,7 @@ export default function App() {
                     >
                       Upload resume <ArrowRight size={17} />
                     </button>
-                    <button className="text-button" onClick={demo}>
+                    <button className="text-button" disabled={busy || working} onClick={demo}>
                       Explore a fictional demo ↗
                     </button>
                   </div>
@@ -499,6 +506,7 @@ export default function App() {
                   <Search size={20} />
                   <input
                     aria-label="Role keywords"
+                    disabled={busy && !searchInfo}
                     value={prefs.query}
                     onChange={(e) =>
                       setPrefs({ ...prefs, query: e.target.value })
@@ -713,7 +721,7 @@ export default function App() {
                     >
                       <button
                         className="job-select"
-                        disabled={working}
+                        disabled={busy || working}
                         onClick={() => {
                           setSelected(j);
                           setRun(null);
@@ -913,7 +921,7 @@ export default function App() {
                       </details>
                       <button
                         className="button primary full"
-                        disabled={!profile?.confirmed || working}
+                        disabled={busy || !profile?.confirmed || working}
                         onClick={analyze}
                       >
                         <Sparkles size={16} />
