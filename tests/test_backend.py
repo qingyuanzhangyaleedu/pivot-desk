@@ -26,6 +26,96 @@ class Core(unittest.TestCase):
         storage.DB = self.old
         self.tmp.cleanup()
 
+    def test_new_sector_search_contract(self):
+        # Use the bundled real listings so a fresh installation exercises the new filters.
+        with TestClient(app) as client:
+            options = client.get("/api/status").json()["industries"]
+            for sector in [
+                "Consulting",
+                "Finance & Fintech",
+                "Consumer & Retail",
+                "Climate & Sustainability",
+            ]:
+                with self.subTest(sector=sector):
+                    self.assertIn(sector, options)
+                    result = client.post(
+                        "/api/search",
+                        json={"preferences": {"query": "", "industries": [sector]}},
+                    ).json()
+                    self.assertGreater(len(result["jobs"]), 0)
+                    self.assertTrue(
+                        all(j["industry"] == sector for j in result["jobs"])
+                    )
+                    self.assertTrue(
+                        all(
+                            "investment banking"
+                            not in (j["title"] + " " + j["description"]).lower()
+                            for j in result["jobs"]
+                        )
+                    )
+            self.assertEqual(Preferences().industries, ["Healthcare", "Technology"])
+            self.assertEqual(Preferences().exclude, ["investment banking"])
+
+    def test_mba_consulting_keeps_location_constraint(self):
+        with TestClient(app) as client:
+            result = client.post(
+                "/api/search",
+                json={
+                    "preferences": {
+                        "query": "mba",
+                        "industries": ["Consulting"],
+                        "exclude": [],
+                    }
+                },
+            ).json()
+            self.assertTrue(any("MBA" in j["title"] for j in result["jobs"]))
+            self.assertFalse(
+                any(j["company"] == "Two Roads Consulting" for j in result["jobs"])
+            )
+            self.assertTrue(
+                all("San Francisco" in j["location"] for j in result["jobs"])
+            )
+            # The strict exclusion also catches descriptions that mention prior
+            # banking experience; never silently relax a shopper's preference.
+            strict = client.post(
+                "/api/search",
+                json={"preferences": {"query": "mba", "industries": ["Consulting"]}},
+            ).json()
+            self.assertEqual(strict["jobs"], [])
+            widened = client.post(
+                "/api/search",
+                json={
+                    "preferences": {
+                        "query": "mba",
+                        "industries": ["Consulting"],
+                        "regions": [],
+                    }
+                },
+            ).json()
+            self.assertTrue(
+                any(j["company"] == "Two Roads Consulting" for j in widened["jobs"])
+            )
+
+    def test_washington_dc_is_not_west_coast(self):
+        job = {
+            **JOBS[0],
+            "title": "MBA Associate",
+            "description": "Consulting",
+            "industry": "Consulting",
+        }
+        prefs = Preferences(query="mba", industries=["Consulting"], exclude=[])
+        for location in [
+            "Washington, District of Columbia, United States",
+            "Washington, DC",
+            "Washington D.C.",
+        ]:
+            self.assertTrue(tools.eligible({**job, "location": location}, prefs))
+        for location in [
+            "Seattle, Washington, United States",
+            "San Francisco; Washington, DC",
+        ]:
+            self.assertEqual(tools.eligible({**job, "location": location}, prefs), [])
+
     def test_sensitive_fields_not_in_analyst(self):
         p = {**DEMO, "veteran_status": "private", "work_authorization": "private"}
         self.assertEqual(set(tools.professional(p)), {"facts"})

@@ -1,0 +1,9 @@
+{
+  "duration_seconds": 113.88,
+  "plays_in_chromium": true,
+  "format": "WebM",
+  "captioned": true,
+  "human_narration": false,
+  "fictional_applicant": true,
+  "live_ai_run": "output/evidence/final_demo_run.json"
+}

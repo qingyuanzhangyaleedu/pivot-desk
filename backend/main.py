@@ -139,6 +139,7 @@ async def status(request: Request):
         "model": config.MODEL_NAME,
         "ai_available": config.key_status(),
         "source_count": len(tools.BOARDS),
+        "industries": tools.INDUSTRIES,
         "profile": storage.get(sid(request), "profile"),
         "draft": storage.get(sid(request), "profile_draft"),
         "preferences": storage.get(sid(request), "preferences"),

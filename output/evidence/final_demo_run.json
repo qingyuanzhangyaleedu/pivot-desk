@@ -1,0 +1,107 @@
+{
+  "run_id": "a47645b8-c505-4f83-a225-643a2a7d5006",
+  "kind": "fit",
+  "status": "completed",
+  "result": {
+    "summary": "Heartflow\u2019s role is a credible but unconfirmed step up from the applicant\u2019s healthcare strategy and business analysis work. Market research, financial modeling, pricing analysis, and cross-functional collaboration provide relevant foundations. They do not yet establish enterprise strategy ownership, executive/board decision support, or advanced scenario modeling at the scope requested. The MBA\u2019s listed 2027 end year aligns broadly with the Summer 2027 title, but completion timing and accreditation need confirmation. Year-only employment dates suggest roughly five years of analytical experience; exact qualifying tenure remains uncertain. Healthcare operations exposure is transferable, not proof of cardiac medical-technology expertise.",
+    "evidence": [
+      {
+        "fact_id": "F1",
+        "job_quote": "Frame and answer high-stakes, ambiguous business questions using market research, competitive analysis, customer and clinical insights, financial modeling, and scenario analysis.",
+        "connection": "Leading market research and financial modeling for care-access expansion directly supports two requested analytical methods. Competitive analysis, scenario analysis, and high-stakes enterprise decision ownership are not evidenced."
+      },
+      {
+        "fact_id": "F2",
+        "job_quote": "Identify opportunities to improve how Heartflow creates and captures value, including pricing and contracting models, customer economics, operating model, decision rights, organizational interfaces, and scalable processes.",
+        "connection": "Customer retention and pricing analysis offer transferable evidence for customer economics and pricing work. Contracting models and enterprise operating-model redesign are not evidenced."
+      },
+      {
+        "fact_id": "F1",
+        "job_quote": "Cross-functional leadership: proven ability to influence, align, and drive work across teams without direct reporting authority.",
+        "connection": "Partnering with clinical operations to reduce scheduling delays is relevant cross-functional execution evidence. The facts do not establish reporting relationships or the scale of influence."
+      },
+      {
+        "fact_id": "F2",
+        "job_quote": "Executive-level synthesis and communication: able to distill complex analysis into crisp narratives, decision points, and recommendations for senior leadership and board audiences.",
+        "connection": "Presenting business cases to cross-functional stakeholders provides a communication foundation. Executive or board audiences and decision-memo ownership are not evidenced."
+      },
+      {
+        "fact_id": "F3",
+        "job_quote": "MBA from an accredited program (required).",
+        "connection": "The reviewed fact lists an MBA candidacy spanning 2025\u20132027 with healthcare strategy and technology product management focus. Degree completion by the start date and program accreditation are not evidenced."
+      }
+    ],
+    "gaps": [
+      "Bachelor\u2019s degree in a listed or related field, MBA accreditation, and completed MBA by the required start date are not evidenced.",
+      "Exact months establishing 5+ years of qualifying experience are not evidenced by year-only dates.",
+      "Enterprise strategy, portfolio prioritization, long-range planning, and executive/board decision support ownership are not evidenced.",
+      "Advanced scenario analysis and expert-level spreadsheet proficiency are not evidenced; financial modeling and Excel dashboard work are documented.",
+      "Medical-device strategy, cardiac diagnostics, reimbursement, and clinical-evidence expertise are not evidenced; regulated-industry experience is preferred, not required.",
+      "AI/LLM strategy workflows, on-site availability in either listed California office, and moderate-travel availability are not evidenced."
+    ],
+    "questions": [
+      "What is the expected MBA completion month, is the program accredited, and what bachelor\u2019s degree has been completed?",
+      "What are the exact employment months and any additional qualifying experience relevant to the 5+ year requirement?",
+      "Can you work on-site in San Francisco or Rohnert Park and accommodate moderate travel for the intended Summer 2027 start?",
+      "Have you owned executive-facing strategic decisions, scenario models, or AI-assisted strategy workflows that are not captured in the reviewed facts?"
+    ],
+    "interview_angles": [
+      "Use F1\u2019s care-access expansion to explain the market question, modeling assumptions, investment alternatives, recommendation, and actual outcome; distinguish your ownership from others\u2019 decisions.",
+      "Use F2\u2019s pricing and retention analysis to discuss customer economics, experimental design, and trade-offs relevant to business-model strategy.",
+      "Use F1\u2019s scheduling work to demonstrate cross-functional alignment and measurement, bringing verified scope and results rather than invented metrics.",
+      "Build on F3\u2019s healthcare strategy focus to prepare a clearly labeled Heartflow case covering cardiac diagnostics, reimbursement, competitive positioning, and portfolio choices\u2014not a claim of prior domain experience."
+    ]
+  },
+  "error": null,
+  "events": [
+    {
+      "id": 40,
+      "agent": "Evidence analyst",
+      "action": "start",
+      "summary": "Starting a bounded structured analysis. Contact and sensitive answers are excluded from job analysis.",
+      "created": "2026-10-25T15:01:20.008298+00:00"
+    },
+    {
+      "id": 41,
+      "agent": "Evidence analyst",
+      "action": "model_response",
+      "summary": "get_candidate_evidence, get_job_evidence",
+      "created": "2026-10-25T15:01:21.282314+00:00"
+    },
+    {
+      "id": 42,
+      "agent": "Evidence analyst",
+      "action": "tool_return",
+      "summary": "get_candidate_evidence: 8 reviewed professional facts.",
+      "created": "2026-10-25T15:01:21.284442+00:00"
+    },
+    {
+      "id": 43,
+      "agent": "Evidence analyst",
+      "action": "tool_return",
+      "summary": "get_job_evidence: selected employer text; original source retained.",
+      "created": "2026-10-25T15:01:21.284464+00:00"
+    },
+    {
+      "id": 44,
+      "agent": "Evidence analyst",
+      "action": "model_response",
+      "summary": "final_result",
+      "created": "2026-10-25T15:01:21.467303+00:00"
+    },
+    {
+      "id": 45,
+      "agent": "Evidence analyst",
+      "action": "end",
+      "summary": "Validated structured output ready for human review.",
+      "created": "2026-10-25T15:01:21.472410+00:00"
+    }
+  ],
+  "usage": {
+    "input_tokens": 3225,
+    "cached_tokens": 0,
+    "output_tokens": 892,
+    "requests": 2,
+    "cost": 0.07685
+  }
+}

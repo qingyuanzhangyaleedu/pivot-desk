@@ -38,3 +38,8 @@ pivot-profile-private*.json
 *.db-wal
 *.db-shm
 docs/assignment_brief.pdf
+
+# Rebuilt submission bundles and temporary demo recordings
+submission/
+output/demo_temp/
+pivot-anonymous-trial*.json

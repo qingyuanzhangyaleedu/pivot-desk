@@ -16,3 +16,6 @@ Record actual observations and exact feedback, not expected responses. Do not su
 | Exact feedback | No quote collected |
 
 Automated checks in `output/evidence/` are functional evidence only. Keep this status explicit until a person actually tries the app.
+
+## Ready-to-use worksheet
+Open `output/user_trial.html` by double-clicking. It provides manual/app timers, correction counts, a place for an observed qualification gap and exact feedback, and an anonymous JSON download. It sends nothing to a server and does not contain default results. Complete both rounds and review private details before sharing the export. The worksheet itself has been tested; no real participant result has been created.

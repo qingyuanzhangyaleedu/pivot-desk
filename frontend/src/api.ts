@@ -9,6 +9,8 @@ export interface Fact {
   evidence_quote: string;
 }
 export interface Profile {
+  first_name?: string;
+  last_name?: string;
   full_name: string;
   email: string;
   phone: string;
@@ -22,6 +24,7 @@ export interface Profile {
   work_authorization: string | null;
 }
 export interface Prefs {
+  exclude_scope?: "full_posting" | "title_only";
   query: string;
   regions: string[];
   industries: string[];
@@ -49,6 +52,7 @@ export interface Job {
   evidence: { fact_id: string; title: string; terms: string[] }[];
   matched_terms: string[];
   label: string;
+  application_checks: { kind: string; label: string; source_quote: string; question: string }[];
 }
 export interface Run {
   run_id: string;

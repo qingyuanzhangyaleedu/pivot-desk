@@ -518,6 +518,29 @@ export default function App() {
                   <Plus size={17} /> Add a posting
                 </button>
               </div>
+              <div className="role-shortcuts" aria-label="MBA role shortcuts">
+                <span>Try a role focus</span>
+                {[
+                  ["MBA roles", "mba"],
+                  ["Consulting", "consultant associate"],
+                  ["Corporate finance", "finance"],
+                  ["Brand & growth", "marketing growth"],
+                  ["Climate & energy", "energy sustainability"],
+                ].map(([label, query]) => (
+                  <button
+                    key={label}
+                    disabled={busy || working}
+                    onClick={() => {
+                      const next = { ...prefs, query };
+                      setPrefs(next);
+                      void search(next);
+                    }}
+                  >
+                    {label}
+                  </button>
+                ))}
+                <small>Uses your selected sectors and locations.</small>
+              </div>
               <details className="filters" open>
                 <summary>
                   <SlidersHorizontal size={16} />
@@ -576,19 +599,28 @@ export default function App() {
                   <div>
                     <label>COMPANY SECTOR</label>
                     <div className="chips">
-                      {["Healthcare", "Technology"].map((x) => (
-                        <button
-                          className={
-                            prefs.industries.includes(x) ? "chosen" : ""
-                          }
-                          onClick={() => toggle("industries", x)}
-                          key={x}
-                        >
-                          {prefs.industries.includes(x) && <Check size={13} />}{" "}
-                          {x}
-                        </button>
-                      ))}
+                      {(status?.industries || defaults.industries).map(
+                        (x: string) => (
+                          <button
+                            className={
+                              prefs.industries.includes(x) ? "chosen" : ""
+                            }
+                            aria-pressed={prefs.industries.includes(x)}
+                            onClick={() => toggle("industries", x)}
+                            key={x}
+                          >
+                            {prefs.industries.includes(x) && (
+                              <Check size={13} />
+                            )}{" "}
+                            {x}
+                          </button>
+                        ),
+                      )}
                     </div>
+                    <p className="sector-note">
+                      More paths for MBA recruiting. These are employer sectors,
+                      not a guarantee of MBA eligibility.
+                    </p>
                     <label>OPPORTUNITY TYPE</label>
                     <select
                       aria-label="Opportunity type"
@@ -608,6 +640,7 @@ export default function App() {
                     <label>LEAVE OUT</label>
                     <input
                       aria-label="Excluded terms"
+                      aria-describedby="exclusion-help"
                       value={prefs.exclude.join(", ")}
                       onChange={(e) =>
                         setPrefs({
@@ -619,6 +652,14 @@ export default function App() {
                         })
                       }
                     />
+                    <p className="sector-note" id="exclusion-help">
+                      Full posting also excludes mentions of past experience.
+                      Choose title only to keep consulting roles that mention banking experience.
+                    </p>
+                    <select aria-label="Exclusion scope" value={prefs.exclude_scope || "full_posting"} onChange={e => setPrefs({...prefs, exclude_scope: e.target.value as "full_posting" | "title_only"})}>
+                      <option value="full_posting">Exclude from full posting</option>
+                      <option value="title_only">Exclude from role title only</option>
+                    </select>
                     <label>MINIMUM PUBLISHED BASE PAY / YEAR</label>
                     <input
                       type="number"
@@ -639,7 +680,7 @@ export default function App() {
               </details>
               <div className="results-head">
                 <div>
-                  <strong>{searchInfo?.total_matches ?? "—"} roles</strong>
+                  <strong>{searchInfo?.total_matches ?? "—"} {searchInfo?.total_matches === 1 ? "role" : "roles"}</strong>
                   <span>
                     from {searchInfo?.screened ?? 0} stored postings ·{" "}
                     {searchInfo?.excluded ?? 0} filtered out
@@ -828,6 +869,19 @@ export default function App() {
                           ),
                         )}
                       </div>
+                      <section className="application-checks" aria-label="Check before applying">
+                        <span className="eyebrow">BEFORE YOU INVEST THE TIME</span>
+                        <h3>Check before applying</h3>
+                        <p>A high overlap score can hide a qualification gap. These excerpts flag wording to review, including preferred or conditional criteria.</p>
+                        {selected.application_checks?.length ? selected.application_checks.map(check => (
+                          <details key={check.kind}>
+                            <summary>{check.label}<span>Review</span></summary>
+                            <blockquote>{check.source_quote}</blockquote>
+                            <p>{check.question}</p>
+                          </details>
+                        )) : <p>No screening phrases detected. Read the full posting; this is not an eligibility clearance.</p>}
+                        <small>Source-based screening. No AI call, no eligibility verdict.</small>
+                      </section>
                       <h4>What connects</h4>
                       {selected.evidence?.length ? (
                         selected.evidence.slice(0, 3).map((e) => (
@@ -1047,6 +1101,8 @@ export default function App() {
                       <div className="fields">
                         {[
                           ["full_name", "Full name"],
+                          ["first_name", "Given name for forms (optional)"],
+                          ["last_name", "Family name for forms (optional)"],
                           ["email", "Email"],
                           ["phone", "Phone"],
                           ["location", "Location"],

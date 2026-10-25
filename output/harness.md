@@ -14,7 +14,7 @@ React calls FastAPI through `/api`. The production build is served from port 800
 | Evidence analyst | Selected job ID and reviewed profile | FitAnalysis: evidence connections, gaps, questions and preparation angles |
 | get_candidate_evidence | No model-selected argument; bound to this session’s profile | Professional facts only; excludes contact and optional sensitive fields |
 | get_job_evidence | No model-selected argument; bound to selected listing | Employer text and source identity; untrusted content |
-| refresh_jobs | Fixed five-board registry | Public job records and per-source status; no arbitrary URL fetch |
+| refresh_jobs | Fixed ten-board registry | Public job records and per-source status; no arbitrary URL fetch |
 | eligible | Job + explicit preferences | Exclusion reasons; all hard filters precede scoring |
 | rank | Job + reviewed facts + query | 0–100 overlap score, component points and matched terms |
 | extract_document | Bytes + filename | Text from PDF/DOCX/TXT in memory, or a clear validation error |
@@ -181,7 +181,7 @@ Every field has a Pydantic description. Extra fields are rejected. Optional info
 | AI concurrency | One active run per server process; use one Uvicorn worker |
 | Timeouts | 60 seconds per provider request; 100 seconds per run |
 | Retries | One structured-output validation retry within the request cap; no automatic provider retries |
-| Public feeds | Five; concurrency 3; 20-second timeout; 6.5 MB response cap; 1,000 records per board |
+| Public feeds | Ten; concurrency 3; 20-second timeout; 6.5 MB response cap; 1,000 records per board |
 | Feed cache | 15-minute refresh TTL; failed sources retain labeled snapshots |
 | Search results | At most 100 cards; 50 private imported listings per browser |
 | Documents | 4 MB file, 15 PDF pages, 25,000 text characters, 12 MB expanded DOCX |
@@ -211,3 +211,24 @@ See `output/evidence/` for real model counts, the full/truncated comparison, bro
 
 ## Rehearsal
 A fresh local Git clone passed all 23 offline checks, created a fresh runtime database, served the compiled frontend from port 8000 and returned six strategy matches from the bundled 95-record sample. Setup took 9.84 seconds with warm package caches. Parent-only dotenv discovery used a non-secret fixture; actual AI behavior was verified separately with the configured account. No public repository has been published.
+
+## Yale SOM career-path expansion
+Company-sector options now come from `BOARDS` through `/api/status.industries`, so the UI matches live source coverage. Four optional sectors were added: Consulting (The Brattle Group, Two Roads Consulting), Finance & Fintech (Chime), Consumer & Retail (Quince), and Climate & Sustainability (Clearway Energy). Healthcare and Technology remain the defaults; saved preferences and the investment-banking exclusion are unchanged. The source registry has ten boards and the offline sample now has 146 real records.
+
+MBA role shortcuts change title keywords only: MBA, consultant/associate, finance, marketing/growth, and energy/sustainability. They do not relax geography or other constraints. Company-sector membership is not a claim that every role fits an MBA. The earlier 95-record setup and five-board cost-evaluation evidence above remains the historical baseline. Current source evidence is in `output/evidence/sector_expansion.json`.
+
+Location filtering distinguishes Washington, D.C. from Washington state. Excluded terms still apply to both titles and full descriptions; the interface now explains that a mention of past experience can also exclude a role. The new sector tests cover this behavior without silently weakening preferences.
+
+At the sector-expansion checkpoint, 26 offline backend checks passed. Browser tests searched all four new sectors, checked retained location/exclusion settings and mobile layout, and rechecked pipeline persistence and the application lab. These checks made no AI calls. Evidence: `output/evidence/sector_tests.txt`, `output/evidence/sector_browser.json`, and `output/screenshots/mba-sectors.png`.
+
+## Application checks and helper hardening
+
+Search results now include `application_checks`: at most six exact-source excerpts labeled degree, experience, license, location, travel or authorization. Each `ApplicationCheck` has `kind` (topic), `label` (readable name), `source_quote` (up to 700 original characters), and `question` (what the applicant should verify). These are ordinary code, not another AI request. Required, preferred and conditional wording remains visible in the quote. They do not decide eligibility or reduce the overlap score. Numeric-years matching can miss written quantities such as “a decade”; reading the full posting and requesting AI analysis remain useful.
+
+`Preferences.exclude_scope` defaults to `full_posting` to preserve existing behavior. `title_only` is an explicit user choice: it excludes banking job titles without suppressing every consulting posting that mentions previous banking experience. Neither choice silently relaxes location or other filters.
+
+`Profile.first_name` and `last_name` are optional, explicitly reviewed form answers. They default to empty; the system never splits a full name using cultural assumptions. Export includes them, while the analyst still receives only the professional-facts allowlist. The shared browser adapter now reads `aria-labelledby`, separates repeated education entries, and checks element identity again before each fill so a framework-replaced field cannot inherit a stale approval. The extension and lab use byte-identical adapters. Native selects require an exact option; custom comboboxes, dates, logins and legal acceptance stay manual.
+
+Current evidence: `final_tests.txt` (35 offline checks), `form_regression.json`, `readiness_browser.json`, and `readiness_benchmark.json` in `output/evidence/`. The benchmark deliberately selected 12 real snapshots and surfaced 32/32 author-labeled topics. It is a development coverage check, not a random sample or a human-outcome study. A travel-benefit false positive was corrected; the written-years miss is retained as a limitation.
+
+A live Pfizer Workday inspection reached Create Account/Sign In after Apply Manually. No account was created and no applicant data or agreement was submitted. This verifies the public navigation boundary only; it does not establish authenticated form compatibility. See `workday_public_check.json`.

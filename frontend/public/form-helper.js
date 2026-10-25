@@ -12,6 +12,7 @@
     return (
       [...(el.labels || [])].map((x) => x.innerText).join(" ") ||
       el.getAttribute("aria-label") ||
+      (el.getAttribute("aria-labelledby") || "").split(/\s+/).map(id => document.getElementById(id)?.textContent || "").join(" ").trim() ||
       el.getAttribute("data-automation-id") ||
       el.placeholder ||
       el.name ||
@@ -33,6 +34,8 @@
     const name = norm(label(el));
     const allowed = new Set([
       "full_name",
+      "first_name",
+      "last_name",
       "email",
       "phone",
       "linkedin",
@@ -60,7 +63,11 @@
         ...document.querySelectorAll('[data-automation-id="workExperience"]'),
       ].indexOf(section);
     const experience = facts.filter((f) => f.kind === "experience")[index];
-    const education = facts.find((f) => f.kind === "education");
+    const educationSection = el.closest('[data-education-index],[data-automation-id="educationSection"]');
+    const educationIndex = educationSection?.dataset.educationIndex != null
+      ? Number(educationSection.dataset.educationIndex)
+      : educationSection ? [...document.querySelectorAll('[data-automation-id="educationSection"]')].indexOf(educationSection) : 0;
+    const education = facts.filter((f) => f.kind === "education")[educationIndex];
     if (manual.test(name) || ["checkbox", "radio"].includes(el.type))
       return [null, "Read and answer this on the employer page."];
     if (/veteran/.test(name))
@@ -107,8 +114,8 @@
     if (!key) return [null, "No reliable field mapping; enter manually."];
     if (key === "first_name" || key === "last_name")
       return [
-        null,
-        "Names are not split automatically. Use the full-name field or enter each part yourself.",
+        packet[key] || null,
+        "Uses only an explicitly reviewed name part. Full names are never split automatically.",
       ];
     if (key.startsWith("experience."))
       return [
@@ -167,8 +174,7 @@
     });
   }
   function apply(packet, approved) {
-    const plan = preview(packet),
-      elements = fields();
+    const plan = preview(packet), elements = fields();
     let filled = 0;
     const skipped = [];
     for (const choice of approved) {
@@ -183,6 +189,13 @@
         continue;
       }
       const el = elements[row.index];
+      // A framework can replace or reorder inputs in response to an earlier
+      // change event. Never apply an old approval to a changed element.
+      const current = preview(packet)[row.index];
+      if (!el?.isConnected || fields()[row.index] !== el || !current || current.key !== row.key || current.value !== row.value) {
+        skipped.push(choice.label);
+        continue;
+      }
       const proto =
         el.tagName === "SELECT"
           ? HTMLSelectElement.prototype

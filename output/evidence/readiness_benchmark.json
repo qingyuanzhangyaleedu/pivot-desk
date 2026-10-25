@@ -1,0 +1,491 @@
+{
+  "scope": "Development coverage check on 12 deliberately selected real employer snapshots. Author annotations, not an independent benchmark or applicant trial. Categories are prompts to inspect, not mandatory conditions or eligibility decisions.",
+  "cases": [
+    {
+      "id": "gh:heartflowinc:6218422004",
+      "company": "Heartflow",
+      "title": "Manager, Corporate Strategy - MBA Grad, Summer 2027",
+      "url": "https://job-boards.greenhouse.io/heartflowinc/jobs/6218422004",
+      "score": 80,
+      "expected_topics": [
+        "degree",
+        "experience",
+        "travel",
+        "location"
+      ],
+      "surfaced_topics": [
+        "degree",
+        "experience",
+        "location",
+        "travel"
+      ],
+      "missing_topics": [],
+      "additional_topics": [],
+      "all_quotes_exact": true,
+      "checks": [
+        {
+          "kind": "degree",
+          "label": "Degree and graduation timing",
+          "source_quote": "MBA from an accredited program (required).",
+          "question": "Does your degree or expected graduation date match this wording? A candidate is not yet a graduate."
+        },
+        {
+          "kind": "experience",
+          "label": "Experience and seniority",
+          "source_quote": "5+ years of combined pre- and post-MBA experience in corporate strategy, strategy consulting, strategic finance, business operations, or a similarly analytical strategy role.",
+          "question": "Which experience qualifies, and can you verify the exact months? Overlapping roles should not be counted twice."
+        },
+        {
+          "kind": "location",
+          "label": "Work arrangement",
+          "source_quote": "This is an on-site position:",
+          "question": "Can you meet this location or attendance condition? A remote label alone does not establish state eligibility."
+        },
+        {
+          "kind": "travel",
+          "label": "Travel expectations",
+          "source_quote": "Moderate travel may be expected for internal planning sessions, leadership offsites, industry conferences, and select external meetings.",
+          "question": "What travel does the role require, and does it fit your availability?"
+        }
+      ]
+    },
+    {
+      "id": "gh:heartflowinc:6218478004",
+      "company": "Heartflow",
+      "title": "Product Manager - MBA Grad, Summer 2027",
+      "url": "https://job-boards.greenhouse.io/heartflowinc/jobs/6218478004",
+      "score": 51,
+      "expected_topics": [
+        "degree",
+        "experience",
+        "travel"
+      ],
+      "surfaced_topics": [
+        "degree",
+        "experience",
+        "location",
+        "travel"
+      ],
+      "missing_topics": [],
+      "additional_topics": [
+        "location"
+      ],
+      "all_quotes_exact": true,
+      "checks": [
+        {
+          "kind": "degree",
+          "label": "Degree and graduation timing",
+          "source_quote": "This is a product management role for a recent MBA graduate who wants to build products that change how heart disease is diagnosed and managed.",
+          "question": "Does your degree or expected graduation date match this wording? A candidate is not yet a graduate."
+        },
+        {
+          "kind": "experience",
+          "label": "Experience and seniority",
+          "source_quote": "5\u20137 years of professional experience before or during your MBA, for example in product management, engineering, consulting, healthcare, medical devices, or health technology.",
+          "question": "Which experience qualifies, and can you verify the exact months? Overlapping roles should not be counted twice."
+        },
+        {
+          "kind": "location",
+          "label": "Work arrangement",
+          "source_quote": "Customer discovery: Spend time on site with cardiologists, radiologists, CT technologists, and health-system administrators to understand how CCTA programs run end to end, from referral and scan acquisition to interpretation, reporting, and follow-up.",
+          "question": "Can you meet this location or attendance condition? A remote label alone does not establish state eligibility."
+        },
+        {
+          "kind": "travel",
+          "label": "Travel expectations",
+          "source_quote": "Willingness to travel to customer sites (approximately 20%).",
+          "question": "What travel does the role require, and does it fit your availability?"
+        }
+      ]
+    },
+    {
+      "id": "gh:heartflowinc:6207194004",
+      "company": "Heartflow",
+      "title": "Finance Manager",
+      "url": "https://job-boards.greenhouse.io/heartflowinc/jobs/6207194004",
+      "score": 51,
+      "expected_topics": [
+        "degree",
+        "experience",
+        "license",
+        "location"
+      ],
+      "surfaced_topics": [
+        "degree",
+        "experience",
+        "license",
+        "location"
+      ],
+      "missing_topics": [],
+      "additional_topics": [],
+      "all_quotes_exact": true,
+      "checks": [
+        {
+          "kind": "degree",
+          "label": "Degree and graduation timing",
+          "source_quote": "Education: Bachelor\u2019s degree in Finance, Accounting, or a related field (required).",
+          "question": "Does your degree or expected graduation date match this wording? A candidate is not yet a graduate."
+        },
+        {
+          "kind": "experience",
+          "label": "Experience and seniority",
+          "source_quote": "Experience: 6+ years of FP&A, Strategic Finance, or Accounting experience.",
+          "question": "Which experience qualifies, and can you verify the exact months? Overlapping roles should not be counted twice."
+        },
+        {
+          "kind": "license",
+          "label": "Professional credentials",
+          "source_quote": "MBA, CPA, or CMA is a plus.",
+          "question": "Is this required or preferred, and do you hold the stated credential? A transferable skill does not establish licensure."
+        },
+        {
+          "kind": "location",
+          "label": "Work arrangement",
+          "source_quote": "Hybrid Requirement: San Francisco or Rohnert Park office: Four times per week",
+          "question": "Can you meet this location or attendance condition? A remote label alone does not establish state eligibility."
+        }
+      ]
+    },
+    {
+      "id": "gh:oscar:8241475",
+      "company": "Oscar Health",
+      "title": "Director, Member Experience Strategy",
+      "url": "https://job-boards.greenhouse.io/oscar/jobs/8241475",
+      "score": 58,
+      "expected_topics": [
+        "degree",
+        "experience",
+        "location",
+        "travel"
+      ],
+      "surfaced_topics": [
+        "degree",
+        "experience",
+        "license",
+        "location",
+        "travel"
+      ],
+      "missing_topics": [],
+      "additional_topics": [
+        "license"
+      ],
+      "all_quotes_exact": true,
+      "checks": [
+        {
+          "kind": "degree",
+          "label": "Degree and graduation timing",
+          "source_quote": "Master's degree",
+          "question": "Does your degree or expected graduation date match this wording? A candidate is not yet a graduate."
+        },
+        {
+          "kind": "experience",
+          "label": "Experience and seniority",
+          "source_quote": "10+ years experience in healthcare strategy and operations, and/or related field",
+          "question": "Which experience qualifies, and can you verify the exact months? Overlapping roles should not be counted twice."
+        },
+        {
+          "kind": "license",
+          "label": "Professional credentials",
+          "source_quote": "Clinical licensure",
+          "question": "Is this required or preferred, and do you hold the stated credential? A transferable skill does not establish licensure."
+        },
+        {
+          "kind": "location",
+          "label": "Work arrangement",
+          "source_quote": "Unless you reside within 30 miles of a designated office, you would be Hybrid.",
+          "question": "Can you meet this location or attendance condition? A remote label alone does not establish state eligibility."
+        },
+        {
+          "kind": "travel",
+          "label": "Travel expectations",
+          "source_quote": "Travel required:",
+          "question": "What travel does the role require, and does it fit your availability?"
+        }
+      ]
+    },
+    {
+      "id": "gh:oscar:8202916",
+      "company": "Oscar Health",
+      "title": "Associate Director, Market Strategy Advisory",
+      "url": "https://job-boards.greenhouse.io/oscar/jobs/8202916",
+      "score": 58,
+      "expected_topics": [
+        "degree",
+        "experience",
+        "travel"
+      ],
+      "surfaced_topics": [
+        "degree",
+        "experience",
+        "travel"
+      ],
+      "missing_topics": [],
+      "additional_topics": [],
+      "all_quotes_exact": true,
+      "checks": [
+        {
+          "kind": "degree",
+          "label": "Degree and graduation timing",
+          "source_quote": "Bachelor's Degree",
+          "question": "Does your degree or expected graduation date match this wording? A candidate is not yet a graduate."
+        },
+        {
+          "kind": "experience",
+          "label": "Experience and seniority",
+          "source_quote": "8+ years of experience in healthcare, consulting, strategy, or ACA/IFP product roles",
+          "question": "Which experience qualifies, and can you verify the exact months? Overlapping roles should not be counted twice."
+        },
+        {
+          "kind": "travel",
+          "label": "Travel expectations",
+          "source_quote": "Willingness to travel up to 25%.",
+          "question": "What travel does the role require, and does it fit your availability?"
+        }
+      ]
+    },
+    {
+      "id": "gh:airbnb:8259920",
+      "company": "Airbnb",
+      "title": "Principal, Strategic Finance & Analytics, Incubations",
+      "url": "https://careers.airbnb.com/positions/8259920?gh_jid=8259920",
+      "score": 73,
+      "expected_topics": [
+        "experience"
+      ],
+      "surfaced_topics": [
+        "experience"
+      ],
+      "missing_topics": [],
+      "additional_topics": [],
+      "all_quotes_exact": true,
+      "checks": [
+        {
+          "kind": "experience",
+          "label": "Experience and seniority",
+          "source_quote": "10+ years of relevant experience.",
+          "question": "Which experience qualifies, and can you verify the exact months? Overlapping roles should not be counted twice."
+        }
+      ]
+    },
+    {
+      "id": "gh:stripe:8078168",
+      "company": "Stripe",
+      "title": "Growth Marketing Manager, Greater China",
+      "url": "https://stripe.com/jobs/search?gh_jid=8078168",
+      "score": 59,
+      "expected_topics": [
+        "experience"
+      ],
+      "surfaced_topics": [
+        "experience"
+      ],
+      "missing_topics": [],
+      "additional_topics": [],
+      "all_quotes_exact": true,
+      "checks": [
+        {
+          "kind": "experience",
+          "label": "Experience and seniority",
+          "source_quote": "5+ years of digital marketing experience with significant hands-on experience running paid campaigns on China-native platforms (WeChat, Baidu, Douyin, Xiaohongshu, or similar)",
+          "question": "Which experience qualifies, and can you verify the exact months? Overlapping roles should not be counted twice."
+        }
+      ]
+    },
+    {
+      "id": "gh:thebrattlegroup:4738128005",
+      "company": "The Brattle Group",
+      "title": "Associate, MBA - Corporate Finance",
+      "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4738128005",
+      "score": 41,
+      "expected_topics": [
+        "degree"
+      ],
+      "surfaced_topics": [
+        "degree"
+      ],
+      "missing_topics": [],
+      "additional_topics": [],
+      "all_quotes_exact": true,
+      "checks": [
+        {
+          "kind": "degree",
+          "label": "Degree and graduation timing",
+          "source_quote": "Undergraduate transcripts and MBA course list (unofficial copies accepted)",
+          "question": "Does your degree or expected graduation date match this wording? A candidate is not yet a graduate."
+        }
+      ]
+    },
+    {
+      "id": "gh:tworoadsconsulting:4110370005",
+      "company": "Two Roads Consulting",
+      "title": "Management Consultant - MBA Intern (Summer 2027)",
+      "url": "https://job-boards.greenhouse.io/tworoadsconsulting/jobs/4110370005",
+      "score": 20,
+      "expected_topics": [
+        "degree",
+        "travel"
+      ],
+      "surfaced_topics": [
+        "degree",
+        "travel"
+      ],
+      "missing_topics": [],
+      "additional_topics": [],
+      "all_quotes_exact": true,
+      "checks": [
+        {
+          "kind": "degree",
+          "label": "Degree and graduation timing",
+          "source_quote": "We are seeking candidates for a 10-12 week summer MBA internship with Two Roads Consulting in Dallas, TX.",
+          "question": "Does your degree or expected graduation date match this wording? A candidate is not yet a graduate."
+        },
+        {
+          "kind": "travel",
+          "label": "Travel expectations",
+          "source_quote": "You will develop deep client relationships with local, Fortune 500 clients; no travel is required",
+          "question": "What travel does the role require, and does it fit your availability?"
+        }
+      ]
+    },
+    {
+      "id": "gh:chime:8869627002",
+      "company": "Chime",
+      "title": "AEO Content Strategist",
+      "url": "https://boards.greenhouse.io/chime/jobs/8869627002?gh_jid=8869627002",
+      "score": 51,
+      "expected_topics": [
+        "experience",
+        "location"
+      ],
+      "surfaced_topics": [
+        "experience",
+        "location"
+      ],
+      "missing_topics": [],
+      "additional_topics": [],
+      "all_quotes_exact": true,
+      "checks": [
+        {
+          "kind": "experience",
+          "label": "Experience and seniority",
+          "source_quote": "5+ years of experience in editorial strategy, content strategy, or SEO content, with a track record of growing organic visibility, traffic, or conversions.",
+          "question": "Which experience qualifies, and can you verify the exact months? Overlapping roles should not be counted twice."
+        },
+        {
+          "kind": "location",
+          "label": "Work arrangement",
+          "source_quote": "#LI-Onsite #LI-AM1",
+          "question": "Can you meet this location or attendance condition? A remote label alone does not establish state eligibility."
+        }
+      ]
+    },
+    {
+      "id": "gh:quince:5421994008",
+      "company": "Quince",
+      "title": "Associate Merchant - Women's Active",
+      "url": "https://job-boards.greenhouse.io/quince/jobs/5421994008",
+      "score": 51,
+      "expected_topics": [
+        "degree",
+        "experience"
+      ],
+      "surfaced_topics": [
+        "degree",
+        "experience",
+        "location"
+      ],
+      "missing_topics": [],
+      "additional_topics": [
+        "location"
+      ],
+      "all_quotes_exact": true,
+      "checks": [
+        {
+          "kind": "degree",
+          "label": "Degree and graduation timing",
+          "source_quote": "Bachelor\u2019s Degree",
+          "question": "Does your degree or expected graduation date match this wording? A candidate is not yet a graduate."
+        },
+        {
+          "kind": "experience",
+          "label": "Experience and seniority",
+          "source_quote": "3+ years of apparel merchandising experience.",
+          "question": "Which experience qualifies, and can you verify the exact months? Overlapping roles should not be counted twice."
+        },
+        {
+          "kind": "location",
+          "label": "Work arrangement",
+          "source_quote": "Role is based in San Francisco California, with 3 days per week in office requirement.",
+          "question": "Can you meet this location or attendance condition? A remote label alone does not establish state eligibility."
+        }
+      ]
+    },
+    {
+      "id": "gh:clearwayjobs:5103138007",
+      "company": "Clearway Energy",
+      "title": "Associate, Project Development",
+      "url": "https://job-boards.greenhouse.io/clearwayjobs/jobs/5103138007",
+      "score": 44,
+      "expected_topics": [
+        "degree",
+        "experience",
+        "travel",
+        "authorization",
+        "location"
+      ],
+      "surfaced_topics": [
+        "authorization",
+        "degree",
+        "experience",
+        "location",
+        "travel"
+      ],
+      "missing_topics": [],
+      "additional_topics": [],
+      "all_quotes_exact": true,
+      "checks": [
+        {
+          "kind": "degree",
+          "label": "Degree and graduation timing",
+          "source_quote": "A bachelor\u2019s degree in engineering, business, economics, finance, environmental science, or a related field is required.",
+          "question": "Does your degree or expected graduation date match this wording? A candidate is not yet a graduate."
+        },
+        {
+          "kind": "experience",
+          "label": "Experience and seniority",
+          "source_quote": "Minimum of 2 years of applicable experience in the renewable energy industry in the U.S., with direct experience and competence in full life-cycle development of utility-scale solar and/or wind projects.",
+          "question": "Which experience qualifies, and can you verify the exact months? Overlapping roles should not be counted twice."
+        },
+        {
+          "kind": "location",
+          "label": "Work arrangement",
+          "source_quote": "#LI-Hybrid",
+          "question": "Can you meet this location or attendance condition? A remote label alone does not establish state eligibility."
+        },
+        {
+          "kind": "travel",
+          "label": "Travel expectations",
+          "source_quote": "Ability to travel as required to projects within the footprint of Clearway\u2019s West Region (>25%).",
+          "question": "What travel does the role require, and does it fit your availability?"
+        },
+        {
+          "kind": "authorization",
+          "label": "Work authorization wording",
+          "source_quote": "No visa sponsorship or any kind of sponsorship for employment authorization is available for this role, now or in the future.",
+          "question": "Read the employer wording and answer personally. We do not infer citizenship, authorization or sponsorship needs."
+        }
+      ]
+    }
+  ],
+  "expected_topics": 32,
+  "surfaced_expected_topics": 32,
+  "all_quotes_exact": true,
+  "elapsed_ms": 49.1,
+  "model_calls": 0,
+  "worded_years_challenge": {
+    "text": "A decade of strategy experience is required.",
+    "detected": false,
+    "limitation": "Numeric-years pattern does not cover written quantities such as a decade."
+  },
+  "baseline": "Original score-only search response contained no separately labeled application checks. AI assessment and the full posting remain available in both versions."
+}

@@ -1,0 +1,40 @@
+test_absent_profile_no_score (test_backend.Core.test_absent_profile_no_score) ... ok
+test_api_isolation_and_delete (test_backend.Core.test_api_isolation_and_delete) ... ok
+test_bad_upload_rejected (test_backend.Core.test_bad_upload_rejected) ... ok
+test_budget_persists_in_db (test_backend.Core.test_budget_persists_in_db) ... ok
+test_consent_required (test_backend.Core.test_consent_required) ... ok
+test_cross_site_change_blocked (test_backend.Core.test_cross_site_change_blocked) ... ok
+test_dangerous_url_rejected (test_backend.Core.test_dangerous_url_rejected) ... ok
+test_docx_upload (test_backend.Core.test_docx_upload) ... ok
+test_exact_quote_validation (test_backend.Core.test_exact_quote_validation) ... ok
+test_filters_exclusion (test_backend.Core.test_filters_exclusion) ... ok
+test_invented_job_quote_rejected (test_backend.Core.test_invented_job_quote_rejected) ... ok
+test_mba_consulting_keeps_location_constraint (test_backend.Core.test_mba_consulting_keeps_location_constraint) ... ok
+test_new_sector_search_contract (test_backend.Core.test_new_sector_search_contract) ... ok
+test_no_unreviewed_profile_use (test_backend.Core.test_no_unreviewed_profile_use) ... ok
+test_pdf_upload (test_backend.Core.test_pdf_upload) ... ok
+test_private_import_isolation (test_backend.Core.test_private_import_isolation) ... ok
+test_queue_reserves_budget (test_backend.Core.test_queue_reserves_budget) ... ok
+test_rank_is_deterministic (test_backend.Core.test_rank_is_deterministic) ... ok
+test_remote_not_assumed (test_backend.Core.test_remote_not_assumed) ... ok
+test_sensitive_fields_not_in_analyst (test_backend.Core.test_sensitive_fields_not_in_analyst) ... ok
+test_text_upload (test_backend.Core.test_text_upload) ... ok
+test_title_query_not_boilerplate (test_backend.Core.test_title_query_not_boilerplate) ... ok
+test_tracker_persistence (test_backend.Core.test_tracker_persistence) ... ok
+test_unknown_fact_rejected (test_backend.Core.test_unknown_fact_rejected) ... ok
+test_unknown_salary_not_invented (test_backend.Core.test_unknown_salary_not_invented) ... ok
+test_washington_dc_is_not_west_coast (test_backend.Core.test_washington_dc_is_not_west_coast) ... ok
+test_combined_experience_detected (test_readiness.Readiness.test_combined_experience_detected) ... ok
+test_completed_degree_before_intro (test_readiness.Readiness.test_completed_degree_before_intro) ... ok
+test_explicit_exclusion_scope (test_readiness.Readiness.test_explicit_exclusion_scope) ... ok
+test_explicit_names_export_without_ai_access (test_readiness.Readiness.test_explicit_names_export_without_ai_access) ... ok
+test_missing_name_parts_stay_empty (test_readiness.Readiness.test_missing_name_parts_stay_empty) ... ok
+test_no_keyword_does_not_invent_a_check (test_readiness.Readiness.test_no_keyword_does_not_invent_a_check) ... ok
+test_no_qualification_verdict_from_negation (test_readiness.Readiness.test_no_qualification_verdict_from_negation) ... ok
+test_real_source_quotes_and_bounds (test_readiness.Readiness.test_real_source_quotes_and_bounds) ... ok
+test_travel_benefit_is_not_an_expectation (test_readiness.Readiness.test_travel_benefit_is_not_an_expectation) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.612s
+
+OK

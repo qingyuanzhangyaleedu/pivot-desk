@@ -1,12 +1,14 @@
 {
+  "copied_artifacts_open_offline": true,
   "report_images_loaded": true,
-  "report_sections": 12,
+  "report_sections": 14,
   "report_overflow": [],
+  "report_printed_pages": 14,
   "slides": 9,
   "slide_overflow": [],
   "arrow_navigation": true,
+  "fullscreen": true,
   "slide_images_loaded": true,
   "browser_errors": [],
-  "letter_printed_pages": 12,
-  "offline": true
+  "passed": true
 }

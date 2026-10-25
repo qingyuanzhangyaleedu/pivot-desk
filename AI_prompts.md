@@ -56,3 +56,35 @@ as the evidence supporting each completed outcome.
 > Keep gpt-6-astra from my workspace instructions
 
 **Outcome:** Retained gpt-6-astra and its actual measured costs. Documented that this user-selected configuration differs from the course-key model restriction.
+
+## Task 3 — Expand the career areas for a Yale SOM MBA student
+
+**User prompt (as provided):**
+
+> I like the fact that you did healthcare and technology maybe add a few that pertains an MBA student at Yale SOM
+
+**Outcome:** Added Consulting, Finance & Fintech, Consumer & Retail, and Climate & Sustainability filters backed by five additional public employer boards. Added title-keyword shortcuts for MBA career searches, preserved existing preferences and exclusions, and expanded the real offline job sample. The selections were informed by Yale SOM’s career reporting and business/environment career resources; no Yale affiliation or eligibility guarantee is implied.
+
+## Task 4 — Keep the project documentation complete as it develops
+
+**User prompt (as provided):**
+
+> and make sure that you update the files and docs along the way so that the project is complete
+
+**Outcome:** Reconciled current source and test counts across the README, evaluation, design notes, grading checklist and report/deck generator. Preserved earlier measurements as historical evidence. Added an ongoing document-maintenance checklist and a reproducible offline artifact check. Outstanding user testing, employer-form validation and submission items remain explicit; they are not marked complete without evidence.
+
+## Task 5 — Evaluate the project against the grading scheme
+
+**User prompt (as provided):**
+
+> can you evaluate according the grading scheme how much this project can score
+
+**Outcome:** Re-read the original rubric and inspected the current code, report, slides and saved evidence. Saved a category-by-category estimate and prioritized gaps in `output/grading_review.md`. The estimate is conditional and not an instructor grade. No model configuration was changed, no new applicant results were invented, and nothing was published or submitted.
+
+## Task 6 — Improve the project and prepare submission
+
+**User prompt (as provided):**
+
+> improve it to the best ability that you can. Prepare everything needed for a successful submission
+
+**Outcome:** Added source-based application checks beside the match score and an explicit title-only exclusion option. Improved reviewed application-name fields, repeated education mapping, accessible labels and protection against dynamic field replacement. Expanded automated tests and recorded a real public Workday account boundary without creating an account. Prepared a timed real-user worksheet, reproducible benchmark, captioned demonstration and submission materials. Human-outcome evidence, authenticated Workday compatibility and the previously selected model/account exception are not fabricated or silently marked complete.

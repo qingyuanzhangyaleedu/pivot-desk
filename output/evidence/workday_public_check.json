@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-25T14:50:19.692993+00:00",
+  "source_url": "https://pfizer.wd1.myworkdayjobs.com/en-US/PfizerCareers/job/MBA-Strategy---Consulting-Summer-Associate_4960972",
+  "title": "Pfizer MBA Strategy & Consulting Summer Associate",
+  "action": "Opened public role, clicked Apply, then Apply Manually. Stopped at the sign-in/create-account gate. No applicant information entered.",
+  "visible_buttons": [
+    "English",
+    "Sign In",
+    "Search for Jobs",
+    "",
+    "Sign In",
+    "Forgot your password?"
+  ],
+  "screenshot": "output/screenshots/workday-apply-gate.png",
+  "authenticated_form_tested": false,
+  "account_created": false,
+  "application_submitted": false,
+  "agreements_accepted": false
+}

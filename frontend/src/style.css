@@ -1605,3 +1605,42 @@ code {
     margin-bottom: 18px;
   }
 }
+
+.role-shortcuts {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 18px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.role-shortcuts button {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  color: var(--pink);
+  padding: 7px 11px;
+  font-size: 12px;
+}
+.role-shortcuts button:hover {
+  background: var(--pale);
+}
+.role-shortcuts small {
+  font-size: 11px;
+}
+.sector-note {
+  font-size: 11px;
+  margin: 8px 0 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.application-checks { margin: 24px 0; padding: 20px; background: #f9edf2; border: 1px solid #d9a8bd; border-radius: 12px; }
+.application-checks h3 { margin: 8px 0; font-size: 21px; }
+.application-checks > p, .application-checks details p { font-size: 13px; line-height: 1.6; color: #584652; }
+.application-checks details { padding: 11px 0; border-top: 1px solid #dfc7d3; }
+.application-checks summary { cursor: pointer; font-size: 13px; font-weight: 700; }
+.application-checks summary span { float: right; font-size: 10px; font-weight: 500; color: #70485c; }
+.application-checks blockquote { margin: 12px 0; padding-left: 12px; border-left: 3px solid #b43d70; font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; }
+.application-checks > small { display: block; font-size: 11px; color: #70485c; margin-top: 10px; }

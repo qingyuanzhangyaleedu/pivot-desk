@@ -68,7 +68,7 @@ The extension requests `activeTab`, `scripting` and session storage, with no per
 
 ## Data and limitations
 
-Five curated public Greenhouse boards: Heartflow, Oscar Health, Figma, Airbnb and Stripe. The app is not a general crawl of the entire job market. `Add a posting` accepts copied text and an HTTPS reference link from another site, including Workday; the server does not fetch arbitrary submitted URLs. A source failure preserves its dated snapshot and displays a warning. The bundled sample contains 95 records fetched October 25, 2026; refresh retrieves current board data, which changes over time.
+Ten curated public Greenhouse boards: Heartflow, Oscar Health, Figma, Airbnb, Stripe, The Brattle Group, Two Roads Consulting, Chime, Quince and Clearway Energy. The app is not a general crawl of the entire job market. `Add a posting` accepts copied text and an HTTPS reference link from another site, including Workday; the server does not fetch arbitrary submitted URLs. A source failure preserves its dated snapshot and displays a warning. The bundled sample contains 146 records fetched October 25, 2026; refresh retrieves current board data, which changes over time.
 
 The location filter uses the employer’s text; US-remote does not establish eligibility in every state. Company sectors are manual source labels. A salary appears only when an explicit annual USD range is parsed. Unknown dates, compensation, employment type and qualifications remain unknown. A high overlap score can still hide a seniority or domain gap: review the source and analyst’s questions.
 
@@ -112,3 +112,43 @@ python tests/browser_smoke.py
 ```
 
 Rebuild the offline report/deck from the saved evidence with `python scripts/build_deliverables.py`. The embedded reveal.js runtime is vendored with its MIT license; no CDN is used.
+
+## More paths for Yale SOM MBA recruiting
+
+Keep Healthcare and Technology selected, or add **Consulting**, **Finance & Fintech**, **Consumer & Retail**, and **Climate & Sustainability** under Company sector. These are employer-sector labels, not evidence of an MBA requirement or Yale affiliation. Role shortcuts change only the title keywords; selected sectors, locations and exclusions stay in force. Try Consulting + the MBA roles shortcut for explicit MBA openings. Excluded terms scan full descriptions too: Brattle’s MBA role mentions prior investment-banking experience, so the default exclusion hides it. Choose “role title only” to keep that role while still excluding banking job titles. Two Roads' Dallas internship appears only after you broaden the location filter.
+
+The choices draw on [Yale SOM’s career report](https://som.yale.edu/programs/mba/career-paths/employment-report/2025-mba-career-data-analysis-assistant-dean) and its [Business and the Environment Club](https://groups.som.yale.edu/env/home/). Source coverage is curated; this is an independent project, not a Yale recruiting feed.
+
+## Documentation and completion status
+
+The current app has 10 employer sources, 6 company sectors and 146 bundled public-job records. The latest 35-test result is `output/evidence/final_tests.txt`; `sector_browser.json` records the added sector searches and preserved filters. The earlier clean-clone and model-cost measurements remain dated baseline evidence.
+
+Use `docs/project_plan.md` for the document map and remaining tasks, and `docs/requirements.md` for the grading checklist. The app is a tested local prototype; a real applicant trial, live employer-form validation, resolution of the course model/account conflict, and publication/final submission are still outstanding.
+
+After updating a report or slide claim, edit the generator and run:
+
+```sh
+python scripts/build_deliverables.py
+# Requires requirements-dev.txt and Chromium, installed as described above.
+python scripts/check_deliverables.py
+```
+
+The check opens both artifacts offline, verifies embedded images and navigation, and checks the report’s printed page count and layout.
+
+## Check before applying
+A selected role now displays exact employer wording about degree timing, experience, credentials, work arrangement, travel and authorization. The checks run in ordinary code at no model cost and do not determine eligibility. They include conditional/preferred wording and can miss unfamiliar phrasing. Read the source and use the analyst to examine your actual evidence.
+
+The exclusion selector defaults to the full posting. Choose **role title only** if a consulting role mentions past banking experience but you only want to exclude banking jobs. In My evidence, optional given/family name fields help the application extension without guessing how to split a name. Repeated education records and accessible labels are supported; custom controls and employer authentication remain manual.
+
+Additional reproducible checks (after installing the optional browser dependencies):
+
+```sh
+python scripts/evaluate_readiness.py
+python tests/browser_forms.py
+# With backend on 8000 and frontend on 5173:
+python tests/browser_readiness.py
+```
+
+`output/user_trial.html` is a local worksheet for a real participant's timed comparison. It contains no invented results. `output/demo.webm` is a captioned automated walkthrough with fictional applicant data and a real AI review; it is not a narrated human trial. The submission checklist and exact files to upload are in `output/submission_checklist.md`.
+
+The final source scan checks configured credential values and common key patterns without printing them. Reproduce it with `python scripts/verify_release.py`. A fresh committed local-copy rehearsal is available with `python scripts/check_clean_clone.py`; it installs in a temporary directory and uses port 8771 to avoid disturbing the running app. It makes no model call.

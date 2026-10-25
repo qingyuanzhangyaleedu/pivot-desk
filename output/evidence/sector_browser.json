@@ -1,0 +1,29 @@
+{
+  "url": "http://localhost:5173/",
+  "sector_choices": 6,
+  "searches": {
+    "Consulting": [
+      "Associate, MBA - Economics/Finance"
+    ],
+    "Finance & Fintech": {
+      "results": 3,
+      "example": "Senior Associate, Strategic Finance (Growth)"
+    },
+    "Consumer & Retail": {
+      "results": 4,
+      "example": "Senior Data Scientist, Growth"
+    },
+    "Climate & Sustainability": {
+      "results": 2,
+      "example": "Senior Manager, Energy Management"
+    }
+  },
+  "exclusion_preserved": true,
+  "location_preserved": true,
+  "no_dc_in_west_coast_mba_results": true,
+  "mobile_overflow": false,
+  "page_errors": [],
+  "model_calls": 0,
+  "profile": "fictional demo",
+  "note": "Consulting MBA test explicitly cleared description exclusion only for its second search; default exclusion produced zero results as expected."
+}

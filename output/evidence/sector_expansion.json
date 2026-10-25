@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-25T14:07:57.619070+00:00",
+  "boards": 10,
+  "industries": [
+    "Healthcare",
+    "Technology",
+    "Consulting",
+    "Finance & Fintech",
+    "Consumer & Retail",
+    "Climate & Sustainability"
+  ],
+  "new_sources": [
+    {
+      "company": "The Brattle Group",
+      "industry": "Consulting",
+      "live_count": 58,
+      "sample_count": 12,
+      "west_coast_or_us_remote_after_exclusions": 8,
+      "example": "Assistant General Counsel"
+    },
+    {
+      "company": "Two Roads Consulting",
+      "industry": "Consulting",
+      "live_count": 3,
+      "sample_count": 3,
+      "west_coast_or_us_remote_after_exclusions": 0,
+      "example": null
+    },
+    {
+      "company": "Chime",
+      "industry": "Finance & Fintech",
+      "live_count": 73,
+      "sample_count": 12,
+      "west_coast_or_us_remote_after_exclusions": 65,
+      "example": "AEO Content Strategist"
+    },
+    {
+      "company": "Quince",
+      "industry": "Consumer & Retail",
+      "live_count": 155,
+      "sample_count": 12,
+      "west_coast_or_us_remote_after_exclusions": 47,
+      "example": "Account Executive, Enterprise"
+    },
+    {
+      "company": "Clearway Energy",
+      "industry": "Climate & Sustainability",
+      "live_count": 68,
+      "sample_count": 12,
+      "west_coast_or_us_remote_after_exclusions": 24,
+      "example": "Analyst, Market Optimization & Trading"
+    }
+  ],
+  "sample_total": 146,
+  "note": "Company-sector labels; no Yale affiliation or candidate eligibility implied. Existing preferences were not changed."
+}

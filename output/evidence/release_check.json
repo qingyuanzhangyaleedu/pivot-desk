@@ -1,0 +1,14 @@
+{
+  "candidate_file_count": 136,
+  "missing": [],
+  "credential_findings": [],
+  "historical_findings": [],
+  "configured_credential_values_checked": 1,
+  "model": "gpt-6-astra",
+  "boards": 10,
+  "sectors": 6,
+  "bundled_jobs": 146,
+  "git_remote_present": false,
+  "passed": true,
+  "note": "No secret values printed. Pattern scan and configured-value matching do not prove absence of every possible secret."
+}

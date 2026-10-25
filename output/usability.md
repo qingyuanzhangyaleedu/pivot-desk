@@ -17,3 +17,12 @@ The agent notebook shows real tool activity while an analysis runs. Usage & proo
 
 ## User testing status
 Automated browser checks are recorded in `output/evidence/browser_checks.json`. They are not human feedback. No applicant has yet completed a recruiting trial, and no hiring, time-saving percentage or satisfaction claim has been invented.
+
+## Broader MBA career choices
+Company sector now offers four additional areas with real source feeds: Consulting, Finance & Fintech, Consumer & Retail, and Climate & Sustainability. Click a role shortcut to search for MBA, consulting, finance, brand/growth or climate/energy titles. The shortcut keeps the user's geography, sector and exclusions. The existing healthcare/technology focus remains the starting point.
+
+## Check an application before investing time
+Each selected role has a “Check before applying” panel with the employer's actual degree, experience and other screening language. A high skill-overlap score cannot erase those questions. The applicant can also scope excluded phrases to titles instead of entire descriptions, preserving consulting roles that mention banking experience while still filtering banking job titles. Both changes work without model calls.
+
+## Keep application names and education accurate
+The reviewed profile accepts optional given/family names directly. The helper uses those values without splitting names and maps separate education sections to separate records. It rechecks every target field after earlier change events so dynamic forms cannot redirect an old approval to a replaced field. Controlled DOM tests cover these behaviors; a real employer's authenticated application remains unverified.

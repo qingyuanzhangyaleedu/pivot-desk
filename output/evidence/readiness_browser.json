@@ -1,0 +1,10 @@
+{
+  "application_checks_visible": true,
+  "exact_degree_requirement_visible": true,
+  "title_only_exclusion_keeps_phrase": true,
+  "consulting_mba_matches": 1,
+  "mobile_no_overflow": true,
+  "trial_requires_completed_observations": true,
+  "errors": [],
+  "model_calls": 0
+}

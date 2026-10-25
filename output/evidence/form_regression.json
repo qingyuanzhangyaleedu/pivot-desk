@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "Explicit given/family names; aria-labelledby; two separate education records; exact native-select option",
+    "Existing different email protected; password, agreement, signature, unknown date, sensitive answer and custom combobox left manual",
+    "Framework replaced an input after the first change: stale approval skipped",
+    "Full name never automatically split when reviewed parts are absent",
+    "Misleading data-pivot-key cannot bypass sensitive-answer review"
+  ],
+  "passed": true,
+  "fixture_scope": "Controlled DOM, including Workday-style attributes. Not an authenticated Workday compatibility test.",
+  "shared_adapter_identical": true,
+  "submitted": false,
+  "model_calls": 0
+}

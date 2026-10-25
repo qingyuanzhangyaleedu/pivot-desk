@@ -6,7 +6,7 @@ from html.parser import HTMLParser
 from xml.etree import ElementTree
 import httpx
 from pypdf import PdfReader
-from .models import Job, Profile, Preferences
+from .models import Job, Profile, Preferences, ApplicationCheck
 from . import storage
 
 BOARDS = [
@@ -15,7 +15,25 @@ BOARDS = [
     {"slug": "figma", "company": "Figma", "industry": "Technology"},
     {"slug": "airbnb", "company": "Airbnb", "industry": "Technology"},
     {"slug": "stripe", "company": "Stripe", "industry": "Technology"},
+    {
+        "slug": "thebrattlegroup",
+        "company": "The Brattle Group",
+        "industry": "Consulting",
+    },
+    {
+        "slug": "tworoadsconsulting",
+        "company": "Two Roads Consulting",
+        "industry": "Consulting",
+    },
+    {"slug": "chime", "company": "Chime", "industry": "Finance & Fintech"},
+    {"slug": "quince", "company": "Quince", "industry": "Consumer & Retail"},
+    {
+        "slug": "clearwayjobs",
+        "company": "Clearway Energy",
+        "industry": "Climate & Sustainability",
+    },
 ]
+INDUSTRIES = list(dict.fromkeys(board["industry"] for board in BOARDS))
 MAX_SOURCE_BYTES = 6500000
 
 
@@ -253,6 +271,7 @@ REGIONS = {
         "connecticut",
         "new haven",
         "washington dc",
+        "district of columbia",
         "philadelphia",
         "virginia",
         "maryland",
@@ -261,7 +280,11 @@ REGIONS = {
 
 
 def eligible(job, prefs):
-    text = (job["title"] + " " + job["description"]).lower()
+    text = (
+        job["title"]
+        if prefs.exclude_scope == "title_only"
+        else job["title"] + " " + job["description"]
+    ).lower()
     loc = job["location"].lower()
     reasons = []
     for word in prefs.exclude:
@@ -270,12 +293,22 @@ def eligible(job, prefs):
     if prefs.industries and job["industry"] not in prefs.industries:
         reasons.append("Industry outside preference")
     if prefs.regions:
-        locations = [
-            term.lower()
-            for region in prefs.regions
-            for term in REGIONS.get(region, [region])
-        ]
-        in_region = any(term in loc for term in locations)
+        in_region = False
+        for region in prefs.regions:
+            region_loc = loc
+            if region == "West Coast":
+                # Washington, D.C. is not Washington state; other listed cities
+                # can still qualify a posting with multiple office locations.
+                region_loc = re.sub(
+                    r"\bwashington(?:,\s*|\s+)(?:district of columbia|d\.?\s*c\.?)\b",
+                    "",
+                    loc,
+                )
+            in_region |= any(
+                re.search(r"(?<!\w)" + re.escape(term.lower()) + r"(?!\w)", region_loc)
+                is not None
+                for term in REGIONS.get(region, [region])
+            )
         us_remote = bool(
             re.search(r"remote", loc)
             and re.search(r"united states|\busa\b|\bu\.?s\.?\b", loc)
@@ -293,6 +326,106 @@ def eligible(job, prefs):
     if prefs.query.strip() and not (tokens(prefs.query) & tokens(job["title"])):
         reasons.append("No role keyword match")
     return reasons
+
+
+CHECK_PATTERNS = [
+    (
+        "degree",
+        "Degree and graduation timing",
+        r"\bMBA\b|\bPh\.?D\.?\b|\b(?:bachelor|master|doctoral)[’'s]*\s+(?:degree|of)|graduat(?:ion|ing)\s+(?:date|between|in|by)",
+        "Does your degree or expected graduation date match this wording? A candidate is not yet a graduate.",
+    ),
+    (
+        "experience",
+        "Experience and seniority",
+        r"\b\d+\s*(?:[-–]\s*\d+|\+)?\s*(?:years?|yrs?)\b[^\n.;]{0,95}\bexperience\b",
+        "Which experience qualifies, and can you verify the exact months? Overlapping roles should not be counted twice.",
+    ),
+    (
+        "license",
+        "Professional credentials",
+        r"\b(?:licensed|licensure|registered nurse|active.{0,30}license|bar admission|admitted to.{0,30}bar|CPA|CFA|board.certified)\b",
+        "Is this required or preferred, and do you hold the stated credential? A transferable skill does not establish licensure.",
+    ),
+    (
+        "location",
+        "Work arrangement",
+        r"\b(?:on[ -]?site|in[ -]person|hybrid|relocat\w*|\d+\s+days?\s+(?:a|per|each)\s+week|remote.{0,35}(?:only|within|residen))\b",
+        "Can you meet this location or attendance condition? A remote label alone does not establish state eligibility.",
+    ),
+    (
+        "travel",
+        "Travel expectations",
+        r"\b(?:travel|traveling|travelling)\b",
+        "What travel does the role require, and does it fit your availability?",
+    ),
+    (
+        "authorization",
+        "Work authorization wording",
+        r"\b(?:sponsorship|work authoriz\w*|authoriz\w*.{0,20}work|security clearance)\b",
+        "Read the employer wording and answer personally. We do not infer citizenship, authorization or sponsorship needs.",
+    ),
+]
+
+
+def application_checks(job):
+    """Surface up to six exact-source checks at zero model cost; never decide eligibility.
+
+    This conservative keyword screen includes preferred and conditional wording.
+    It does not establish that a condition is mandatory or that the applicant meets it.
+    """
+    description = job["description"]
+    checks = []
+    for kind, label, pattern, question in CHECK_PATTERNS:
+        candidates = []
+        for match in re.finditer(pattern, description, re.I):
+            start = max(
+                description.rfind("\n", 0, match.start()),
+                description.rfind(". ", 0, match.start()) + 1,
+                0,
+            )
+            stops = [
+                p
+                for p in (
+                    description.find("\n", match.end()),
+                    description.find(". ", match.end()),
+                )
+                if p >= 0
+            ]
+            end = min(stops) + 1 if stops else len(description)
+            start = max(start, match.start() - 220)
+            quote = description[start : min(end, start + 700)].strip()
+            if (
+                kind == "travel"
+                and re.search(
+                    r"travel (?:credits|reimbursement)|travel.{0,20}stipend",
+                    quote,
+                    re.I,
+                )
+                and not re.search(
+                    r"required|willing|ability to travel|expected|\d+\s*%", quote, re.I
+                )
+            ):
+                continue
+            # Prefer qualification wording to introductory copy. This is still
+            # a review prompt, never a claim that a condition is mandatory.
+            priority = len(
+                re.findall(
+                    r"required|must|minimum|before the start|accredited|enrolled|graduat|\d+\+? years",
+                    quote,
+                    re.I,
+                )
+            )
+            candidates.append((priority, quote))
+        if not candidates:
+            continue
+        quote = max(candidates, key=lambda item: item[0])[1]
+        checks.append(
+            ApplicationCheck(
+                kind=kind, label=label, source_quote=quote, question=question
+            ).model_dump()
+        )
+    return checks
 
 
 def rank(job, profile, prefs):
@@ -314,6 +447,7 @@ def rank(job, profile, prefs):
             skills |= words
     if not facts:
         return {
+            "application_checks": application_checks(job),
             "score": None,
             "breakdown": {},
             "evidence": [],
@@ -342,6 +476,7 @@ def rank(job, profile, prefs):
         else 20
     )
     return {
+        "application_checks": application_checks(job),
         "score": min(100, skill_points + experience_points + focus_points),
         "breakdown": {
             "resume_skills": skill_points,
@@ -404,6 +539,8 @@ def export_packet(profile):
     return {
         "format": "pivot-profile-v1",
         "full_name": profile["full_name"],
+        "first_name": profile.get("first_name", ""),
+        "last_name": profile.get("last_name", ""),
         "email": profile["email"],
         "phone": profile["phone"],
         "location": profile["location"],

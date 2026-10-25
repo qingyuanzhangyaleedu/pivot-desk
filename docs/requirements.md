@@ -39,8 +39,10 @@ does not run for graders; it cannot replace the 5 setup points.
       or a local app that works from a fresh clone using the README.
 - [ ] If online, put the app URL at the top of the README and report and check it
       on submission day, including any host sleep behavior.
-- [ ] If local, time a fresh-clone setup. **More than 10 minutes without a running
-      app earns zero of the 5 "teaching staff can run it" points.**
+- [x] Timed the initial local Git clone: 9.84 seconds with warm caches; see
+      `output/evidence/clean_setup.json`. Recheck the final published version.
+      **More than 10 minutes without a running app earns zero of the 5
+      "teaching staff can run it" points.**
 - [x] Search for `.env` first in the repository root, then one directory above it.
 - [x] Test the grader's arrangement with the key file only in the parent folder.
 - [ ] If an additional API key beyond the permitted names is needed, the brief
@@ -117,7 +119,8 @@ real new addition. Their **idea** is capped at Tier 1 without that new contribut
 
 ## Final evidence checks
 
-- [x] Claims and screenshots reflect the same implemented app version.
+- [x] Current feature counts match code; screenshots and measurements from the
+      initial baseline are identified as historical rather than presented as new runs.
 - [x] Measured values are separated from assumptions and future plans.
 - [ ] A real user trial is documented without fabricated quotes or results.
 - [x] Token costs are derived from real usage; cached tokens are not double-counted.
@@ -129,4 +132,6 @@ real new addition. Their **idea** is capped at Tier 1 without that new contribut
 
 ## Current handoff
 
-Report: 12 letter-size printed pages. Deck: 9 offline reveal.js slides. Application: working local prototype with live model runs and automated evidence. Outstanding: real applicant trial, authenticated employer Workday test, course-key model conflict, GitHub publication and final submission review. No video or human testimonial has been fabricated.
+Report: 14 letter-size printed pages. Deck: 9 offline reveal.js slides. Application: working local prototype with live model runs and automated evidence. Outstanding: real applicant trial, authenticated employer Workday test, course-key model conflict, GitHub publication and final submission review. No video or human testimonial has been fabricated.
+
+Current verification: 10 boards, 6 sectors, 146 bundled source records, and 35 passing offline tests. The source-expansion browser results are in `output/evidence/sector_browser.json`. Report/deck image loading, layout and navigation checks are in `output/evidence/artifact_validation.json`. `docs/project_plan.md` tracks the remaining completion work.
