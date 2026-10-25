@@ -1,9 +1,11 @@
 {
   "copied_artifacts_open_offline": true,
+  "report_public_repository_link": true,
   "report_images_loaded": true,
   "report_sections": 15,
   "report_overflow": [],
   "report_printed_pages": 15,
+  "slides_public_repository_link": true,
   "slides": 9,
   "slide_overflow": [],
   "arrow_navigation": true,

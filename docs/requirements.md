@@ -11,8 +11,11 @@ for the accuracy of every word and number submitted.
 Due: **Monday, October 26, 2026 at 6:00 PM on Canvas**. The PDF does not state a time
 zone; confirm the course deadline in Canvas.
 
-- [ ] GitHub repository URL submitted on Canvas. Public, or private with `zlisto`
-      added so the teaching staff can clone it.
+- [x] Public GitHub repository URL visibly linked inside both the report and slides.
+- [ ] Upload only `report.html` and `slides.html` to Canvas (testing video optional).
+      The October 25 instructor announcement replaces the separate website-URL
+      submission step. No PowerPoint, ZIP, URL text file or other extras.
+      A private repository would need its status stated in both files and grader access; ours is public.
 - [x] `report.html`: one HTML file, 10-15 normal letter-size printed pages,
       including screenshots, with regular readable text and no filler.
 - [x] `slides.html`: one HTML file using reveal.js, at most 10 slides.

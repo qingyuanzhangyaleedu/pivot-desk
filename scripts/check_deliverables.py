@@ -17,6 +17,7 @@ EVIDENCE = ROOT / "output/evidence"
 
 def main():
     checks = {"copied_artifacts_open_offline": True}
+    repo_url = (ROOT / "output/github_url.txt").read_text().strip()
     screenshots = EVIDENCE / "artifact_checks"
     screenshots.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="pivot-artifacts-") as temp:
@@ -32,6 +33,9 @@ def main():
             errors = []
             page.on("pageerror", lambda error: errors.append(str(error)))
             page.goto((folder / "report.html").as_uri())
+            checks["report_public_repository_link"] = page.locator(
+                f'.sheet:first-child a[href="{repo_url}"]'
+            ).is_visible()
             page.emulate_media(media="print")
             checks["report_images_loaded"] = page.locator("img").evaluate_all(
                 "xs => xs.length > 0 && xs.every(x => x.complete && x.naturalWidth > 0)"
@@ -62,6 +66,9 @@ def main():
             page.emulate_media(media="screen")
             page.goto((folder / "slides.html").as_uri())
             page.wait_for_function("window.Reveal && Reveal.isReady()")
+            checks["slides_public_repository_link"] = page.locator(
+                f'.slides > section:first-child a[href="{repo_url}"]'
+            ).is_visible()
             checks["slides"] = page.evaluate("Reveal.getTotalSlides()")
             checks["slide_overflow"] = []
             for index in range(checks["slides"]):
@@ -94,6 +101,8 @@ def main():
         and checks["slide_images_loaded"]
         and checks["arrow_navigation"]
         and checks["fullscreen"]
+        and checks["report_public_repository_link"]
+        and checks["slides_public_repository_link"]
         and not checks["report_overflow"]
         and not checks["slide_overflow"]
         and not checks["browser_errors"]

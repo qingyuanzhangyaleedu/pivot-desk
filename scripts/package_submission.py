@@ -25,6 +25,14 @@ files = {
 }
 for source, target in files.items():
     shutil.copy2(R / source, OUT / target)
+canvas = OUT / "canvas_upload"
+canvas.mkdir(exist_ok=True)
+canvas_files = ["report.html", "slides.html"]
+extras = {p.name for p in canvas.iterdir()} - set(canvas_files)
+if extras:
+    raise SystemExit("The Canvas upload folder contains unexpected files; preserve them outside that folder before packaging.")
+for name in canvas_files:
+    shutil.copy2(R / name, canvas / name)
 subprocess.run(
     [
         "git",
@@ -49,15 +57,18 @@ with zipfile.ZipFile(OUT / "source.zip") as z:
     )
     assert "pivot-desk/.env.example" in names
 repo_url = (R / "output/github_url.txt").read_text().strip()
-(OUT / "START_HERE.md").write_text(f"""# Pivot Desk submission package
+(OUT / "START_HERE.md").write_text(f"""# Pivot Desk — upload only the two HTML files
 
-Repository URL to paste into Canvas: {repo_url}
+The instructor's October 25 announcement changes Canvas to FILE UPLOAD only.
+Upload canvas_upload/report.html and canvas_upload/slides.html. Both include the public repository URL: {repo_url}.
+The canvas_upload folder contains exactly those two files. A testing video is optional.
+Do not upload this README, the PowerPoint, either ZIP, source files, github_url.txt, the manifest or the trial worksheet. Extra attachments may be penalized.
 
-Double-click report.html and slides.html. Both include their own visuals and work offline.
-Pivot_Desk.pptx is an editable nine-slide PowerPoint companion. The required course deck remains slides.html; the PPTX does not replace it.
+Double-click the two HTML files to review them. Both include their own visuals and work offline.
+Pivot_Desk.pptx is an editable nine-slide PowerPoint companion for personal use only.
 The captioned demo.webm shows fictional applicant data and a real AI review; it is an automated demonstration, not a human trial.
 
-Canvas requires the GitHub repository URL plus report.html and slides.html. The optional video is included here. source.zip is a clean source backup, not a replacement for the required repository URL. See submission_checklist.md for exact Canvas items and remaining evidence limits.
+source.zip and Pivot_Desk_Submission.zip are local backups, not Canvas attachments. See submission_checklist.md for exact instructions and evidence limits.
 
 user_trial.html is a local, anonymous timer worksheet for a real applicant. It contains no completed results. Do not submit empty observations as user evidence.
 
@@ -73,6 +84,8 @@ items = [
     "source.zip",
     "START_HERE.md",
     "github_url.txt",
+    "canvas_upload/report.html",
+    "canvas_upload/slides.html",
 ]
 manifest = {
     "created_at": datetime.now(timezone.utc).isoformat(),
@@ -86,6 +99,10 @@ manifest = {
     },
     "private_files_excluded": True,
     "repository_url": repo_url,
+    "canvas_submission_mode": "file_upload_only",
+    "canvas_upload_directory": "canvas_upload",
+    "canvas_required_files": canvas_files,
+    "canvas_optional_file": "testing video",
     "canvas_submission_completed": False,
     "human_trial_completed": False,
     "authenticated_workday_verified": False,

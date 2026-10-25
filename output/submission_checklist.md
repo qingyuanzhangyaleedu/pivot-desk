@@ -1,12 +1,15 @@
 # Pivot Desk — final Canvas handoff
 
-## Submit these three items
+## Upload only these two files
 
-1. **Website URL:** https://github.com/qingyuanzhangyaleedu/pivot-desk
-2. **Report:** `report.html` — one self-contained file, 15 printed letter-size pages.
-3. **Slide deck:** `slides.html` — one self-contained reveal.js file, nine slides. Arrow keys navigate; F enters fullscreen.
+The instructor's October 25 announcement supersedes the PDF's separate website-URL submission step. Canvas now accepts files only.
 
-The final copies are together in `submission/`. `github_url.txt` contains the URL to paste. `Pivot_Desk.pptx` is an editable companion, not a replacement for the required HTML slides. `source.zip` and `Pivot_Desk_Submission.zip` are backups, not substitutes for the repository link.
+1. **Report:** `report.html` — one self-contained file, 15 printed letter-size pages.
+2. **Slide deck:** `slides.html` — one self-contained reveal.js file, nine slides. Arrow keys navigate; F enters fullscreen.
+
+Use the two files in **`submission/canvas_upload/`**. That folder contains no other files. Both title pages visibly label and link the public repository: https://github.com/qingyuanzhangyaleedu/pivot-desk.
+
+A testing video is optional. **Do not upload the PowerPoint, ZIP archives, source code, URL text file, checklist, manifest or trial worksheet to Canvas.** Those are reference/backup materials in the parent `submission/` folder. The instructor explicitly warned against extra attachments.
 
 The PDF gives a deadline of October 26, 2026, at 6:00 PM. It does not state a timezone; the Canvas assignment is authoritative for the upload deadline. No Canvas upload has been performed by the coding assistant.
 
@@ -31,4 +34,4 @@ The included `demo.webm` is a captioned automated demonstration with fictional a
 
 ## Final student step
 
-Open `submission/report.html` and `submission/slides.html`, review the claims, and upload the two HTML files with the repository URL to Canvas. Keep the original filenames. Confirm Canvas shows a successful submission receipt. The app itself runs locally; the GitHub URL is the required source link, not a hosted application.
+Open `submission/canvas_upload/report.html` and `submission/canvas_upload/slides.html`, review the claims, and upload only those two HTML files using Canvas File Upload. Keep the original filenames. The repository URL is already inside both documents; do not submit it as another attachment. Confirm Canvas shows a successful submission receipt. The app runs locally; the linked public repository contains its source.

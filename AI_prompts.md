@@ -115,3 +115,8 @@ as the evidence supporting each completed outcome.
 **Follow-up:** “it doesn’t matter. the professor said during the class that it can be whatever” (model choice).
 
 **Work:** Reread the brief; retained Astra based on the reported clarification; prepared public GitHub source, repository links, offline report/deck and a fresh remote-clone check. Kept private resumes, personal runtime data and credentials excluded. Canvas upload is a separate final step.
+
+## Updated Canvas submission instructions
+**Prompt:** “make adjustment if necessary,” with the instructor’s October 25 announcement that Canvas accepts files only and extra attachments are penalized.
+
+**Work:** Put an explicit clickable public GitHub URL in the report and HTML slides, updated the handoff instructions, and created `submission/canvas_upload/` with exactly those two HTML files. Kept PowerPoint, ZIPs and other reference materials outside the upload folder. No Canvas submission was performed.

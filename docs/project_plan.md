@@ -40,7 +40,7 @@ After each meaningful change, update the affected rows/documents, run the releva
 - Test the helper on a permitted real employer form before making an actual Workday-compatibility claim. Submission and agreements remain manual.
 - Instructor clarification recorded: the owner reports any model is allowed. The selected Astra configuration remains unchanged.
 - Public GitHub clone and repository links verified; see output/evidence/remote_clean_setup.json.
-- Review the final package and submit it through Canvas. No submission has been made.
+- Review and upload only the two HTML files in `submission/canvas_upload/` to Canvas. Both contain the public repository URL. The October 25 announcement prohibits extra files (testing video optional). No submission has been made.
 
 ## Rubric review
 
