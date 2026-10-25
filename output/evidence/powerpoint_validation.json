@@ -12,5 +12,6 @@
   "first_party_import_passed": true,
   "all_slide_previews_visually_reviewed": true,
   "opened_in_native_powerpoint": false,
-  "notes": "Editable local companion. The required course deck remains slides.html. No private resume details included."
+  "notes": "Editable local companion. The required course deck remains slides.html. No private resume details included.",
+  "final_pptx_reimported_and_all_nine_slides_rendered": true
 }

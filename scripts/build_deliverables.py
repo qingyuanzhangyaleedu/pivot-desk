@@ -282,7 +282,7 @@ page(
 page(
     "12 / EVIDENCE + REPRODUCIBILITY",
     "How to check the claims",
-    """<h2>Reproduce the app</h2><p>Install the pinned Python requirements in a local virtual environment. Run <code>npm ci</code> and <code>npm run build</code> inside frontend/. Put the configured key in the repository or parent .env. From backend/, run <code>uvicorn main:app --host 127.0.0.1 --port 8000</code>. Open localhost:8000.</p><p><strong>Latest local-clone rehearsal:</strong> revision 0739831 installed, built and started in 10.16 seconds with warm caches; all 35 tests passed. Parent-only key discovery used a fixture and port 8771. No AI call or public-clone test. See final_clean_setup.json.</p><h2>Evidence map</h2>"""
+    """<h2>Reproduce the app</h2><p>Install the pinned Python requirements in a local virtual environment. Run <code>npm ci</code> and <code>npm run build</code> inside frontend/. Put the configured key in the repository or parent .env. From backend/, run <code>uvicorn main:app --host 127.0.0.1 --port 8000</code>. Open localhost:8000.</p><p><strong>Latest local-clone rehearsal:</strong> revision df57929 installed, built and started in 10.09 seconds with warm caches; all 35 tests passed. Parent-only key discovery used a fixture and port 8771. No AI call or public-clone test. See final_clean_setup.json.</p><h2>Evidence map</h2>"""
     + table(
         ["File", "Evidence"],
         [
