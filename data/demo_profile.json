@@ -1,0 +1,96 @@
+{
+  "full_name": "Avery Morgan",
+  "email": "avery.morgan@example.com",
+  "phone": "555-010-0142",
+  "location": "New Haven, CT",
+  "linkedin": "https://example.com/avery-demo",
+  "confirmed": true,
+  "demo": true,
+  "veteran_status": null,
+  "work_authorization": null,
+  "warnings": [
+    "Fictional demonstration profile. Replace it with your own reviewed resume."
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "kind": "experience",
+      "title": "Strategy Associate",
+      "organization": "Northstar Community Health (fictional)",
+      "start": "2022",
+      "end": "2025",
+      "description": "Led market research and financial modeling for a care-access expansion. Built dashboards with SQL and Excel; partnered with clinical operations to reduce scheduling delays.",
+      "evidence_quote": "Strategy Associate | Northstar Community Health (fictional) | 2022 | 2025 | Led market research and financial modeling for a care-access expansion. Built dashboards with SQL and Excel; partnered with clinical operations to reduce scheduling delays."
+    },
+    {
+      "id": "F2",
+      "kind": "experience",
+      "title": "Business Analyst",
+      "organization": "Harbor Technology (fictional)",
+      "start": "2020",
+      "end": "2022",
+      "description": "Analyzed customer retention and pricing. Worked with product managers on experiments and presented business cases to cross-functional stakeholders.",
+      "evidence_quote": "Business Analyst | Harbor Technology (fictional) | 2020 | 2022 | Analyzed customer retention and pricing. Worked with product managers on experiments and presented business cases to cross-functional stakeholders."
+    },
+    {
+      "id": "F3",
+      "kind": "education",
+      "title": "Master of Business Administration",
+      "organization": "Example School of Management (fictional)",
+      "start": "2025",
+      "end": "2027",
+      "description": "MBA candidate focused on healthcare strategy and technology product management.",
+      "evidence_quote": "Master of Business Administration | Example School of Management (fictional) | 2025 | 2027 | MBA candidate focused on healthcare strategy and technology product management."
+    },
+    {
+      "id": "F4",
+      "kind": "skill",
+      "title": "SQL",
+      "organization": "",
+      "start": "",
+      "end": "",
+      "description": "SQL",
+      "evidence_quote": "SQL | SQL"
+    },
+    {
+      "id": "F5",
+      "kind": "skill",
+      "title": "Financial modeling",
+      "organization": "",
+      "start": "",
+      "end": "",
+      "description": "Financial modeling",
+      "evidence_quote": "Financial modeling | Financial modeling"
+    },
+    {
+      "id": "F6",
+      "kind": "skill",
+      "title": "Market research",
+      "organization": "",
+      "start": "",
+      "end": "",
+      "description": "Market research",
+      "evidence_quote": "Market research | Market research"
+    },
+    {
+      "id": "F7",
+      "kind": "skill",
+      "title": "Product strategy",
+      "organization": "",
+      "start": "",
+      "end": "",
+      "description": "Product strategy",
+      "evidence_quote": "Product strategy | Product strategy"
+    },
+    {
+      "id": "F8",
+      "kind": "language",
+      "title": "English",
+      "organization": "",
+      "start": "",
+      "end": "",
+      "description": "English (professional working proficiency)",
+      "evidence_quote": "English | English (professional working proficiency)"
+    }
+  ]
+}

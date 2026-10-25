@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-25",
+  "fixture": "data/demo_resume.pdf",
+  "characters_extracted": 914,
+  "assertion": "Extracted text contains Avery Morgan",
+  "result": "passed",
+  "scope": "Text-based PDF only; no OCR"
+}

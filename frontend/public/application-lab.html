@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Application practice lab · Pivot Desk</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font: 15px system-ui;
+        background: #f6f1f3;
+        color: #251c25;
+        margin: 0;
+      }
+      header {
+        background: #251c25;
+        color: white;
+        padding: 24px 5vw;
+      }
+      header a {
+        color: #f5bad1;
+      }
+      main {
+        max-width: 1100px;
+        margin: 30px auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 30px;
+      }
+      h1 {
+        font: 36px Georgia;
+      }
+      fieldset,
+      aside {
+        background: white;
+        border: 1px solid #dfd2d9;
+        border-radius: 14px;
+        padding: 24px;
+        margin: 0 0 18px;
+      }
+      legend {
+        font-weight: 700;
+      }
+      label {
+        display: block;
+        margin: 12px 0;
+      }
+      input:not([type="checkbox"]),
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        border: 1px solid #bdaeb6;
+        border-radius: 7px;
+      }
+      button {
+        background: #b53f70;
+        color: white;
+        border: 0;
+        border-radius: 8px;
+        padding: 12px;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.4;
+      }
+      aside {
+        align-self: start;
+        position: sticky;
+        top: 20px;
+      }
+      #plan {
+        max-height: 400px;
+        overflow: auto;
+        font-size: 13px;
+      }
+      .row {
+        border-bottom: 1px solid #ddd;
+        padding: 8px;
+      }
+      .row small {
+        display: block;
+        color: #71616b;
+      }
+      #status {
+        color: #764358;
+        font-weight: 600;
+      }
+      .notice {
+        background: #f5dce7;
+        padding: 12px;
+        border-radius: 8px;
+      }
+      a {
+        color: #a12e60;
+      }
+      @media (max-width: 760px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+        aside {
+          position: static;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header><a href="/">← Pivot Desk</a> / APPLICATION PRACTICE LAB</header>
+    <main>
+      <section>
+        <h1>Do the repetitive part once.</h1>
+        <p class="notice">
+          Local test form inspired by common application fields. This is not
+          Workday and does not send a real application. Employer-specific
+          Workday pages still need testing.
+        </p>
+        <form onsubmit="event.preventDefault()">
+          <fieldset>
+            <legend>Contact</legend>
+            <label
+              >Full name<input
+                id="name"
+                data-pivot-key="full_name"
+                autocomplete="name" /></label
+            ><label
+              >Email<input
+                id="email"
+                type="email"
+                autocomplete="email" /></label
+            ><label>Phone<input id="phone" type="tel" /></label
+            ><label
+              >Location<input id="location" data-pivot-key="location"
+            /></label>
+          </fieldset>
+          <fieldset
+            data-experience-index="0"
+            data-automation-id="workExperience"
+          >
+            <legend>Previous job 1</legend>
+            <label>Job title<input id="role1" /></label
+            ><label>Company<input id="company1" /></label
+            ><label
+              >Role description<textarea id="description1"></textarea></label
+            ><label
+              >Start month / year<input id="start1" placeholder="MM/YYYY"
+            /></label>
+          </fieldset>
+          <fieldset
+            data-experience-index="1"
+            data-automation-id="workExperience"
+          >
+            <legend>Previous job 2</legend>
+            <label>Job title<input id="role2" /></label
+            ><label>Company<input id="company2" /></label
+            ><label
+              >Role description<textarea id="description2"></textarea>
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Education and language</legend>
+            <label>School<input id="school" /></label
+            ><label>Degree<input id="degree" /></label
+            ><label
+              >Language<select id="language">
+                <option value="">Choose</option>
+                <option>English</option>
+                <option>Spanish</option>
+                <option>Mandarin</option>
+              </select></label
+            >
+          </fieldset>
+          <fieldset>
+            <legend>Voluntary and legal questions</legend>
+            <label
+              >Veteran status<select id="veteran">
+                <option value="">Choose for yourself</option>
+                <option>I am not a protected veteran</option>
+                <option>I identify as a protected veteran</option>
+                <option>I do not wish to answer</option>
+              </select></label
+            ><label
+              ><input id="consent" type="checkbox" /> I agree to this employer's
+              data collection terms</label
+            ><label>Signature<input id="signature" /></label>
+          </fieldset>
+          <button type="submit" disabled>
+            Submission disabled in the practice lab
+          </button>
+        </form>
+      </section>
+      <aside>
+        <h2>Review before filling</h2>
+        <p>
+          Uses the reviewed profile in your current Pivot Desk browser
+          workspace.
+        </p>
+        <button id="preview">Preview profile fields</button>
+        <div id="plan"></div>
+        <label
+          ><input type="checkbox" id="review" /> I reviewed the selected
+          values.</label
+        ><button id="fill" disabled>Fill selected fields</button>
+        <p id="status" role="status"></p>
+        <small
+          >Agreements, signatures, unsupported dates and unknown fields stay
+          manual. Existing answers are protected.</small
+        >
+      </aside>
+    </main>
+    <script src="/form-helper.js"></script>
+    <script>
+      let packet,
+        plan = [];
+      const $ = (id) => document.getElementById(id);
+      $("preview").onclick = async () => {
+        try {
+          const r = await fetch("/api/packet");
+          packet = await r.json();
+          if (!r.ok) throw Error(packet.detail);
+          plan = PivotFill.preview(packet).filter(
+            (x) =>
+              !["review"].includes(
+                document.querySelectorAll("input,textarea,select")[x.index]?.id,
+              ),
+          );
+          $("plan").replaceChildren();
+          for (const row of plan) {
+            if (row.label.includes("reviewed the selected")) continue;
+            const div = document.createElement("div");
+            div.className = "row";
+            const label = document.createElement("label");
+            const box = document.createElement("input");
+            box.type = "checkbox";
+            box.dataset.index = row.index;
+            box.checked = !!row.value && !row.sensitive;
+            box.disabled = !row.value;
+            label.append(box, document.createTextNode(" " + row.label));
+            const small = document.createElement("small");
+            small.textContent = row.value || row.reason;
+            div.append(label, small);
+            $("plan").append(div);
+          }
+          $("status").textContent =
+            plan.filter((x) => x.value).length + " fields available to fill.";
+        } catch (e) {
+          $("status").textContent = e.message;
+        }
+      };
+      $("review").onchange = () => {
+        $("fill").disabled = !$("review").checked;
+      };
+      $("fill").onclick = () => {
+        if (!$("review").checked) return;
+        const selected = plan.filter(
+          (x) =>
+            $("plan").querySelector(`input[data-index="${x.index}"]`)?.checked,
+        );
+        const result = PivotFill.apply(packet, selected);
+        $("status").textContent =
+          `${result.filled} fields filled. No consent accepted. No application submitted.`;
+        $("fill").disabled = true;
+        $("review").checked = false;
+      };
+    </script>
+  </body>
+</html>

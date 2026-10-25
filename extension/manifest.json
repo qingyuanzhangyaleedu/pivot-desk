@@ -1,0 +1,8 @@
+{
+  "manifest_version": 3,
+  "name": "Pivot Desk — Review & Fill",
+  "version": "0.1.0",
+  "description": "Preview and fill reviewed profile facts on the current application page. Never submits or accepts agreements.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "action": { "default_popup": "popup.html" }
+}

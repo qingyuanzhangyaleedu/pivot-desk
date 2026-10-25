@@ -1,0 +1,40 @@
+# Credentials and local settings
+.env
+.env.*
+!.env.example
+.codex/
+.DS_Store
+
+# Python environments and generated caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Frontend dependencies and build output, if a frontend is selected
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Temporary working files; keep curated evidence in output/evidence/
+tmp/
+*.log
+
+# Do not blanket-ignore databases: decide what safe demo data belongs in the repo.
+
+# Private resumes, user state, tokens and personal application records
+runtime/
+*.sqlite-wal
+*.sqlite-shm
+
+# Private exports and local course brief
+pivot-profile-private*.json
+*.db
+*.db-wal
+*.db-shm
+docs/assignment_brief.pdf

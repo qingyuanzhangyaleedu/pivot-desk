@@ -1,0 +1,630 @@
+{
+  "date": "2026-10-25",
+  "fixture": "Fictional Avery Morgan resume; real employer listings",
+  "runs": [
+    {
+      "run_id": "cda9c798-4858-499d-b2db-9ea0d5d97b2c",
+      "kind": "resume",
+      "status": "completed",
+      "result": {
+        "full_name": "Avery Morgan",
+        "email": "avery.morgan@example.com",
+        "phone": "555-010-0142",
+        "location": "New Haven, CT",
+        "facts": [
+          {
+            "id": "F1",
+            "kind": "experience",
+            "title": "Strategy Associate",
+            "organization": "Northstar Community Health (fictional)",
+            "start": "2022",
+            "end": "2025",
+            "description": "Led market research and financial modeling for a care-access expansion. Built dashboards with SQL and Excel; partnered with clinical operations to reduce scheduling delays.",
+            "evidence_quote": "Strategy Associate | Northstar Community Health (fictional) | 2022 | 2025 | Led market research and financial modeling for a care-access expansion. Built dashboards with SQL and Excel; partnered with clinical operations to reduce scheduling delays."
+          },
+          {
+            "id": "F2",
+            "kind": "experience",
+            "title": "Business Analyst",
+            "organization": "Harbor Technology (fictional)",
+            "start": "2020",
+            "end": "2022",
+            "description": "Analyzed customer retention and pricing. Worked with product managers on experiments and presented business cases to cross-functional stakeholders.",
+            "evidence_quote": "Business Analyst | Harbor Technology (fictional) | 2020 | 2022 | Analyzed customer retention and pricing. Worked with product managers on experiments and presented business cases to cross-functional stakeholders."
+          },
+          {
+            "id": "F3",
+            "kind": "education",
+            "title": "Master of Business Administration",
+            "organization": "Example School of Management (fictional)",
+            "start": "2025",
+            "end": "2027",
+            "description": "MBA candidate focused on healthcare strategy and technology product management.",
+            "evidence_quote": "Master of Business Administration | Example School of Management (fictional) | 2025 | 2027 | MBA candidate focused on healthcare strategy and technology product management."
+          },
+          {
+            "id": "F4",
+            "kind": "skill",
+            "title": "SQL",
+            "organization": "",
+            "start": "",
+            "end": "",
+            "description": "",
+            "evidence_quote": "SQL | SQL"
+          },
+          {
+            "id": "F5",
+            "kind": "skill",
+            "title": "Financial modeling",
+            "organization": "",
+            "start": "",
+            "end": "",
+            "description": "",
+            "evidence_quote": "Financial modeling | Financial modeling"
+          },
+          {
+            "id": "F6",
+            "kind": "skill",
+            "title": "Market research",
+            "organization": "",
+            "start": "",
+            "end": "",
+            "description": "",
+            "evidence_quote": "Market research | Market research"
+          },
+          {
+            "id": "F7",
+            "kind": "skill",
+            "title": "Product strategy",
+            "organization": "",
+            "start": "",
+            "end": "",
+            "description": "",
+            "evidence_quote": "Product strategy | Product strategy"
+          },
+          {
+            "id": "F8",
+            "kind": "skill",
+            "title": "Excel",
+            "organization": "",
+            "start": "",
+            "end": "",
+            "description": "Built dashboards with SQL and Excel.",
+            "evidence_quote": "Built dashboards with SQL and Excel"
+          },
+          {
+            "id": "F9",
+            "kind": "language",
+            "title": "English",
+            "organization": "",
+            "start": "",
+            "end": "",
+            "description": "Professional working proficiency.",
+            "evidence_quote": "English | English (professional working proficiency)"
+          }
+        ],
+        "warnings": [
+          "Extraction draft: source is labeled 'FICTIONAL DEMO RESUME - NOT THE USER'.",
+          "MBA entry states candidate status and lists 2027 as the end year; degree completion is not stated."
+        ],
+        "confirmed": true,
+        "demo": true,
+        "linkedin": "",
+        "veteran_status": null,
+        "work_authorization": null
+      },
+      "error": null,
+      "events": [
+        {
+          "id": 1,
+          "agent": "Resume reader",
+          "action": "start",
+          "summary": "Starting a bounded structured analysis. Contact and sensitive answers are excluded from job analysis.",
+          "created": "2026-10-25T12:41:20.398290+00:00"
+        },
+        {
+          "id": 2,
+          "agent": "Resume reader",
+          "action": "model_response",
+          "summary": "final_result",
+          "created": "2026-10-25T12:41:29.587388+00:00"
+        },
+        {
+          "id": 3,
+          "agent": "Resume reader",
+          "action": "end",
+          "summary": "Validated structured output ready for human review.",
+          "created": "2026-10-25T12:41:29.591940+00:00"
+        }
+      ],
+      "usage": {
+        "input_tokens": 766,
+        "cached_tokens": 0,
+        "output_tokens": 561,
+        "requests": 1,
+        "cost": 0.03571
+      },
+      "label": "resume_upload",
+      "elapsed_seconds": 9.15
+    },
+    {
+      "run_id": "f9773f57-1a02-4005-b8c4-e1b7aff44676",
+      "kind": "fit",
+      "status": "completed",
+      "result": {
+        "summary": "Heartflow\u2019s role is a credible but unconfirmed step up from the applicant\u2019s healthcare strategy and business analysis work. Market research, financial modeling, pricing analysis, and cross-functional collaboration provide relevant foundations. They do not yet establish enterprise strategy ownership, executive/board decision support, or advanced scenario modeling at the scope requested. The MBA\u2019s listed 2027 end year aligns broadly with the Summer 2027 title, but completion timing and accreditation need confirmation. Year-only employment dates suggest roughly five years of analytical experience; exact qualifying tenure remains uncertain. Healthcare operations exposure is transferable, not proof of cardiac medical-technology expertise.",
+        "evidence": [
+          {
+            "fact_id": "F1",
+            "job_quote": "Frame and answer high-stakes, ambiguous business questions using market research, competitive analysis, customer and clinical insights, financial modeling, and scenario analysis.",
+            "connection": "Leading market research and financial modeling for care-access expansion directly supports two requested analytical methods. Competitive analysis, scenario analysis, and high-stakes enterprise decision ownership are not evidenced."
+          },
+          {
+            "fact_id": "F2",
+            "job_quote": "Identify opportunities to improve how Heartflow creates and captures value, including pricing and contracting models, customer economics, operating model, decision rights, organizational interfaces, and scalable processes.",
+            "connection": "Customer retention and pricing analysis offer transferable evidence for customer economics and pricing work. Contracting models and enterprise operating-model redesign are not evidenced."
+          },
+          {
+            "fact_id": "F1",
+            "job_quote": "Cross-functional leadership: proven ability to influence, align, and drive work across teams without direct reporting authority.",
+            "connection": "Partnering with clinical operations to reduce scheduling delays is relevant cross-functional execution evidence. The facts do not establish reporting relationships or the scale of influence."
+          },
+          {
+            "fact_id": "F2",
+            "job_quote": "Executive-level synthesis and communication: able to distill complex analysis into crisp narratives, decision points, and recommendations for senior leadership and board audiences.",
+            "connection": "Presenting business cases to cross-functional stakeholders provides a communication foundation. Executive or board audiences and decision-memo ownership are not evidenced."
+          },
+          {
+            "fact_id": "F3",
+            "job_quote": "MBA from an accredited program (required).",
+            "connection": "The reviewed fact lists an MBA candidacy spanning 2025\u20132027 with healthcare strategy and technology product management focus. Degree completion by the start date and program accreditation are not evidenced."
+          }
+        ],
+        "gaps": [
+          "Bachelor\u2019s degree in a listed or related field, MBA accreditation, and completed MBA by the required start date are not evidenced.",
+          "Exact months establishing 5+ years of qualifying experience are not evidenced by year-only dates.",
+          "Enterprise strategy, portfolio prioritization, long-range planning, and executive/board decision support ownership are not evidenced.",
+          "Advanced scenario analysis and expert-level spreadsheet proficiency are not evidenced; financial modeling and Excel dashboard work are documented.",
+          "Medical-device strategy, cardiac diagnostics, reimbursement, and clinical-evidence expertise are not evidenced; regulated-industry experience is preferred, not required.",
+          "AI/LLM strategy workflows, on-site availability in either listed California office, and moderate-travel availability are not evidenced."
+        ],
+        "questions": [
+          "What is the expected MBA completion month, is the program accredited, and what bachelor\u2019s degree has been completed?",
+          "What are the exact employment months and any additional qualifying experience relevant to the 5+ year requirement?",
+          "Can you work on-site in San Francisco or Rohnert Park and accommodate moderate travel for the intended Summer 2027 start?",
+          "Have you owned executive-facing strategic decisions, scenario models, or AI-assisted strategy workflows that are not captured in the reviewed facts?"
+        ],
+        "interview_angles": [
+          "Use F1\u2019s care-access expansion to explain the market question, modeling assumptions, investment alternatives, recommendation, and actual outcome; distinguish your ownership from others\u2019 decisions.",
+          "Use F2\u2019s pricing and retention analysis to discuss customer economics, experimental design, and trade-offs relevant to business-model strategy.",
+          "Use F1\u2019s scheduling work to demonstrate cross-functional alignment and measurement, bringing verified scope and results rather than invented metrics.",
+          "Build on F3\u2019s healthcare strategy focus to prepare a clearly labeled Heartflow case covering cardiac diagnostics, reimbursement, competitive positioning, and portfolio choices\u2014not a claim of prior domain experience."
+        ]
+      },
+      "error": null,
+      "events": [
+        {
+          "id": 4,
+          "agent": "Evidence analyst",
+          "action": "start",
+          "summary": "Starting a bounded structured analysis. Contact and sensitive answers are excluded from job analysis.",
+          "created": "2026-10-25T12:41:29.678625+00:00"
+        },
+        {
+          "id": 5,
+          "agent": "Evidence analyst",
+          "action": "model_response",
+          "summary": "get_candidate_evidence, get_job_evidence",
+          "created": "2026-10-25T12:41:32.042278+00:00"
+        },
+        {
+          "id": 6,
+          "agent": "Evidence analyst",
+          "action": "tool_return",
+          "summary": "get_candidate_evidence: 8 reviewed professional facts.",
+          "created": "2026-10-25T12:41:32.046842+00:00"
+        },
+        {
+          "id": 7,
+          "agent": "Evidence analyst",
+          "action": "tool_return",
+          "summary": "get_job_evidence: selected employer text; original source retained.",
+          "created": "2026-10-25T12:41:32.046943+00:00"
+        },
+        {
+          "id": 8,
+          "agent": "Evidence analyst",
+          "action": "model_response",
+          "summary": "final_result",
+          "created": "2026-10-25T12:41:47.911867+00:00"
+        },
+        {
+          "id": 9,
+          "agent": "Evidence analyst",
+          "action": "end",
+          "summary": "Validated structured output ready for human review.",
+          "created": "2026-10-25T12:41:47.920648+00:00"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3225,
+        "cached_tokens": 0,
+        "output_tokens": 892,
+        "requests": 2,
+        "cost": 0.07685
+      },
+      "label": "full_description",
+      "elapsed_seconds": 18.31
+    },
+    {
+      "run_id": "74a13bcc-5e29-4a02-a8df-038b5ae0a131",
+      "kind": "fit",
+      "status": "completed",
+      "result": {
+        "summary": "The reviewed facts support a plausible pivot into Heartflow\u2019s corporate strategy role: healthcare expansion research, financial modeling, pricing analysis, and cross-functional work align with several responsibilities. They do not establish manager-level enterprise strategy ownership, board communication, or cardiac medtech expertise. The MBA\u2019s listed 2027 end year aligns broadly with the Summer 2027 title, but completion timing and accreditation need confirmation. The 2020\u20132025 roles may meet the experience threshold; exact months are needed. The supplied listing ends mid-requirement, so this assessment cannot establish full eligibility. No score was supplied to validate.",
+        "evidence": [
+          {
+            "fact_id": "F1",
+            "job_quote": "Frame and answer high-stakes, ambiguous business questions using market research, competitive analysis, customer and clinical insights, financial modeling, and scenario analysis.",
+            "connection": "Healthcare expansion market research and financial modeling directly support parts of this work. Competitive analysis, scenario analysis, and high-stakes enterprise decision ownership are not evidenced."
+          },
+          {
+            "fact_id": "F2",
+            "job_quote": "including pricing and contracting models, customer economics, operating model, decision rights, organizational interfaces, and scalable processes.",
+            "connection": "Customer retention and pricing analysis provide transferable evidence for pricing and customer economics. Contracting models and enterprise operating-model redesign are not evidenced."
+          },
+          {
+            "fact_id": "F1",
+            "job_quote": "Cross-functional leadership: proven ability to influence, align, and drive work across teams without direct reporting authority.",
+            "connection": "Partnership with clinical operations to reduce scheduling delays shows cross-functional collaboration. Influence without reporting authority and enterprise-wide leadership scope need clarification."
+          },
+          {
+            "fact_id": "F2",
+            "job_quote": "Executive-level synthesis and communication: able to distill complex analysis into crisp narratives, decision points, and recommendations for senior leadership and board audiences.",
+            "connection": "Presenting business cases to cross-functional stakeholders is relevant communication experience, but does not establish senior leadership or board-level presentation experience."
+          },
+          {
+            "fact_id": "F1",
+            "job_quote": "Advanced financial modeling and scenario analysis skills, with expert-level proficiency in spreadsheets and comfort working with imperfect information.",
+            "connection": "Financial modeling and Excel dashboard work provide a foundation. Advanced modeling depth, scenario analysis, and expert spreadsheet proficiency are not evidenced by the brief description."
+          },
+          {
+            "fact_id": "F3",
+            "job_quote": "MBA from an accredited program (required).",
+            "connection": "The reviewed record lists MBA candidacy from 2025 to 2027 with healthcare strategy and technology product management focus. A completed degree and program accreditation are not evidenced."
+          }
+        ],
+        "gaps": [
+          "MBA completion by the intended start date, program accreditation, and the required bachelor\u2019s degree are not evidenced.",
+          "Exact employment months confirming 5+ years of qualifying experience are not evidenced; the final experience requirement is truncated in the supplied listing.",
+          "Enterprise strategy, long-range planning, portfolio resource allocation, and executive or board decision-support ownership are not evidenced.",
+          "Advanced scenario modeling and expert-level spreadsheet proficiency are not evidenced.",
+          "Coronary care, cardiac diagnostics, reimbursement, and medical technology competitive expertise are not evidenced; healthcare operations experience is transferable rather than proof of these specialties.",
+          "Use of AI tools or LLMs for strategy workflows is not evidenced."
+        ],
+        "questions": [
+          "What are the expected MBA completion month and program accreditation, and what bachelor\u2019s degree has been completed?",
+          "What are the exact start and end months for the 2020\u20132025 roles, and is there additional qualifying experience?",
+          "Can the employer provide the untruncated posting and confirm the Summer 2027 start date and location or on-site expectations?",
+          "What examples demonstrate enterprise initiative ownership, executive communication, advanced scenario modeling, or AI-assisted strategic work?"
+        ],
+        "interview_angles": [
+          "Use F1\u2019s care-access expansion to explain opportunity sizing, financial assumptions, trade-offs, and recommendations; distinguish personal ownership from team contributions.",
+          "Use F1\u2019s scheduling work to discuss clinical-operations alignment, dashboard measures, and outcomes, adding quantitative results only if verified.",
+          "Use F2\u2019s pricing and retention work to explain customer economics, experiment design, and how evidence informed a business case.",
+          "Connect F3\u2019s healthcare strategy focus to a learning plan for Heartflow\u2019s cardiac products, reimbursement, and competitive landscape without claiming existing domain expertise."
+        ]
+      },
+      "error": null,
+      "events": [
+        {
+          "id": 10,
+          "agent": "Evidence analyst",
+          "action": "start",
+          "summary": "Starting a bounded structured analysis. Contact and sensitive answers are excluded from job analysis.",
+          "created": "2026-10-25T12:41:48.003883+00:00"
+        },
+        {
+          "id": 11,
+          "agent": "Evidence analyst",
+          "action": "model_response",
+          "summary": "get_candidate_evidence, get_job_evidence",
+          "created": "2026-10-25T12:41:48.933013+00:00"
+        },
+        {
+          "id": 12,
+          "agent": "Evidence analyst",
+          "action": "tool_return",
+          "summary": "get_job_evidence: selected employer text; original source retained.",
+          "created": "2026-10-25T12:41:48.936799+00:00"
+        },
+        {
+          "id": 13,
+          "agent": "Evidence analyst",
+          "action": "tool_return",
+          "summary": "get_candidate_evidence: 8 reviewed professional facts.",
+          "created": "2026-10-25T12:41:48.936706+00:00"
+        },
+        {
+          "id": 14,
+          "agent": "Evidence analyst",
+          "action": "model_response",
+          "summary": "final_result",
+          "created": "2026-10-25T12:42:04.296603+00:00"
+        },
+        {
+          "id": 15,
+          "agent": "Evidence analyst",
+          "action": "end",
+          "summary": "Validated structured output ready for human review.",
+          "created": "2026-10-25T12:42:04.311719+00:00"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2774,
+        "cached_tokens": 0,
+        "output_tokens": 904,
+        "requests": 2,
+        "cost": 0.07294
+      },
+      "label": "compact_description",
+      "elapsed_seconds": 17.32
+    },
+    {
+      "run_id": "8efe34e5-c926-4097-a096-abcc2ae063a8",
+      "kind": "fit",
+      "status": "cached",
+      "result": {
+        "summary": "The reviewed facts support a plausible pivot into Heartflow\u2019s corporate strategy role: healthcare expansion research, financial modeling, pricing analysis, and cross-functional work align with several responsibilities. They do not establish manager-level enterprise strategy ownership, board communication, or cardiac medtech expertise. The MBA\u2019s listed 2027 end year aligns broadly with the Summer 2027 title, but completion timing and accreditation need confirmation. The 2020\u20132025 roles may meet the experience threshold; exact months are needed. The supplied listing ends mid-requirement, so this assessment cannot establish full eligibility. No score was supplied to validate.",
+        "evidence": [
+          {
+            "fact_id": "F1",
+            "job_quote": "Frame and answer high-stakes, ambiguous business questions using market research, competitive analysis, customer and clinical insights, financial modeling, and scenario analysis.",
+            "connection": "Healthcare expansion market research and financial modeling directly support parts of this work. Competitive analysis, scenario analysis, and high-stakes enterprise decision ownership are not evidenced."
+          },
+          {
+            "fact_id": "F2",
+            "job_quote": "including pricing and contracting models, customer economics, operating model, decision rights, organizational interfaces, and scalable processes.",
+            "connection": "Customer retention and pricing analysis provide transferable evidence for pricing and customer economics. Contracting models and enterprise operating-model redesign are not evidenced."
+          },
+          {
+            "fact_id": "F1",
+            "job_quote": "Cross-functional leadership: proven ability to influence, align, and drive work across teams without direct reporting authority.",
+            "connection": "Partnership with clinical operations to reduce scheduling delays shows cross-functional collaboration. Influence without reporting authority and enterprise-wide leadership scope need clarification."
+          },
+          {
+            "fact_id": "F2",
+            "job_quote": "Executive-level synthesis and communication: able to distill complex analysis into crisp narratives, decision points, and recommendations for senior leadership and board audiences.",
+            "connection": "Presenting business cases to cross-functional stakeholders is relevant communication experience, but does not establish senior leadership or board-level presentation experience."
+          },
+          {
+            "fact_id": "F1",
+            "job_quote": "Advanced financial modeling and scenario analysis skills, with expert-level proficiency in spreadsheets and comfort working with imperfect information.",
+            "connection": "Financial modeling and Excel dashboard work provide a foundation. Advanced modeling depth, scenario analysis, and expert spreadsheet proficiency are not evidenced by the brief description."
+          },
+          {
+            "fact_id": "F3",
+            "job_quote": "MBA from an accredited program (required).",
+            "connection": "The reviewed record lists MBA candidacy from 2025 to 2027 with healthcare strategy and technology product management focus. A completed degree and program accreditation are not evidenced."
+          }
+        ],
+        "gaps": [
+          "MBA completion by the intended start date, program accreditation, and the required bachelor\u2019s degree are not evidenced.",
+          "Exact employment months confirming 5+ years of qualifying experience are not evidenced; the final experience requirement is truncated in the supplied listing.",
+          "Enterprise strategy, long-range planning, portfolio resource allocation, and executive or board decision-support ownership are not evidenced.",
+          "Advanced scenario modeling and expert-level spreadsheet proficiency are not evidenced.",
+          "Coronary care, cardiac diagnostics, reimbursement, and medical technology competitive expertise are not evidenced; healthcare operations experience is transferable rather than proof of these specialties.",
+          "Use of AI tools or LLMs for strategy workflows is not evidenced."
+        ],
+        "questions": [
+          "What are the expected MBA completion month and program accreditation, and what bachelor\u2019s degree has been completed?",
+          "What are the exact start and end months for the 2020\u20132025 roles, and is there additional qualifying experience?",
+          "Can the employer provide the untruncated posting and confirm the Summer 2027 start date and location or on-site expectations?",
+          "What examples demonstrate enterprise initiative ownership, executive communication, advanced scenario modeling, or AI-assisted strategic work?"
+        ],
+        "interview_angles": [
+          "Use F1\u2019s care-access expansion to explain opportunity sizing, financial assumptions, trade-offs, and recommendations; distinguish personal ownership from team contributions.",
+          "Use F1\u2019s scheduling work to discuss clinical-operations alignment, dashboard measures, and outcomes, adding quantitative results only if verified.",
+          "Use F2\u2019s pricing and retention work to explain customer economics, experiment design, and how evidence informed a business case.",
+          "Connect F3\u2019s healthcare strategy focus to a learning plan for Heartflow\u2019s cardiac products, reimbursement, and competitive landscape without claiming existing domain expertise."
+        ]
+      },
+      "error": null,
+      "events": [
+        {
+          "id": 16,
+          "agent": "Evidence analyst",
+          "action": "cache_hit",
+          "summary": "Same profile, job and prompt: reused the prior assessment with no model call.",
+          "created": "2026-10-25T12:42:05.342878+00:00"
+        }
+      ],
+      "usage": null,
+      "label": "cache_repeat",
+      "elapsed_seconds": 0.0
+    }
+  ],
+  "model": "gpt-6-astra",
+  "search": {
+    "total_matches": 12,
+    "screened": 1383,
+    "excluded": 1371,
+    "returned_cap": 100,
+    "sources": [],
+    "cached": true,
+    "message": "Using the stored public snapshot. Refresh for current source status."
+  },
+  "job": {
+    "id": "gh:heartflowinc:6218422004",
+    "title": "Manager, Corporate Strategy - MBA Grad, Summer 2027",
+    "company": "Heartflow",
+    "industry": "Healthcare",
+    "location": "Rohnert Park, California; San Francisco, California",
+    "description": "Heartflow is a medical technology company advancing the diagnosis and management of coronary artery disease, the #1 cause of death worldwide, using cutting-edge technology. The flagship product\u2014an AI-driven, non-invasive cardiac test supported by the ACC/AHA Chest Pain Guidelines called the Heartflow FFRCT\u00a0Analysis\u2014provides a color-coded, 3D model of a patient\u2019s coronary arteries indicating the impact blockages have on blood flow to the heart. Heartflow is the first AI-driven non-invasive integrated heart care solution across the CCTA pathway that helps clinicians identify stenoses in the coronary arteries (RoadMap\u2122Analysis), assess coronary blood flow (FFRCT\u00a0Analysis), and characterize and quantify coronary atherosclerosis (Plaque Analysis).\u00a0Our pipeline of products is growing and so is our team; join us in helping to revolutionize precision heartcare.\nHeartflow is a publicly traded company (HTFL) that has received international recognition for exceptional strides in healthcare innovation, is supported by medical societies around the world, cleared for use in the US, UK, Europe, Japan and Canada, and has been used for more than 750,000 patients worldwide.\u00a0\u00a0\nCorporate Strategy at Heartflow helps answer the company\u2019s most important questions: where should we play, how will we win, what should we prioritize, and how should the company evolve as it scales. As Manager, Corporate Strategy, you will partner with executive leadership to shape enterprise strategy, assess new markets and portfolio opportunities, translate strategy into the long-range plan, and drive a small number of high-priority initiatives that cut across functions. You will combine rigorous analytics, strategic judgment, and executive communication to turn ambiguous questions into clear choices and action. This role is fundamentally about setting direction, sharpening choices, and helping Heartflow make better enterprise-level decisions.\nJob Responsibilities\nEnterprise Strategy & Portfolio Direction\nCorporate Strategy & Long-Range Planning: Partner with executive leadership and Finance to shape Heartflow\u2019s enterprise strategy, strategic priorities, and long-range plan, linking market opportunity, competitive position, product roadmap, financial ambition, and organizational capabilities.\nMarket, Portfolio & Adjacency Strategy: Evaluate where Heartflow should play next across products, clinical use cases, customer segments, geographies, and adjacent markets. Size opportunities, assess strategic fit and right-to-win, and develop clear recommendations on where to invest, sequence, or deprioritize.\nStrategic Opportunity Assessment: Frame and answer high-stakes, ambiguous business questions using market research, competitive analysis, customer and clinical insights, financial modeling, and scenario analysis. Translate analysis into explicit choices, trade-offs, and recommendations.\nStrategic Execution & Business Transformation\nPriority Strategic Initiatives: Lead a small number of enterprise-wide initiatives that matter disproportionately to Heartflow\u2019s growth and scale, moving from problem definition and strategy through cross-functional alignment, execution, and measurable outcomes.\nBusiness Model & Operating Model Evolution: Identify opportunities to improve how Heartflow creates and captures value, including pricing and contracting models, customer economics, operating model, decision rights, organizational interfaces, and scalable processes.\nResource Allocation & Investment Prioritization: Work with Finance and functional leaders to evaluate competing uses of capital and operating resources. Build fact-based cases that help leadership prioritize investments, sequence capabilities, allocate resources across the portfolio, and make explicit stop-doing decisions.\nValue Creation & Performance Management: Translate strategic priorities into clear objectives, milestones, owners, and measures of value. Establish practical governance and management routines that surface issues early and keep major initiatives tied to enterprise outcomes.\nDecision Support & Strategic Intelligence\nExecutive & Board Decision Support: Develop strategy narratives, decision memos, and leadership and board materials that synthesize complex information into a clear strategic rationale, financial implications, key risks, and recommended path forward.\nCompetitive, Market & Industry Intelligence: Build a forward-looking view of the forces shaping Heartflow\u2019s business, including competitors, technology, reimbursement, clinical evidence, customer behavior, and broader healthcare trends, and translate those signals into implications for strategy.\nAI-Native Strategy Workflows: Use AI tools and LLMs to accelerate research, synthesis, analysis, scenario development, and presentation creation, and help establish modern, repeatable workflows for the strategy team.\nSkills Needed\nExceptional structured problem-solving and strategic thinking, with the ability to deconstruct ambiguous questions, identify the critical issues, and develop clear, evidence-based recommendations.\nStrong market, competitive, and financial analysis skills, including the ability to connect external market dynamics with internal operating and financial implications.\nExecutive-level synthesis and communication: able to distill complex analysis into crisp narratives, decision points, and recommendations for senior leadership and board audiences.\nAdvanced financial modeling and scenario analysis skills, with expert-level proficiency in spreadsheets and comfort working with imperfect information.\nCross-functional leadership: proven ability to influence, align, and drive work across teams without direct reporting authority.\nStrong business judgment and curiosity, with a desire to develop deep knowledge of Heartflow\u2019s products, customers, economics, competitive landscape, and the broader medical technology industry.\nHigh ownership and comfort operating in a fast-paced environment where the most important questions are often not fully defined at the outset.\nAI mindset and comfort leveraging LLMs and modern tools to improve the speed and quality of strategic work.\nEducational Requirements & Work Experience\nMBA from an accredited program (required).\nBachelor\u2019s degree in Business, Finance, Life Sciences, Engineering, or a related field.\n5+ years of combined pre- and post-MBA experience in corporate strategy, strategy consulting, strategic finance, business operations, or a similarly analytical strategy role.\nTrack record of leading enterprise strategy, market or portfolio strategy, long-range planning, or other high-priority strategic initiatives from analysis through executive decision and execution.\nDemonstrated ability to integrate market, customer, competitive, operational, and financial inputs into a coherent point of view and actionable recommendation.\nExperience in medical device, biopharma, healthcare technology, or another complex regulated industry is preferred but not required.\nExperience working with executive teams on strategic planning, portfolio prioritization, or major cross-functional initiatives is a strong plus.\nComfort leading workstreams and contributing directly in meetings with executive leadership and other senior stakeholders.\nSpecial Working Conditions\nThis is an on-site position:\nSan Francisco or Rohnert Park, California office\nModerate travel may be expected for internal planning sessions, leadership offsites, industry conferences, and select external meetings.\nA reasonable estimate of the base salary compensation range is $160,000 to $175,000, bonus, and equity.\n#LI-DNI\nHeartflow is an Equal Opportunity Employer. We are committed to a work environment that supports, inspires, and respects all individuals and do not discriminate against any employee or applicant because of race, color, religion, marital status, age, national origin, ancestry, physical or mental disability, medical condition, pregnancy, genetic information, gender, sexual orientation, gender identity or expression, veteran status, or any other status protected under federal, state, or local law. This policy applies to every aspect of employment at Heartflow, including recruitment, hiring, training, relocation, promotion, and termination.\nPositions posted for Heartflow are not intended for or open to third party recruiters / agencies. Submission of any unsolicited resumes for these positions will be considered to be free referrals.\nHeartflow has become aware of a fraud where unknown entities are posing as Heartflow recruiters in an attempt to obtain personal information from individuals as part of our application or job offer process. Before providing any personal information to outside parties, please verify the following: A) all legitimate Heartflow recruiter email addresses end with \u201c@heartflow.com\u201d and B) the position described is found on our careers site at\u00a0www.heartflow.com/about/careers/.",
+    "url": "https://job-boards.greenhouse.io/heartflowinc/jobs/6218422004",
+    "source": "Greenhouse / heartflowinc",
+    "retrieved_at": "2026-10-25T05:12:45.680894+00:00",
+    "updated_at": "2026-10-08T14:11:53-04:00",
+    "job_type": "unknown",
+    "salary_min": 160000,
+    "salary_max": 175000,
+    "score": 93,
+    "breakdown": {
+      "resume_skills": 43,
+      "transferable_evidence": 30,
+      "role_focus": 20
+    },
+    "evidence": [
+      {
+        "fact_id": "F1",
+        "title": "Strategy Associate",
+        "terms": [
+          "care",
+          "clinical",
+          "financial",
+          "market",
+          "modeling",
+          "operations",
+          "research",
+          "strategy"
+        ]
+      },
+      {
+        "fact_id": "F2",
+        "title": "Business Analyst",
+        "terms": [
+          "cases",
+          "cross",
+          "customer",
+          "functional",
+          "pricing",
+          "product",
+          "stakeholders"
+        ]
+      },
+      {
+        "fact_id": "F3",
+        "title": "Master of Business Administration",
+        "terms": [
+          "healthcare",
+          "management",
+          "mba",
+          "product",
+          "strategy",
+          "technology"
+        ]
+      },
+      {
+        "fact_id": "F5",
+        "title": "Financial modeling",
+        "terms": [
+          "financial",
+          "modeling"
+        ]
+      },
+      {
+        "fact_id": "F6",
+        "title": "Market research",
+        "terms": [
+          "market",
+          "research"
+        ]
+      },
+      {
+        "fact_id": "F7",
+        "title": "Product strategy",
+        "terms": [
+          "product",
+          "strategy"
+        ]
+      }
+    ],
+    "matched_terms": [
+      "care",
+      "cases",
+      "clinical",
+      "cross",
+      "customer",
+      "financial",
+      "functional",
+      "healthcare",
+      "management",
+      "market",
+      "mba",
+      "modeling",
+      "operations",
+      "pricing",
+      "product",
+      "proficiency"
+    ],
+    "label": "Evidence overlap / 100 \u00b7 not a hiring probability"
+  },
+  "metrics": {
+    "runs": [
+      {
+        "run_id": "74a13bcc-5e29-4a02-a8df-038b5ae0a131",
+        "input_tokens": 2774,
+        "cached_tokens": 0,
+        "output_tokens": 904,
+        "requests": 2,
+        "cost": 0.07294,
+        "created": "2026-10-25T12:42:04.313007+00:00"
+      },
+      {
+        "run_id": "f9773f57-1a02-4005-b8c4-e1b7aff44676",
+        "input_tokens": 3225,
+        "cached_tokens": 0,
+        "output_tokens": 892,
+        "requests": 2,
+        "cost": 0.07685,
+        "created": "2026-10-25T12:41:47.921906+00:00"
+      },
+      {
+        "run_id": "cda9c798-4858-499d-b2db-9ea0d5d97b2c",
+        "input_tokens": 766,
+        "cached_tokens": 0,
+        "output_tokens": 561,
+        "requests": 1,
+        "cost": 0.03571,
+        "created": "2026-10-25T12:41:29.592602+00:00"
+      }
+    ],
+    "cache_hits": 1,
+    "total_cost": 0.1855,
+    "input_tokens": 6765,
+    "cached_tokens": 0,
+    "output_tokens": 2357,
+    "prices": {
+      "input_per_million": 10.0,
+      "cached_input_per_million": 1.0,
+      "output_per_million": 50.0
+    },
+    "price_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+    "price_checked": "2026-10-25",
+    "cost_note": "Estimated model cost using public standard rates; your provider invoice or course credits may differ."
+  },
+  "tracker": [
+    {
+      "job_id": "gh:heartflowinc:6218422004",
+      "stage": "Preparing",
+      "note": "Demo: verify experience requirements before applying.",
+      "follow_up": "2026-10-29",
+      "updated": "2026-10-25T12:42:05.355330+00:00",
+      "job": {
+        "id": "gh:heartflowinc:6218422004",
+        "title": "Manager, Corporate Strategy - MBA Grad, Summer 2027",
+        "company": "Heartflow",
+        "industry": "Healthcare",
+        "location": "Rohnert Park, California; San Francisco, California",
+        "description": "Heartflow is a medical technology company advancing the diagnosis and management of coronary artery disease, the #1 cause of death worldwide, using cutting-edge technology. The flagship product\u2014an AI-driven, non-invasive cardiac test supported by the ACC/AHA Chest Pain Guidelines called the Heartflow FFRCT\u00a0Analysis\u2014provides a color-coded, 3D model of a patient\u2019s coronary arteries indicating the impact blockages have on blood flow to the heart. Heartflow is the first AI-driven non-invasive integrated heart care solution across the CCTA pathway that helps clinicians identify stenoses in the coronary arteries (RoadMap\u2122Analysis), assess coronary blood flow (FFRCT\u00a0Analysis), and characterize and quantify coronary atherosclerosis (Plaque Analysis).\u00a0Our pipeline of products is growing and so is our team; join us in helping to revolutionize precision heartcare.\nHeartflow is a publicly traded company (HTFL) that has received international recognition for exceptional strides in healthcare innovation, is supported by medical societies around the world, cleared for use in the US, UK, Europe, Japan and Canada, and has been used for more than 750,000 patients worldwide.\u00a0\u00a0\nCorporate Strategy at Heartflow helps answer the company\u2019s most important questions: where should we play, how will we win, what should we prioritize, and how should the company evolve as it scales. As Manager, Corporate Strategy, you will partner with executive leadership to shape enterprise strategy, assess new markets and portfolio opportunities, translate strategy into the long-range plan, and drive a small number of high-priority initiatives that cut across functions. You will combine rigorous analytics, strategic judgment, and executive communication to turn ambiguous questions into clear choices and action. This role is fundamentally about setting direction, sharpening choices, and helping Heartflow make better enterprise-level decisions.\nJob Responsibilities\nEnterprise Strategy & Portfolio Direction\nCorporate Strategy & Long-Range Planning: Partner with executive leadership and Finance to shape Heartflow\u2019s enterprise strategy, strategic priorities, and long-range plan, linking market opportunity, competitive position, product roadmap, financial ambition, and organizational capabilities.\nMarket, Portfolio & Adjacency Strategy: Evaluate where Heartflow should play next across products, clinical use cases, customer segments, geographies, and adjacent markets. Size opportunities, assess strategic fit and right-to-win, and develop clear recommendations on where to invest, sequence, or deprioritize.\nStrategic Opportunity Assessment: Frame and answer high-stakes, ambiguous business questions using market research, competitive analysis, customer and clinical insights, financial modeling, and scenario analysis. Translate analysis into explicit choices, trade-offs, and recommendations.\nStrategic Execution & Business Transformation\nPriority Strategic Initiatives: Lead a small number of enterprise-wide initiatives that matter disproportionately to Heartflow\u2019s growth and scale, moving from problem definition and strategy through cross-functional alignment, execution, and measurable outcomes.\nBusiness Model & Operating Model Evolution: Identify opportunities to improve how Heartflow creates and captures value, including pricing and contracting models, customer economics, operating model, decision rights, organizational interfaces, and scalable processes.\nResource Allocation & Investment Prioritization: Work with Finance and functional leaders to evaluate competing uses of capital and operating resources. Build fact-based cases that help leadership prioritize investments, sequence capabilities, allocate resources across the portfolio, and make explicit stop-doing decisions.\nValue Creation & Performance Management: Translate strategic priorities into clear objectives, milestones, owners, and measures of value. Establish practical governance and management routines that surface issues early and keep major initiatives tied to enterprise outcomes.\nDecision Support & Strategic Intelligence\nExecutive & Board Decision Support: Develop strategy narratives, decision memos, and leadership and board materials that synthesize complex information into a clear strategic rationale, financial implications, key risks, and recommended path forward.\nCompetitive, Market & Industry Intelligence: Build a forward-looking view of the forces shaping Heartflow\u2019s business, including competitors, technology, reimbursement, clinical evidence, customer behavior, and broader healthcare trends, and translate those signals into implications for strategy.\nAI-Native Strategy Workflows: Use AI tools and LLMs to accelerate research, synthesis, analysis, scenario development, and presentation creation, and help establish modern, repeatable workflows for the strategy team.\nSkills Needed\nExceptional structured problem-solving and strategic thinking, with the ability to deconstruct ambiguous questions, identify the critical issues, and develop clear, evidence-based recommendations.\nStrong market, competitive, and financial analysis skills, including the ability to connect external market dynamics with internal operating and financial implications.\nExecutive-level synthesis and communication: able to distill complex analysis into crisp narratives, decision points, and recommendations for senior leadership and board audiences.\nAdvanced financial modeling and scenario analysis skills, with expert-level proficiency in spreadsheets and comfort working with imperfect information.\nCross-functional leadership: proven ability to influence, align, and drive work across teams without direct reporting authority.\nStrong business judgment and curiosity, with a desire to develop deep knowledge of Heartflow\u2019s products, customers, economics, competitive landscape, and the broader medical technology industry.\nHigh ownership and comfort operating in a fast-paced environment where the most important questions are often not fully defined at the outset.\nAI mindset and comfort leveraging LLMs and modern tools to improve the speed and quality of strategic work.\nEducational Requirements & Work Experience\nMBA from an accredited program (required).\nBachelor\u2019s degree in Business, Finance, Life Sciences, Engineering, or a related field.\n5+ years of combined pre- and post-MBA experience in corporate strategy, strategy consulting, strategic finance, business operations, or a similarly analytical strategy role.\nTrack record of leading enterprise strategy, market or portfolio strategy, long-range planning, or other high-priority strategic initiatives from analysis through executive decision and execution.\nDemonstrated ability to integrate market, customer, competitive, operational, and financial inputs into a coherent point of view and actionable recommendation.\nExperience in medical device, biopharma, healthcare technology, or another complex regulated industry is preferred but not required.\nExperience working with executive teams on strategic planning, portfolio prioritization, or major cross-functional initiatives is a strong plus.\nComfort leading workstreams and contributing directly in meetings with executive leadership and other senior stakeholders.\nSpecial Working Conditions\nThis is an on-site position:\nSan Francisco or Rohnert Park, California office\nModerate travel may be expected for internal planning sessions, leadership offsites, industry conferences, and select external meetings.\nA reasonable estimate of the base salary compensation range is $160,000 to $175,000, bonus, and equity.\n#LI-DNI\nHeartflow is an Equal Opportunity Employer. We are committed to a work environment that supports, inspires, and respects all individuals and do not discriminate against any employee or applicant because of race, color, religion, marital status, age, national origin, ancestry, physical or mental disability, medical condition, pregnancy, genetic information, gender, sexual orientation, gender identity or expression, veteran status, or any other status protected under federal, state, or local law. This policy applies to every aspect of employment at Heartflow, including recruitment, hiring, training, relocation, promotion, and termination.\nPositions posted for Heartflow are not intended for or open to third party recruiters / agencies. Submission of any unsolicited resumes for these positions will be considered to be free referrals.\nHeartflow has become aware of a fraud where unknown entities are posing as Heartflow recruiters in an attempt to obtain personal information from individuals as part of our application or job offer process. Before providing any personal information to outside parties, please verify the following: A) all legitimate Heartflow recruiter email addresses end with \u201c@heartflow.com\u201d and B) the position described is found on our careers site at\u00a0www.heartflow.com/about/careers/.",
+        "url": "https://job-boards.greenhouse.io/heartflowinc/jobs/6218422004",
+        "source": "Greenhouse / heartflowinc",
+        "retrieved_at": "2026-10-25T05:12:45.680894+00:00",
+        "updated_at": "2026-10-08T14:11:53-04:00",
+        "job_type": "unknown",
+        "salary_min": 160000,
+        "salary_max": 175000
+      }
+    }
+  ]
+}

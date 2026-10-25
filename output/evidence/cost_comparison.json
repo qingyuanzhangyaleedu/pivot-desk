@@ -1,0 +1,33 @@
+{
+  "model": "gpt-6-astra",
+  "job": "Manager, Corporate Strategy - MBA Grad, Summer 2027",
+  "full": {
+    "input_tokens": 3225,
+    "cached_tokens": 0,
+    "output_tokens": 892,
+    "requests": 2,
+    "cost": 0.07685
+  },
+  "truncated": {
+    "input_tokens": 2774,
+    "cached_tokens": 0,
+    "output_tokens": 904,
+    "requests": 2,
+    "cost": 0.07294
+  },
+  "context_characters": [
+    8937,
+    6500
+  ],
+  "input_reduction_percent": 13.98,
+  "cost_reduction_percent": 5.09,
+  "quality_review": {
+    "both_reference_real_facts": true,
+    "both_quote_source_text": true,
+    "full_mentions_onsite_and_travel": true,
+    "truncated_does_not_preserve_specific_travel_requirement": true,
+    "truncated_warns_source_incomplete": true
+  },
+  "decision": "Use full descriptions in the UI. Retain truncation only as an experimental API option. Reuse exact-result cache for safe repeat-call savings.",
+  "limitations": "One fictional candidate and one real role; not a statistical evaluation or human recruiting trial."
+}

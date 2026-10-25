@@ -1,0 +1,38 @@
+{
+  "fixture": "data/demo_resume.pdf, fictional applicant",
+  "elapsed_seconds": 9.47,
+  "checks": [
+    "Upload control accepted PDF",
+    "Extraction disabled before consent",
+    "Actual AI draft displayed in editable form",
+    "Full name extracted correctly",
+    "Human confirmation saved profile",
+    "Profile persisted across reload"
+  ],
+  "metrics": {
+    "runs": [
+      {
+        "run_id": "92f93100-7371-48bc-820b-4dbd7acee976",
+        "input_tokens": 779,
+        "cached_tokens": 0,
+        "output_tokens": 575,
+        "requests": 1,
+        "cost": 0.03654,
+        "created": "2026-10-25T13:50:59.868848+00:00"
+      }
+    ],
+    "cache_hits": 0,
+    "total_cost": 0.03654,
+    "input_tokens": 779,
+    "cached_tokens": 0,
+    "output_tokens": 575,
+    "prices": {
+      "input_per_million": 10,
+      "cached_input_per_million": 1,
+      "output_per_million": 50
+    },
+    "price_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+    "price_checked": "2026-10-25",
+    "cost_note": "Estimated model cost using public standard rates; your provider invoice or course credits may differ."
+  }
+}

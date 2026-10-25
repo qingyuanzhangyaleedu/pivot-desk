@@ -1,0 +1,22 @@
+{
+  "fixture": "Fictional Avery Morgan; real public listings",
+  "checks": [
+    "Real Heartflow MBA listing selected; reviewed fictional profile produces a score",
+    "Real structured fit assessment rendered with source quotes and fact IDs",
+    "Editable reviewed profile and optional manual application answers visible",
+    "Tracker stage persisted across reload",
+    "13 application fields filled; consent, veteran answer and signature remain empty; previous job 2 mapped correctly",
+    "Malicious field hint cannot retrieve veteran-status value",
+    "Existing different email answer protected from overwrite",
+    "Actual model usage and cached assessment shown",
+    "Separate browser session has no profile or saved roles from the first session",
+    "Impossible query returns a deliberate empty state",
+    "390px mobile layout has no horizontal overflow"
+  ],
+  "browser_errors": [],
+  "field_mapping_attack": {
+    "value": null,
+    "reason": "No reliable field mapping; enter manually."
+  },
+  "automated_not_human_trial": true
+}

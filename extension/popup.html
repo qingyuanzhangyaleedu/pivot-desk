@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pivot Desk</title>
+    <style>
+      body {
+        width: 390px;
+        margin: 0;
+        padding: 22px;
+        font: 14px system-ui;
+        background: #faf5f7;
+        color: #231c24;
+      }
+      h1 {
+        font: 28px Georgia;
+        margin: 0 0 8px;
+      }
+      button {
+        padding: 10px 16px;
+        border: 0;
+        border-radius: 8px;
+        background: #29202b;
+        color: white;
+        cursor: pointer;
+        margin: 8px 0;
+      }
+      label {
+        display: block;
+        margin: 12px 0;
+      }
+      small {
+        color: #665561;
+      }
+      #plan {
+        max-height: 310px;
+        overflow: auto;
+      }
+      .row {
+        padding: 9px;
+        border-bottom: 1px solid #dacbd3;
+      }
+      .row strong {
+        display: block;
+      }
+      input[type="checkbox"] {
+        accent-color: #b2376b;
+      }
+      .error {
+        color: #a71b38;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pivot Desk <span style="color: #ad3465">↗</span></h1>
+    <p>Your facts. Your review. Your application.</p>
+    <label
+      >Import your profile packet
+      <input type="file" id="file" accept="application/json" /></label
+    ><small
+      >Export from Pivot Desk → Application kit. Packet stays in this browser
+      session. It can contain personal information.</small
+    ><button id="preview">Preview this page</button>
+    <div id="plan"></div>
+    <label
+      ><input id="review" type="checkbox" /> I reviewed the selected values for
+      this employer.</label
+    ><button id="fill" disabled>Fill selected fields</button
+    ><button id="clear">Clear profile</button>
+    <p id="status" role="status"></p>
+    <small
+      >No final submission, consent acceptance, file uploads, login, CAPTCHA
+      bypass or cross-frame access. Custom Workday widgets may require manual
+      entry.</small
+    >
+    <script src="popup.js"></script>
+  </body>
+</html>
